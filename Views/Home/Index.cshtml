@@ -1,0 +1,120 @@
+﻿@* Views/Home/Index.cshtml *@
+@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Hayalindeki Vücuda Ulaş</h1>
+        <p>Premium spor salonu ekipmanları, uzman antrenörler ve kişiselleştirilmiş programlarla hedeflerine ulaş</p>
+        <div class="hero-actions">
+            <a asp-controller="Account" asp-action="Register" class="btn btn-primary">Hemen Başla</a>
+            <a asp-controller="Services" asp-action="Index" class="btn btn-outline">Hizmetleri Keşfet</a>
+        </div>
+    </div>
+</section>
+
+<!-- Stats -->
+<div class="container">
+    <div class="stats">
+        <div class="stat-item">
+            <h3>5000+</h3>
+            <p>Mutlu Üye</p>
+        </div>
+        <div class="stat-item">
+            <h3>10</h3>
+            <p>Uzman Antrenör</p>
+        </div>
+        <div class="stat-item">
+            <h3>6</h3>
+            <p>Farklı Program</p>
+        </div>
+        <div class="stat-item">
+            <h3>7/24</h3>
+            <p>Açık</p>
+        </div>
+    </div>
+</div>
+
+<!-- Services Preview -->
+<div class="container">
+    <h2 class="section-title">Hizmetlerimiz</h2>
+    <div class="services-grid">
+        <div class="service-card">
+            <div class="service-image">💪</div>
+            <div class="service-content">
+                <h3>Fitness</h3>
+                <p>Modern ekipmanlarla tam donanımlı fitness alanı</p>
+                <div class="service-meta">
+                    <span>⏱️ 60 dk</span>
+                    <span>💰 350 TL/ay</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)">🧘</div>
+            <div class="service-content">
+                <h3>Yoga</h3>
+                <p>Zihin ve beden dengesini sağlayan yoga seansları</p>
+                <div class="service-meta">
+                    <span>⏱️ 45 dk</span>
+                    <span>💰 400 TL/ay</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%)">🤸</div>
+            <div class="service-content">
+                <h3>Pilates</h3>
+                <p>Core güçlendirme ve esneklik için pilates</p>
+                <div class="service-meta">
+                    <span>⏱️ 50 dk</span>
+                    <span>💰 450 TL/ay</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%)">🏋️</div>
+            <div class="service-content">
+                <h3>Gym / Ağırlık</h3>
+                <p>Profesyonel powerlifting ekipmanları ve serbest ağırlık alanı</p>
+                <div class="service-meta">
+                    <span>⏱️ 90 dk</span>
+                    <span>💰 500 TL/ay</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-image" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%)">🏊</div>
+            <div class="service-content">
+                <h3>Havuz</h3>
+                <p>Olimpik standartlarda kapalı yüzme havuzu ve su sporları</p>
+                <div class="service-meta">
+                    <span>⏱️ 60 dk</span>
+                    <span>💰 600 TL/ay</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-image" style="background: linear-gradient(135deg, #ff6a00 0%, #ee0979 100%)">🥊</div>
+            <div class="service-content">
+                <h3>Boks</h3>
+                <p>Profesyonel boks antrenmanları ve kickboxing seansları</p>
+                <div class="service-meta">
+                    <span>⏱️ 60 dk</span>
+                    <span>💰 550 TL/ay</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem;">
+        <a asp-controller="Services" asp-action="Index" class="btn btn-primary">Tüm Hizmetleri Gör</a>
+    </div>
+</div>

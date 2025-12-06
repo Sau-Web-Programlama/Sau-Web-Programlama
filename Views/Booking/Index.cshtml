@@ -1,0 +1,105 @@
+﻿@* Views/Booking/Index.cshtml *@
+@{
+    ViewData["Title"] = "Randevu Al";
+}
+
+<div class="container page-container">
+    <h2 class="section-title">Randevu Al</h2>
+
+    <form class="booking-form" method="post" asp-controller="Booking" asp-action="Create">
+        <div class="form-group">
+            <label for="service">Hizmet Seçin *</label>
+            <select id="service" name="ServiceType" required>
+                <option value="">Hizmet seçiniz...</option>
+                <option value="Fitness">💪 Fitness</option>
+                <option value="Yoga">🧘 Yoga</option>
+                <option value="Pilates">🤸 Pilates</option>
+                <option value="Gym">🏋️ Gym / Ağırlık</option>
+                <option value="Pool">🏊 Havuz</option>
+                <option value="Boxing">🥊 Boks</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="trainer">Antrenör Seçin *</label>
+            <select id="trainer" name="TrainerId" required>
+                <option value="">Antrenör seçiniz...</option>
+                <option value="1">Ahmet Yılmaz - Fitness & Kilo Verme</option>
+                <option value="2">Zeynep Kara - Yoga & Meditasyon</option>
+                <option value="3">Mehmet Demir - Pilates & Rehabilitasyon</option>
+                <option value="4">Ayşe Şahin - Kas Geliştirme & Powerlifting</option>
+                <option value="5">Can Öztürk - Yüzme & Su Sporları</option>
+                <option value="6">Burak Yıldız - Boks & Kickboxing</option>
+                <option value="7">Elif Arslan - Grup Dersleri & Zumba</option>
+                <option value="8">Emre Koç - Crossfit & Fonksiyonel</option>
+                <option value="9">Selin Aydın - Beslenme & Diyet Koçu</option>
+                <option value="10">Kerem Bulut - Kişisel Antrenman & Rehabilitasyon</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="date">Tarih *</label>
+            <input type="date" id="date" name="AppointmentDate" required>
+        </div>
+
+        <div class="form-group">
+            <label for="time">Saat *</label>
+            <select id="time" name="AppointmentTime" required>
+                <option value="">Saat seçiniz...</option>
+                <option value="09:00">09:00</option>
+                <option value="10:00">10:00</option>
+                <option value="11:00">11:00</option>
+                <option value="12:00">12:00</option>
+                <option value="13:00">13:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+                <option value="17:00">17:00</option>
+                <option value="18:00">18:00</option>
+                <option value="19:00">19:00</option>
+                <option value="20:00">20:00</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="notes">Notlar (Opsiyonel)</label>
+            <textarea id="notes" name="Notes" rows="4" placeholder="Özel istekleriniz, sağlık durumunuz veya hedefleriniz hakkında bilgi..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;">
+            Randevu Oluştur
+        </button>
+    </form>
+
+    <!-- Bilgilendirme -->
+    <div style="max-width: 600px; margin: 2rem auto; background-color: var(--bg-card); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border);">
+        <h4 style="color: var(--primary); margin-bottom: 1rem;">📋 Randevu Hakkında Bilgiler</h4>
+        <ul style="color: var(--text-secondary); line-height: 1.8;">
+            <li>Randevunuz onaylandıktan sonra e-posta ile bilgilendirileceksiniz</li>
+            <li>Randevunuza 15 dakika erken gelmeniz önerilir</li>
+            <li>İptal işlemleri en geç 24 saat öncesinden yapılmalıdır</li>
+            <li>İlk seans öncesi sağlık formu doldurulması gerekmektedir</li>
+        </ul>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Bugünün tarihinden önceki tarihleri seçememe
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').setAttribute('min', today);
+
+        // Form validasyonu
+        document.querySelector('.booking-form').addEventListener('submit', function(e) {
+            const service = document.getElementById('service').value;
+            const trainer = document.getElementById('trainer').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+
+            if (!service || !trainer || !date || !time) {
+                e.preventDefault();
+                alert('Lütfen tüm zorunlu alanları doldurun!');
+            }
+        });
+    </script>
+}

@@ -1,0 +1,54 @@
+﻿@* Views/Account/Login.cshtml *@
+@{
+    ViewData["Title"] = "Giriş Yap";
+}
+
+<div class="auth-container">
+    <div class="auth-box">
+        <h2>Giriş Yap</h2>
+
+        <form method="post" asp-controller="Account" asp-action="Login">
+            <div class="form-group">
+                <label for="email">E-posta *</label>
+                <input type="email" id="email" name="Email" placeholder="ornek@sakarya.edu.tr" required />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Şifre *</label>
+                <input type="password" id="password" name="Password" placeholder="••••••••" required />
+            </div>
+
+            <div class="form-group" style="display: flex; align-items: center; margin-bottom: 1rem;">
+                <input type="checkbox" id="remember" name="RememberMe" style="width: auto; margin-right: 0.5rem;" />
+                <label for="remember" style="margin-bottom: 0; color: var(--text-secondary);">Beni Hatırla</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;">
+                Giriş Yap
+            </button>
+
+            <div style="text-align: center; margin-top: 1rem;">
+                <a href="#" style="color: var(--primary); text-decoration: none;">Şifremi Unuttum</a>
+            </div>
+
+            <p style="text-align: center; margin-top: 1.5rem; color: var(--text-secondary);">
+                Hesabınız yok mu?
+                <a asp-controller="Account" asp-action="Register" style="color: var(--primary); text-decoration: none;">Üye Ol</a>
+            </p>
+        </form>
+
+        <!-- Demo Hesaplar -->
+        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">Demo Hesaplar:</p>
+            <div style="background-color: var(--bg-dark); padding: 1rem; border-radius: 6px; font-size: 0.85rem; color: var(--text-secondary);">
+                <p><strong style="color: var(--primary);">Admin:</strong></p>
+                <p>E-posta: ogrencinumarasi@sakarya.edu.tr</p>
+                <p>Şifre: sau</p>
+                <br>
+                <p><strong style="color: var(--primary);">Üye:</strong></p>
+                <p>E-posta: uye@sakarya.edu.tr</p>
+                <p>Şifre: 123456</p>
+            </div>
+        </div>
+    </div>
+</div>

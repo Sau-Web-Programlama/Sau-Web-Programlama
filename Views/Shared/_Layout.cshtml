@@ -1,0 +1,75 @@
+﻿@* Views/Shared/_Layout.cshtml *@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FitZone</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a asp-controller="Home" asp-action="Index" class="logo">
+                FIT<span style="color: var(--accent)">ZONE</span>
+            </a>
+            <ul class="nav-links">
+                <li>
+                    <a asp-controller="Home" asp-action="Index">Ana Sayfa</a>
+                </li>
+                <li>
+                    <a asp-controller="Services" asp-action="Index">Hizmetler</a>
+                </li>
+                <li>
+                    <a asp-controller="Trainers" asp-action="Index">Antrenörler</a>
+                </li>
+                <li>
+                    <a asp-controller="Booking" asp-action="Index">Randevu Al</a>
+                </li>
+            </ul>
+            <div class="nav-actions">
+                <a asp-controller="Account" asp-action="Login" class="btn btn-outline">Giriş Yap</a>
+                <a asp-controller="Account" asp-action="Register" class="btn btn-primary">Üye Ol</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        @RenderBody()
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>FitZone Hakkında</h4>
+                <p>Türkiye'nin en modern spor salonlarından biri olarak, sağlıklı yaşam yolculuğunuzda yanınızdayız.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Hızlı Linkler</h4>
+                <a asp-controller="Services" asp-action="Index">Hizmetler</a>
+                <a asp-controller="Trainers" asp-action="Index">Antrenörler</a>
+                <a asp-controller="Booking" asp-action="Index">Randevu Al</a>
+            </div>
+            <div class="footer-section">
+                <h4>İletişim</h4>
+                <p>📍 Serdivan, Sakarya</p>
+                <p>📞 0264 295 60 60</p>
+                <p>✉️ info@fitzone.com.tr</p>
+            </div>
+            <div class="footer-section">
+                <h4>Çalışma Saatleri</h4>
+                <p>Pazartesi - Cuma: 06:00 - 23:00</p>
+                <p>Cumartesi - Pazar: 08:00 - 22:00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FitZone. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
