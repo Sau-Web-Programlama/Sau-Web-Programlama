@@ -1,32 +1,31 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Spor.Salonu.Models;
 
-namespace Spor.Salonu.Controllers
+namespace FitnessCenter.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
+        // Ana sayfa
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        // Hakkýmýzda sayfasý (opsiyonel)
+        public IActionResult About()
         {
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        // Ýletiþim sayfasý (opsiyonel)
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
+        // Hata sayfasý
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
         }
     }
 }

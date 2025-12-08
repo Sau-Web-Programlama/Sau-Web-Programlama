@@ -5,14 +5,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - FitZone</title>
+
+    <!-- CSS DOSYASI - ÇOK ÖNEMLİ! -->
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/site.css" />
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <div class="container">
             <a asp-controller="Home" asp-action="Index" class="logo">
-                FIT<span style="color: var(--accent)">ZONE</span>
+                FIT<span style="color: var(--accent-orange)">ZONE</span>
             </a>
             <ul class="nav-links">
                 <li>
@@ -29,8 +32,19 @@
                 </li>
             </ul>
             <div class="nav-actions">
-                <a asp-controller="Account" asp-action="Login" class="btn btn-outline">Giriş Yap</a>
-                <a asp-controller="Account" asp-action="Register" class="btn btn-primary">Üye Ol</a>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a asp-controller="Admin" asp-action="Index" class="btn btn-outline">Admin Panel</a>
+                    }
+                    <a asp-controller="Account" asp-action="Logout" class="btn btn-primary">Çıkış Yap</a>
+                }
+                else
+                {
+                    <a asp-controller="Account" asp-action="Login" class="btn btn-outline">Giriş Yap</a>
+                    <a asp-controller="Account" asp-action="Register" class="btn btn-primary">Üye Ol</a>
+                }
             </div>
         </div>
     </nav>

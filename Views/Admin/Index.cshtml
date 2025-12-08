@@ -1,0 +1,105 @@
+﻿@* Views/Admin/Index.cshtml *@
+@{
+    ViewData["Title"] = "Admin Panel";
+}
+
+<div class="container page-container">
+    <h2 class="section-title">Admin Panel</h2>
+
+    <!-- İstatistik Kartları -->
+    <div class="stats">
+        <div class="stat-item">
+            <h3>150</h3>
+            <p>Toplam Üye</p>
+        </div>
+        <div class="stat-item">
+            <h3>48</h3>
+            <p>Bugünkü Randevular</p>
+        </div>
+        <div class="stat-item">
+            <h3>12</h3>
+            <p>Bekleyen Onaylar</p>
+        </div>
+        <div class="stat-item">
+            <h3>₺25,450</h3>
+            <p>Aylık Gelir</p>
+        </div>
+    </div>
+
+    <!-- Hızlı Erişim Menüsü -->
+    <div class="services-grid" style="margin-top: 3rem;">
+        <div class="service-card">
+            <div class="service-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)">👥</div>
+            <div class="service-content">
+                <h3>Üye Yönetimi</h3>
+                <p>Tüm üyeleri görüntüle, düzenle ve yönet</p>
+                <a asp-controller="Admin" asp-action="Members" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Üyeleri Görüntüle</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%)">🏋️</div>
+            <div class="service-content">
+                <h3>Antrenör Yönetimi</h3>
+                <p>Antrenörleri ekle, düzenle ve yönet</p>
+                <a asp-controller="Admin" asp-action="Trainers" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Antrenörleri Yönet</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%)">📅</div>
+            <div class="service-content">
+                <h3>Randevu Yönetimi</h3>
+                <p>Randevuları görüntüle, onayla veya iptal et</p>
+                <a asp-controller="Admin" asp-action="Bookings" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Randevuları Yönet</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-image" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%)">💪</div>
+            <div class="service-content">
+                <h3>Hizmet Yönetimi</h3>
+                <p>Hizmetleri ekle, düzenle ve fiyatlandır</p>
+                <a asp-controller="Admin" asp-action="Services" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Hizmetleri Yönet</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-image" style="background: linear-gradient(135deg, #ff6a00 0%, #ee0979 100%)">📊</div>
+            <div class="service-content">
+                <h3>Raporlar</h3>
+                <p>İstatistikler ve detaylı raporları görüntüle</p>
+                <a asp-controller="Admin" asp-action="Reports" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Raporları Gör</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)">⚙️</div>
+            <div class="service-content">
+                <h3>Ayarlar</h3>
+                <p>Sistem ayarları ve yapılandırma</p>
+                <a href="#" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Ayarlara Git</a>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Son Aktiviteler -->
+    <div style="background-color: var(--bg-card); padding: 2rem; border-radius: 12px; margin-top: 3rem; border: 1px solid var(--border);">
+        <h3 style="color: var(--primary); margin-bottom: 1.5rem;">📋 Son Aktiviteler</h3>
+        <div style="color: var(--text-secondary);">
+            <div style="padding: 1rem; border-bottom: 1px solid var(--border);">
+                <p><strong>Yeni Üye:</strong> Ahmet Yılmaz - 5 dakika önce</p>
+            </div>
+            <div style="padding: 1rem; border-bottom: 1px solid var(--border);">
+                <p><strong>Randevu Onayı:</strong> Zeynep Kara için yoga seansı - 15 dakika önce</p>
+            </div>
+            <div style="padding: 1rem; border-bottom: 1px solid var(--border);">
+                <p><strong>Randevu İptali:</strong> Mehmet Demir - 1 saat önce</p>
+            </div>
+            <div style="padding: 1rem;">
+                <p><strong>Yeni Antrenör:</strong> Can Öztürk eklendi - 2 saat önce</p>
+            </div>
+        </div>
+    </div>
+</div>
