@@ -1,4 +1,4 @@
-namespace Spor.Salonu.Models
+namespace SporSalonu2.Models
 {
     public class ErrorViewModel
     {

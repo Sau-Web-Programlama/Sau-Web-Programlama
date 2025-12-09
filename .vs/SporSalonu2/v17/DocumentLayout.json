@@ -1,0 +1,533 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\controllers\\aicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:controllers\\aicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\views\\ai\\dietassistant.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\ai\\dietassistant.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\models\\a\u0131dietviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:models\\a\u0131dietviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\views\\admin\\bookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\admin\\bookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\views\\admin\\reports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\admin\\reports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\views\\admin\\members.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\admin\\members.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\views\\admin\\services.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\admin\\services.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\views\\admin\\trainers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\admin\\trainers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\views\\admin\\createtrainer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\admin\\createtrainer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\views\\booking\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\booking\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\models\\bookingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:models\\bookingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\models\\trainerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:models\\trainerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\views\\trainers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\trainers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\views\\services\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\services\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\controllers\\trainerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:controllers\\trainerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\source\\repos\\sporsalonu2\\controllers\\servicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:controllers\\servicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T09:08:04.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AIController.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Controllers\\AIController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AIController.cs",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Controllers\\AIController.cs",
+              "RelativeToolTip": "Controllers\\AIController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAEkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T10:35:11.563Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DietAssistant.cshtml",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\AI\\DietAssistant.cshtml",
+              "RelativeDocumentMoniker": "Views\\AI\\DietAssistant.cshtml",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\AI\\DietAssistant.cshtml",
+              "RelativeToolTip": "Views\\AI\\DietAssistant.cshtml",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwD8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-09T10:35:47.546Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-09T10:34:24.946Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T08:50:57.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "A\u0131DietViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Models\\A\u0131DietViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\A\u0131DietViewModel.cs",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Models\\A\u0131DietViewModel.cs",
+              "RelativeToolTip": "Models\\A\u0131DietViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T10:34:52.326Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Bookings.cshtml",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Admin\\Bookings.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\Bookings.cshtml",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Admin\\Bookings.cshtml",
+              "RelativeToolTip": "Views\\Admin\\Bookings.cshtml",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAmwCkAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-09T10:17:14.663Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Reports.cshtml",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Admin\\Reports.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\Reports.cshtml",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Admin\\Reports.cshtml",
+              "RelativeToolTip": "Views\\Admin\\Reports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-09T10:18:16.159Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAADwv2sAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T08:50:44.727Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Members.cshtml",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Admin\\Members.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\Members.cshtml",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Admin\\Members.cshtml",
+              "RelativeToolTip": "Views\\Admin\\Members.cshtml",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAmwCYAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-09T10:17:59.664Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Services.cshtml",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Admin\\Services.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\Services.cshtml",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Admin\\Services.cshtml",
+              "RelativeToolTip": "Views\\Admin\\Services.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAmwCcAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-09T10:16:56.346Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Trainers.cshtml",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Admin\\Trainers.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\Trainers.cshtml",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Admin\\Trainers.cshtml",
+              "RelativeToolTip": "Views\\Admin\\Trainers.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAmwCcAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-09T10:15:56.296Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CreateTrainer.cshtml",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Admin\\CreateTrainer.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\CreateTrainer.cshtml",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Admin\\CreateTrainer.cshtml",
+              "RelativeToolTip": "Views\\Admin\\CreateTrainer.cshtml",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAmwC4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-09T10:16:37.498Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AgIAAMcCAAAAAAAAAAAYwOECAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-12-09T08:50:05.622Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Booking\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Booking\\Index.cshtml",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Booking\\Index.cshtml",
+              "RelativeToolTip": "Views\\Booking\\Index.cshtml",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAmwGIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-09T09:05:16.101Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAmwFEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-09T08:55:47.938Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAmwD4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-09T08:55:05.586Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "BookingViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Models\\BookingViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\BookingViewModel.cs",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Models\\BookingViewModel.cs",
+              "RelativeToolTip": "Models\\BookingViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T09:36:13.706Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "TrainerViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Models\\TrainerViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\TrainerViewModel.cs",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Models\\TrainerViewModel.cs",
+              "RelativeToolTip": "Models\\TrainerViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T09:36:00.042Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Models\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\RegisterViewModel.cs",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Models\\RegisterViewModel.cs",
+              "RelativeToolTip": "Models\\RegisterViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T09:35:42.098Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Models\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Models\\LoginViewModel.cs",
+              "RelativeToolTip": "Models\\LoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T09:35:16.194Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T08:52:34.006Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "BookingController.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Controllers\\BookingController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BookingController.cs",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Controllers\\BookingController.cs",
+              "RelativeToolTip": "Controllers\\BookingController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAqwCsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T08:51:11.578Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\Index.cshtml",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "Views\\Admin\\Index.cshtml",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAmwGUAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-09T08:56:26.905Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-09T09:39:37.406Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAADEAAAAAAAAAAAAIwFgAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-09T09:06:50.028Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Trainers\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Trainers\\Index.cshtml",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Trainers\\Index.cshtml",
+              "RelativeToolTip": "Views\\Trainers\\Index.cshtml",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAAwIEAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-09T09:07:40.853Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Services\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Services\\Index.cshtml",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Services\\Index.cshtml",
+              "RelativeToolTip": "Views\\Services\\Index.cshtml",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAAwGoAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-09T09:06:23.081Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAEsAAAAAAAAAAIBZwHgAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-09T09:05:39.417Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T08:53:07.746Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "TrainersController.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Controllers\\TrainersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TrainersController.cs",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Controllers\\TrainersController.cs",
+              "RelativeToolTip": "Controllers\\TrainersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T08:51:59.72Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "ServicesController.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Controllers\\ServicesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ServicesController.cs",
+              "ToolTip": "C:\\Users\\tunah\\source\\repos\\SporSalonu2\\Controllers\\ServicesController.cs",
+              "RelativeToolTip": "Controllers\\ServicesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T08:51:42.972Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

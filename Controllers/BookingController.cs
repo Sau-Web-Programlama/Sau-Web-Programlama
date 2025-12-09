@@ -1,37 +1,35 @@
-// Controllers/BookingController.cs
+ï»¿// Controllers/BookingController.cs
 using Microsoft.AspNetCore.Mvc;
+using FitnessCenter.Models; // Models klasÃ¶rÃ¼nÃ¼ kullanmak iÃ§in
 
 namespace FitnessCenter.Controllers
 {
     public class BookingController : Controller
     {
-        // Randevu alma sayfası
+        // Randevu alma sayfasÄ±
         public IActionResult Index()
         {
             return View();
         }
 
-        // Randevu oluşturma
+        // Randevu oluÅŸturma
         [HttpPost]
         public IActionResult Create(BookingViewModel model)
         {
             if (ModelState.IsValid)
             {
-                // Veritabanına kaydet
-                // Randevu çakışması kontrolü yap
-                // Onay maili gönder
+                // VeritabanÄ±na kaydetme simÃ¼lasyonu...
 
-                TempData["Success"] = "Randevunuz başarıyla oluşturuldu! Onay için e-posta gönderilecektir.";
+                TempData["Success"] = "Randevunuz baÅŸarÄ±yla oluÅŸturuldu! Onay iÃ§in e-posta gÃ¶nderilecektir.";
                 return RedirectToAction("Index", "Home");
             }
 
             return View("Index", model);
         }
 
-        // Randevularım sayfası (üye paneli)
+        // RandevularÄ±m sayfasÄ± (Ã¼ye paneli)
         public IActionResult MyBookings()
         {
-            // Kullanıcının randevularını listele
             return View();
         }
 
@@ -39,19 +37,8 @@ namespace FitnessCenter.Controllers
         [HttpPost]
         public IActionResult Cancel(int id)
         {
-            // Randevuyu iptal et
-            TempData["Success"] = "Randevunuz başarıyla iptal edildi.";
+            TempData["Success"] = "Randevunuz baÅŸarÄ±yla iptal edildi.";
             return RedirectToAction("MyBookings");
         }
-    }
-
-    // ViewModel (şimdilik basit tutalım, Models klasöründe olacak)
-    public class BookingViewModel
-    {
-        public string ServiceType { get; set; }
-        public int TrainerId { get; set; }
-        public DateTime AppointmentDate { get; set; }
-        public string AppointmentTime { get; set; }
-        public string Notes { get; set; }
     }
 }

@@ -1,0 +1,9 @@
+C:\Users\tunah\source\repos\SporSalonu2\obj\Debug\net8.0\SporSalonu2.csproj.AssemblyReference.cache
+C:\Users\tunah\source\repos\SporSalonu2\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\tunah\source\repos\SporSalonu2\obj\Debug\net8.0\SporSalonu2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tunah\source\repos\SporSalonu2\obj\Debug\net8.0\SporSalonu2.AssemblyInfoInputs.cache
+C:\Users\tunah\source\repos\SporSalonu2\obj\Debug\net8.0\SporSalonu2.AssemblyInfo.cs
+C:\Users\tunah\source\repos\SporSalonu2\obj\Debug\net8.0\SporSalonu2.csproj.CoreCompileInputs.cache
+C:\Users\tunah\source\repos\SporSalonu2\obj\Debug\net8.0\SporSalonu2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\tunah\source\repos\SporSalonu2\obj\Debug\net8.0\SporSalonu2.RazorAssemblyInfo.cache
+C:\Users\tunah\source\repos\SporSalonu2\obj\Debug\net8.0\SporSalonu2.RazorAssemblyInfo.cs

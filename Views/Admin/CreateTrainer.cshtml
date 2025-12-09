@@ -1,0 +1,47 @@
+﻿@model FitnessCenter.Models.TrainerViewModel
+@{
+    ViewData["Title"] = "Yeni Antrenör Ekle";
+}
+
+<div class="auth-container">
+    <div class="auth-box" style="max-width: 600px;">
+        <h2>➕ Yeni Antrenör Ekle</h2>
+
+        <form method="post" asp-controller="Admin" asp-action="CreateTrainer">
+            <div asp-validation-summary="ModelOnly" style="color: red; margin-bottom: 1rem;"></div>
+
+            <div class="form-group">
+                <label asp-for="FirstName">Ad *</label>
+                <input asp-for="FirstName" placeholder="Ad" required />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LastName">Soyad *</label>
+                <input asp-for="LastName" placeholder="Soyad" required />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Specialty">Uzmanlık Alanı *</label>
+                <input asp-for="Specialty" placeholder="Örn: Kilo Verme, Pilates" required />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email">E-posta</label>
+                <input asp-for="Email" placeholder="E-posta" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Bio">Biyografi (Kısa Açıklama)</label>
+                <textarea asp-for="Bio" rows="4" placeholder="Antrenörün kısa özgeçmişi ve deneyimleri..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem;">
+                Antrenörü Kaydet
+            </button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

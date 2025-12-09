@@ -1,30 +1,30 @@
-// Controllers/AccountController.cs
-using Microsoft.AspNetCore.Mvc;
+ï»¿// Controllers/AccountController.cs
+using FitnessCenter.Models; // Models klasÃ¶rÃ¼nÃ¼ kullanmak iÃ§in
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
 namespace FitnessCenter.Controllers
 {
     public class AccountController : Controller
     {
-        // Giriþ sayfasý
+        // GiriÅŸ sayfasÄ±
         public IActionResult Login()
         {
             return View();
         }
 
-        // Giriþ iþlemi
+        // GiriÅŸ iÅŸlemi
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (ModelState.IsValid)
             {
-                // Veritabanýndan kullanýcý kontrolü
-                // Demo için basit kontrol
+                // Demo iÃ§in basit kontrol
                 if (model.Email == "ogrencinumarasi@sakarya.edu.tr" && model.Password == "sau")
                 {
-                    // Admin giriþi
+                    // Admin giriÅŸi
                     var claims = new List<Claim>
                     {
                         new Claim(ClaimTypes.Name, model.Email),
@@ -47,7 +47,7 @@ namespace FitnessCenter.Controllers
                 }
                 else if (model.Email == "uye@sakarya.edu.tr" && model.Password == "123456")
                 {
-                    // Üye giriþi
+                    // Ãœye giriÅŸi
                     var claims = new List<Claim>
                     {
                         new Claim(ClaimTypes.Name, model.Email),
@@ -70,67 +70,39 @@ namespace FitnessCenter.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "E-posta veya þifre hatalý!");
+                    ModelState.AddModelError("", "E-posta veya ÅŸifre hatalÄ±!");
                 }
             }
 
             return View(model);
         }
 
-        // Kayýt sayfasý
+        // KayÄ±t sayfasÄ±
         public IActionResult Register()
         {
             return View();
         }
 
-        // Kayýt iþlemi
+        // KayÄ±t iÅŸlemi (DÃœZELTÄ°LDÄ°)
         [HttpPost]
-        public IActionResult Register(RegisterViewModel model)
+        public IActionResult Register(RegisterViewModel model) // <-- HATA DÃœZELTÄ°LDÄ°: RegisterViewModel doÄŸru tanÄ±mlandÄ±
         {
             if (ModelState.IsValid)
             {
-                // Þifre kontrolü
-                if (model.Password != model.ConfirmPassword)
-                {
-                    ModelState.AddModelError("", "Þifreler eþleþmiyor!");
-                    return View(model);
-                }
+                // VeritabanÄ±na kaydetme simÃ¼lasyonu...
 
-                // Veritabanýna kaydet
-                // E-posta kontrolü yap
-                // Baþarýlý kayýt mesajý
-
-                TempData["Success"] = "Kayýt baþarýlý! Giriþ yapabilirsiniz.";
+                TempData["Success"] = "KayÄ±t baÅŸarÄ±lÄ±! GiriÅŸ yapabilirsiniz.";
                 return RedirectToAction("Login");
             }
 
             return View(model);
         }
 
-        // Çýkýþ iþlemi
+        // Ã‡Ä±kÄ±ÅŸ iÅŸlemi
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Index", "Home");
         }
-    }
-
-    // ViewModels (þimdilik burada, Models klasöründe olacak)
-    public class LoginViewModel
-    {
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public bool RememberMe { get; set; }
-    }
-
-    public class RegisterViewModel
-    {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
-        public string Phone { get; set; }
-        public string Password { get; set; }
-        public string ConfirmPassword { get; set; }
-        public bool AcceptTerms { get; set; }
     }
 }

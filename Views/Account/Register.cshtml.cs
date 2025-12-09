@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Spor.Salonu.Views.Account
+namespace SporSalonu2.Views.Account
 {
     public class RegisterModel : PageModel
     {

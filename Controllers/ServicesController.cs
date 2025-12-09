@@ -1,4 +1,4 @@
-// Controllers/ServicesController.cs
+ï»¿// Controllers/ServicesController.cs
 using Microsoft.AspNetCore.Mvc;
 
 namespace FitnessCenter.Controllers
@@ -11,10 +11,10 @@ namespace FitnessCenter.Controllers
             return View();
         }
 
-        // Hizmet detaylarý (opsiyonel - ileride eklenebilir)
+        // Hizmet detaylarÄ± (opsiyonel - ileride eklenebilir)
         public IActionResult Details(int id)
         {
-            // Veritabanýndan hizmet detaylarý çekilecek
+            // VeritabanÄ±ndan hizmet detaylarÄ± Ã§ekilecek
             return View();
         }
     }

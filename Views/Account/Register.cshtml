@@ -1,4 +1,5 @@
 ﻿@* Views/Account/Register.cshtml *@
+@model FitnessCenter.Models.RegisterViewModel
 @{
     ViewData["Title"] = "Üye Ol";
 }
@@ -8,76 +9,69 @@
         <h2>Üye Ol</h2>
 
         <form method="post" asp-controller="Account" asp-action="Register" id="registerForm">
+            <div asp-validation-summary="ModelOnly" class="primary-text" style="color: red; margin-bottom: 1rem;"></div>
+
             <div class="form-group">
-                <label for="firstName">Ad *</label>
-                <input type="text" id="firstName" name="FirstName" placeholder="Adınız" required />
+                <label asp-for="FirstName">Ad *</label>
+                <input asp-for="FirstName" placeholder="Adınız" required />
+                <span asp-validation-for="FirstName" class="primary-text" style="color: red; font-size: 0.85rem;"></span>
             </div>
 
             <div class="form-group">
-                <label for="lastName">Soyad *</label>
-                <input type="text" id="lastName" name="LastName" placeholder="Soyadınız" required />
+                <label asp-for="LastName">Soyad *</label>
+                <input asp-for="LastName" placeholder="Soyadınız" required />
+                <span asp-validation-for="LastName" class="primary-text" style="color: red; font-size: 0.85rem;"></span>
             </div>
 
             <div class="form-group">
-                <label for="email">E-posta *</label>
-                <input type="email" id="email" name="Email" placeholder="ornek@sakarya.edu.tr" required />
+                <label asp-for="Email">E-posta *</label>
+                <input asp-for="Email" placeholder="ornek@sakarya.edu.tr" required />
+                <span asp-validation-for="Email" class="primary-text" style="color: red; font-size: 0.85rem;"></span>
             </div>
 
             <div class="form-group">
-                <label for="phone">Telefon *</label>
-                <input type="tel" id="phone" name="Phone" placeholder="0555 555 55 55" required />
+                <label asp-for="Phone">Telefon *</label>
+                <input asp-for="Phone" placeholder="0555 555 55 55" required />
+                <span asp-validation-for="Phone" class="primary-text" style="color: red; font-size: 0.85rem;"></span>
             </div>
 
             <div class="form-group">
-                <label for="password">Şifre *</label>
-                <input type="password" id="password" name="Password" placeholder="••••••••" required minlength="6" />
-                <small style="color: var(--text-secondary); font-size: 0.85rem;">En az 6 karakter olmalıdır</small>
+                <label asp-for="Password">Şifre *</label>
+                <input asp-for="Password" placeholder="••••••••" required />
+                <span asp-validation-for="Password" class="primary-text" style="color: red; font-size: 0.85rem;"></span>
+                <small class="secondary-text">En az 6 karakter olmalıdır</small>
             </div>
 
             <div class="form-group">
-                <label for="confirmPassword">Şifre Tekrar *</label>
-                <input type="password" id="confirmPassword" name="ConfirmPassword" placeholder="••••••••" required />
+                <label asp-for="ConfirmPassword">Şifre Tekrar *</label>
+                <input asp-for="ConfirmPassword" placeholder="••••••••" required />
+                <span asp-validation-for="ConfirmPassword" class="primary-text" style="color: red; font-size: 0.85rem;"></span>
             </div>
 
             <div class="form-group" style="display: flex; align-items: start; margin-bottom: 1rem;">
-                <input type="checkbox" id="terms" name="AcceptTerms" required style="width: auto; margin-right: 0.5rem; margin-top: 0.3rem;" />
-                <label for="terms" style="margin-bottom: 0; color: var(--text-secondary); font-size: 0.9rem;">
-                    <a href="#" style="color: var(--primary);">Kullanım Şartları</a> ve
-                    <a href="#" style="color: var(--primary);">Gizlilik Politikası</a>'nı okudum, kabul ediyorum
+                <input type="checkbox" asp-for="AcceptTerms" required style="width: auto; margin-right: 0.5rem; margin-top: 0.3rem;" />
+                <label asp-for="AcceptTerms" class="secondary-text" style="margin-bottom: 0; font-size: 0.9rem;">
+                    <a href="#" class="primary-text">Kullanım Şartları</a> ve
+                    <a href="#" class="primary-text">Gizlilik Politikası</a>'nı okudum, kabul ediyorum
                 </label>
+                <span asp-validation-for="AcceptTerms" class="primary-text" style="color: red; font-size: 0.85rem;"></span>
             </div>
 
             <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;">
                 Üye Ol
             </button>
 
-            <p style="text-align: center; margin-top: 1.5rem; color: var(--text-secondary);">
+            <p class="secondary-text" style="text-align: center; margin-top: 1.5rem;">
                 Zaten hesabınız var mı?
-                <a asp-controller="Account" asp-action="Login" style="color: var(--primary); text-decoration: none;">Giriş Yap</a>
+                <a asp-controller="Account" asp-action="Login" class="primary-text">Giriş Yap</a>
             </p>
         </form>
     </div>
 </div>
 
 @section Scripts {
+    <partial name="_ValidationScriptsPartial" />
     <script>
-        document.getElementById('registerForm').addEventListener('submit', function(e) {
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
-
-            if (password !== confirmPassword) {
-                e.preventDefault();
-                alert('Şifreler eşleşmiyor! Lütfen kontrol edin.');
-                return false;
-            }
-
-            if (password.length < 6) {
-                e.preventDefault();
-                alert('Şifre en az 6 karakter olmalıdır!');
-                return false;
-            }
-        });
-
         // Telefon numarası formatı
         document.getElementById('phone').addEventListener('input', function(e) {
             let value = e.target.value.replace(/\D/g, '');

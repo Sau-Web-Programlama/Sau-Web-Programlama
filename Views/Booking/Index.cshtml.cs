@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Spor.Salonu.Views.Booking
+namespace SporSalonu2.Views.Booking
 {
     public class IndexModel : PageModel
     {

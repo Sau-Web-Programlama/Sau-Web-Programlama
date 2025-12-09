@@ -1,4 +1,5 @@
 ﻿@* Views/Booking/Index.cshtml *@
+@model FitnessCenter.Models.BookingViewModel
 @{
     ViewData["Title"] = "Randevu Al";
 }
@@ -7,9 +8,11 @@
     <h2 class="section-title">Randevu Al</h2>
 
     <form class="booking-form" method="post" asp-controller="Booking" asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="primary-text" style="color: red; margin-bottom: 1rem;"></div>
+
         <div class="form-group">
-            <label for="service">Hizmet Seçin *</label>
-            <select id="service" name="ServiceType" required>
+            <label asp-for="ServiceType">Hizmet Seçin *</label>
+            <select asp-for="ServiceType" required>
                 <option value="">Hizmet seçiniz...</option>
                 <option value="Fitness">💪 Fitness</option>
                 <option value="Yoga">🧘 Yoga</option>
@@ -18,11 +21,12 @@
                 <option value="Pool">🏊 Havuz</option>
                 <option value="Boxing">🥊 Boks</option>
             </select>
+            <span asp-validation-for="ServiceType" class="primary-text" style="color: red; font-size: 0.85rem;"></span>
         </div>
 
         <div class="form-group">
-            <label for="trainer">Antrenör Seçin *</label>
-            <select id="trainer" name="TrainerId" required>
+            <label asp-for="TrainerId">Antrenör Seçin *</label>
+            <select asp-for="TrainerId" required>
                 <option value="">Antrenör seçiniz...</option>
                 <option value="1">Ahmet Yılmaz - Fitness & Kilo Verme</option>
                 <option value="2">Zeynep Kara - Yoga & Meditasyon</option>
@@ -35,16 +39,18 @@
                 <option value="9">Selin Aydın - Beslenme & Diyet Koçu</option>
                 <option value="10">Kerem Bulut - Kişisel Antrenman & Rehabilitasyon</option>
             </select>
+            <span asp-validation-for="TrainerId" class="primary-text" style="color: red; font-size: 0.85rem;"></span>
         </div>
 
         <div class="form-group">
-            <label for="date">Tarih *</label>
-            <input type="date" id="date" name="AppointmentDate" required>
+            <label asp-for="AppointmentDate">Tarih *</label>
+            <input type="date" asp-for="AppointmentDate" required>
+            <span asp-validation-for="AppointmentDate" class="primary-text" style="color: red; font-size: 0.85rem;"></span>
         </div>
 
         <div class="form-group">
-            <label for="time">Saat *</label>
-            <select id="time" name="AppointmentTime" required>
+            <label asp-for="AppointmentTime">Saat *</label>
+            <select asp-for="AppointmentTime" required>
                 <option value="">Saat seçiniz...</option>
                 <option value="09:00">09:00</option>
                 <option value="10:00">10:00</option>
@@ -59,11 +65,12 @@
                 <option value="19:00">19:00</option>
                 <option value="20:00">20:00</option>
             </select>
+            <span asp-validation-for="AppointmentTime" class="primary-text" style="color: red; font-size: 0.85rem;"></span>
         </div>
 
         <div class="form-group">
-            <label for="notes">Notlar (Opsiyonel)</label>
-            <textarea id="notes" name="Notes" rows="4" placeholder="Özel istekleriniz, sağlık durumunuz veya hedefleriniz hakkında bilgi..."></textarea>
+            <label asp-for="Notes">Notlar (Opsiyonel)</label>
+            <textarea asp-for="Notes" rows="4" placeholder="Özel istekleriniz, sağlık durumunuz veya hedefleriniz hakkında bilgi..."></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;">
@@ -71,10 +78,9 @@
         </button>
     </form>
 
-    <!-- Bilgilendirme -->
-    <div style="max-width: 600px; margin: 2rem auto; background-color: var(--bg-card); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border);">
-        <h4 style="color: var(--primary); margin-bottom: 1rem;">📋 Randevu Hakkında Bilgiler</h4>
-        <ul style="color: var(--text-secondary); line-height: 1.8;">
+    <div style="max-width: 600px; margin: 2rem auto; background-color: var(--bg-secondary); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-color);">
+        <h4 class="primary-text" style="margin-bottom: 1rem;">📋 Randevu Hakkında Bilgiler</h4>
+        <ul class="secondary-text" style="line-height: 1.8; list-style-position: inside;">
             <li>Randevunuz onaylandıktan sonra e-posta ile bilgilendirileceksiniz</li>
             <li>Randevunuza 15 dakika erken gelmeniz önerilir</li>
             <li>İptal işlemleri en geç 24 saat öncesinden yapılmalıdır</li>
@@ -84,22 +90,10 @@
 </div>
 
 @section Scripts {
+    <partial name="_ValidationScriptsPartial" />
     <script>
         // Bugünün tarihinden önceki tarihleri seçememe
         const today = new Date().toISOString().split('T')[0];
-        document.getElementById('date').setAttribute('min', today);
-
-        // Form validasyonu
-        document.querySelector('.booking-form').addEventListener('submit', function(e) {
-            const service = document.getElementById('service').value;
-            const trainer = document.getElementById('trainer').value;
-            const date = document.getElementById('date').value;
-            const time = document.getElementById('time').value;
-
-            if (!service || !trainer || !date || !time) {
-                e.preventDefault();
-                alert('Lütfen tüm zorunlu alanları doldurun!');
-            }
-        });
+        document.getElementById('AppointmentDate').setAttribute('min', today);
     </script>
 }

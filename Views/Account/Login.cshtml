@@ -1,4 +1,5 @@
 ﻿@* Views/Account/Login.cshtml *@
+@model FitnessCenter.Models.LoginViewModel
 @{
     ViewData["Title"] = "Giriş Yap";
 }
@@ -8,19 +9,24 @@
         <h2>Giriş Yap</h2>
 
         <form method="post" asp-controller="Account" asp-action="Login">
+            @* Model Hatalarını Gösterme *@
+            <div asp-validation-summary="ModelOnly" class="primary-text" style="color: red; margin-bottom: 1rem;"></div>
+
             <div class="form-group">
-                <label for="email">E-posta *</label>
-                <input type="email" id="email" name="Email" placeholder="ornek@sakarya.edu.tr" required />
+                <label asp-for="Email">E-posta *</label>
+                <input asp-for="Email" placeholder="ornek@sakarya.edu.tr" required />
+                <span asp-validation-for="Email" class="primary-text" style="color: red; font-size: 0.85rem;"></span>
             </div>
 
             <div class="form-group">
-                <label for="password">Şifre *</label>
-                <input type="password" id="password" name="Password" placeholder="••••••••" required />
+                <label asp-for="Password">Şifre *</label>
+                <input asp-for="Password" placeholder="••••••••" required />
+                <span asp-validation-for="Password" class="primary-text" style="color: red; font-size: 0.85rem;"></span>
             </div>
 
             <div class="form-group" style="display: flex; align-items: center; margin-bottom: 1rem;">
-                <input type="checkbox" id="remember" name="RememberMe" style="width: auto; margin-right: 0.5rem;" />
-                <label for="remember" style="margin-bottom: 0; color: var(--text-secondary);">Beni Hatırla</label>
+                <input type="checkbox" asp-for="RememberMe" style="width: auto; margin-right: 0.5rem;" />
+                <label asp-for="RememberMe" class="secondary-text" style="margin-bottom: 0;">Beni Hatırla</label>
             </div>
 
             <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;">
@@ -28,27 +34,30 @@
             </button>
 
             <div style="text-align: center; margin-top: 1rem;">
-                <a href="#" style="color: var(--primary); text-decoration: none;">Şifremi Unuttum</a>
+                <a href="#" class="primary-text">Şifremi Unuttum</a>
             </div>
 
-            <p style="text-align: center; margin-top: 1.5rem; color: var(--text-secondary);">
+            <p class="secondary-text" style="text-align: center; margin-top: 1.5rem;">
                 Hesabınız yok mu?
-                <a asp-controller="Account" asp-action="Register" style="color: var(--primary); text-decoration: none;">Üye Ol</a>
+                <a asp-controller="Account" asp-action="Register" class="primary-text">Üye Ol</a>
             </p>
-        </form>
 
-        <!-- Demo Hesaplar -->
-        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border);">
-            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">Demo Hesaplar:</p>
-            <div style="background-color: var(--bg-dark); padding: 1rem; border-radius: 6px; font-size: 0.85rem; color: var(--text-secondary);">
-                <p><strong style="color: var(--primary);">Admin:</strong></p>
-                <p>E-posta: ogrencinumarasi@sakarya.edu.tr</p>
-                <p>Şifre: sau</p>
-                <br>
-                <p><strong style="color: var(--primary);">Üye:</strong></p>
-                <p>E-posta: uye@sakarya.edu.tr</p>
-                <p>Şifre: 123456</p>
+            <div class="demo-accounts">
+                <p class="secondary-text" style="font-size: 0.9rem; margin-bottom: 1rem;">Demo Hesaplar:</p>
+                <div>
+                    <p><strong class="primary-text">Admin:</strong></p>
+                    <p>E-posta: ogrencinumarasi@sakarya.edu.tr</p>
+                    <p>Şifre: sau</p>
+                    <br>
+                    <p><strong class="primary-text">Üye:</strong></p>
+                    <p>E-posta: uye@sakarya.edu.tr</p>
+                    <p>Şifre: 123456</p>
+                </div>
             </div>
-        </div>
+        </form>
     </div>
 </div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

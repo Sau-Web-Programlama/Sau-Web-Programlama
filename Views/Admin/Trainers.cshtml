@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Antrenör Yönetimi";
+}
+
+<div class="container page-container">
+    <h2 class="section-title">🏋️ Antrenör Yönetimi</h2>
+
+    <div style="text-align: right; margin-bottom: 1.5rem;">
+        <a asp-controller="Admin" asp-action="CreateTrainer" class="btn btn-primary">➕ Yeni Antrenör Ekle</a>
+    </div>
+
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>Ad Soyad</th>
+                <th>Uzmanlık</th>
+                <th>E-posta</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ahmet Yılmaz</td>
+                <td>Fitness & Kilo Verme</td>
+                <td>ahmet@fitzone.com</td>
+                <td>
+                    <a href="#" class="btn btn-outline" style="padding: 0.3rem 0.8rem;">Düzenle</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Zeynep Kara</td>
+                <td>Yoga & Meditasyon</td>
+                <td>zeynep@fitzone.com</td>
+                <td>
+                    <a href="#" class="btn btn-outline" style="padding: 0.3rem 0.8rem;">Düzenle</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Randevu Yönetimi";
+}
+
+<div class="container page-container">
+    <h2 class="section-title">📅 Randevu Yönetimi</h2>
+
+    <h4 style="color: var(--accent-orange); margin-bottom: 1.5rem;">Bekleyen Onaylar (12)</h4>
+
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>Üye Adı</th>
+                <th>Hizmet</th>
+                <th>Antrenör</th>
+                <th>Tarih/Saat</th>
+                <th>Durum</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Mehmet Kaya</td>
+                <td>Kişisel Fitness</td>
+                <td>Ahmet Yılmaz</td>
+                <td>15.01.2026 / 10:00</td>
+                <td style="color: var(--accent-orange);">Beklemede</td>
+                <td>
+                    <form method="post" asp-controller="Admin" asp-action="ApproveBooking" asp-route-id="1" style="display: inline;">
+                        <button type="submit" class="btn btn-primary" style="padding: 0.3rem 0.6rem;">Onayla</button>
+                    </form>
+                    <form method="post" asp-controller="Admin" asp-action="RejectBooking" asp-route-id="1" style="display: inline;">
+                        <button type="submit" class="btn btn-outline" style="padding: 0.3rem 0.6rem;">Reddet</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4 style="color: var(--accent-green); margin-top: 3rem; margin-bottom: 1.5rem;">Onaylananlar (36)</h4>
+
+</div>
