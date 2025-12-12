@@ -735,3 +735,117 @@ footer {
 .secondary-text {
     color: var(--text-secondary) !important;
 }
+
+.ai-wrapper {
+    max-width: 900px;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.ai-title {
+    color: white;
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.ai-card {
+    background: #151a21;
+    padding: 30px;
+    border-radius: 14px;
+    border: 1px solid #2a2f36;
+    box-shadow: 0px 0px 12px rgba(0,0,0,0.3);
+    max-width: 450px;
+    margin: 0 auto 40px auto;
+}
+
+    .ai-card label {
+        color: #ccc;
+        display: block;
+        margin-top: 15px;
+        text-align: left;
+    }
+
+.ai-input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #1f242b;
+    color: white;
+}
+
+    .ai-input:focus {
+        border-color: #00ff80;
+        outline: none;
+    }
+
+.ai-btn {
+    width: 100%;
+    padding: 14px;
+    margin-top: 25px;
+    background: #00ff80;
+    border: none;
+    border-radius: 8px;
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+    .ai-btn:hover {
+        background: #00e673;
+    }
+
+.ai-result {
+    background: #151a21;
+    border: 1px solid #2a2f36;
+    padding: 25px;
+    border-radius: 12px;
+    color: white;
+    line-height: 1.7;
+    text-align: left;
+}
+
+    .ai-result table {
+        margin: 10px auto !important;
+        border-collapse: collapse;
+        width: 90%;
+        background: #1a1f26;
+        color: white;
+        font-size: 14px;
+    }
+
+        .ai-result table th,
+        .ai-result table td {
+            border: 1px solid #333;
+            padding: 8px 6px;
+            text-align: left;
+        }
+
+    .ai-result h3 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    /* TABLO ARALARINDAKÝ DEV BOÞLUKLARI TEMÝZLER */
+    .ai-result > * {
+        display: block;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .ai-result table + table {
+        margin-top: 12px !important;
+    }
+
+    .ai-result table {
+        box-shadow: 0 0 10px rgba(0,0,0,0.4);
+        border-radius: 6px;
+    }
+
+.ai-table-wrapper * {
+    margin: 0 !important;
+    padding: 0 !important;
+}

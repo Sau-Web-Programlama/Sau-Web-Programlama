@@ -5,21 +5,18 @@ namespace FitnessCenter.Models
     public class AIDietViewModel
     {
         [Required(ErrorMessage = "Yaş gereklidir.")]
-        [Range(15, 100, ErrorMessage = "Yaş 15-100 arasında olmalıdır.")]
+        [Range(10, 100, ErrorMessage = "Yaş 10-100 arasında olmalıdır.")]
         public int Age { get; set; }
 
-        [Required(ErrorMessage = "Boy (cm) gereklidir.")]
+        [Required(ErrorMessage = "Boy gereklidir.")]
         public int HeightCm { get; set; }
 
-        [Required(ErrorMessage = "Kilo (kg) gereklidir.")]
+        [Required(ErrorMessage = "Kilo gereklidir.")]
         public decimal WeightKg { get; set; }
 
-        [Required(ErrorMessage = "Hedef gereklidir.")]
-        public string Goal { get; set; } // Kilo verme, Kas geliştirme, Koruma
+        [Required(ErrorMessage = "Hedef seçilmelidir.")]
+        public string Goal { get; set; }
 
-        public string? ActivityLevel { get; set; } // Düşük, Orta, Yüksek (şimdilik kullanılmıyor)
-
-        // YZ'den gelen sonuç bu değişkende tutulacak
         public string? DietPlanResult { get; set; }
     }
 }

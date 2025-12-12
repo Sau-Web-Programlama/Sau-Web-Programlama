@@ -1,64 +1,46 @@
 ﻿@model FitnessCenter.Models.AIDietViewModel
-@{
-    ViewData["Title"] = "YZ Diyet Asistanı";
-}
 
-<div class="container page-container">
-    <h2 class="section-title">🧠 Yapay Zekâ Diyet Asistanı</h2>
+<div class="ai-wrapper">
+    <h1 class="ai-title">🧠 Yapay Zekâ Diyet Asistanı</h1>
 
-    <div class="booking-form" style="max-width: 700px;">
-        <h4 style="color: var(--accent-green); margin-bottom: 2rem;">Kişisel Bilgilerinizi Girin</h4>
+    <div class="ai-card">
+        <form method="post" asp-action="GenerateDiet">
+            <div asp-validation-summary="ModelOnly" class="ai-error"></div>
 
-        <form method="post" asp-controller="AI" asp-action="GenerateDiet">
-            <div asp-validation-summary="ModelOnly" class="primary-text" style="color: red; margin-bottom: 1rem;"></div>
+            <label>Yaş</label>
+            <input asp-for="Age" type="number" class="ai-input" />
 
-            <div class="form-group">
-                <label asp-for="Age">Yaş *</label>
-                <input asp-for="Age" type="number" required />
-                <span asp-validation-for="Age" class="primary-text" style="color: red; font-size: 0.85rem;"></span>
-            </div>
+            <label>Boy (cm)</label>
+            <input asp-for="HeightCm" type="number" class="ai-input" />
 
-            <div class="form-group">
-                <label asp-for="HeightCm">Boy (cm) *</label>
-                <input asp-for="HeightCm" type="number" required />
-                <span asp-validation-for="HeightCm" class="primary-text" style="color: red; font-size: 0.85rem;"></span>
-            </div>
+            <label>Kilo (kg)</label>
+            <input asp-for="WeightKg" type="number" class="ai-input" />
 
-            <div class="form-group">
-                <label asp-for="WeightKg">Kilo (kg) *</label>
-                <input asp-for="WeightKg" type="number" step="0.1" required />
-                <span asp-validation-for="WeightKg" class="primary-text" style="color: red; font-size: 0.85rem;"></span>
-            </div>
+            <label>Hedef</label>
+            <select asp-for="Goal" class="ai-input">
+                <option value="">Seçiniz...</option>
+                <option>Kilo Verme</option>
+                <option>Kas Geliştirme</option>
+                <option>Kilo Koruma</option>
+            </select>
 
-            <div class="form-group">
-                <label asp-for="Goal">Fitness Hedefi *</label>
-                <select asp-for="Goal" required>
-                    <option value="">Seçiniz...</option>
-                    <option value="Kilo Verme">Kilo Verme (Yağ Yakımı)</option>
-                    <option value="Kas Geliştirme">Kas Geliştirme (Bulk)</option>
-                    <option value="Kilo Koruma">Kilo Koruma</option>
-                </select>
-                <span asp-validation-for="Goal" class="primary-text" style="color: red; font-size: 0.85rem;"></span>
-            </div>
-
-            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem; margin-top: 1.5rem;">
-                Diyet Planı Oluştur
-            </button>
+            <button class="ai-btn">DİYET PLANI OLUŞTUR</button>
         </form>
     </div>
 
-    @* YZ Sonuç Alanı *@
     @if (!string.IsNullOrEmpty(Model.DietPlanResult))
     {
-        <div style="margin-top: 3rem; background-color: var(--bg-secondary); padding: 2rem; border-radius: 12px; border: 1px solid var(--accent-green);">
-            <h3 style="color: var(--accent-orange); margin-bottom: 1.5rem;">✨ Yapay Zekâ Sonucu</h3>
-            <div style="color: var(--text-primary); line-height: 1.6;">
-                @Html.Raw(Model.DietPlanResult.Replace("\n", "<br/>"))
-            </div>
+        <div class="ai-result">
+            <h3>✨ Yapay Zekâ Sonucu</h3>
+            @Html.Raw(
+            Model.DietPlanResult
+            .Replace("\n", "")
+            .Replace("\r", "")
+            .Replace("<br>", "")
+            .Replace("<br/>", "")
+            .Replace("<p>", "")
+            .Replace("</p>", "")
+                )
         </div>
     }
 </div>
-
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}

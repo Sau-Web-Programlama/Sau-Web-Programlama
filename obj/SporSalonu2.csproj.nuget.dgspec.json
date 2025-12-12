@@ -50,6 +50,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Betalgo.OpenAI": {
+              "target": "Package",
+              "version": "[8.7.2, )"
+            },
             "OpenAI": {
               "target": "Package",
               "version": "[2.7.0, )"
