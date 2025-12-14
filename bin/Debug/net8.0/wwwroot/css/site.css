@@ -1,0 +1,261 @@
+/* wwwroot/css/site.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Dark Theme - Letterboxd inspired */
+    --bg-primary: #14181c;
+    --bg-secondary: #1c2128;
+    --bg-tertiary: #2c3440;
+    --bg-hover: #364150;
+    /* Accent Colors */
+    --accent-green: #00e054;
+    --accent-green-dark: #00b845;
+    --accent-orange: #ff8000;
+    --accent-blue: #40bcf4;
+    /* Text Colors */
+    --text-primary: #ffffff;
+    --text-secondary: #9ab;
+    --text-muted: #678;
+    /* Borders & Shadows */
+    --border-color: #456;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-smooth: 0.3s ease;
+}
+
+/* Base */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+p {
+    color: var(--text-secondary);
+}
+
+a {
+    color: var(--accent-green);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+    a:hover {
+        color: var(--accent-green-dark);
+    }
+
+/* NAVBAR */
+nav {
+    background-color: rgba(20,24,28,0.98);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+    nav .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+.logo {
+    font-size: 1.75rem;
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    color: var(--text-primary);
+}
+
+    .logo span {
+        color: var(--accent-orange);
+    }
+
+/* NAV LINKS */
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+    .nav-links a {
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        position: relative;
+    }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--text-primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--accent-green);
+            transition: width var(--transition-smooth);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+/* BUTTONS */
+.btn {
+    padding: 0.6rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: var(--transition-smooth);
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-primary {
+    background-color: var(--accent-green);
+    color: var(--bg-primary);
+}
+
+    .btn-primary:hover {
+        background-color: var(--accent-green-dark);
+        transform: translateY(-2px);
+    }
+
+.btn-outline {
+    border: 2px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+    .btn-outline:hover {
+        border-color: var(--text-secondary);
+        background-color: var(--bg-tertiary);
+    }
+
+/* HERO */
+.hero {
+    min-height: 85vh;
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient( 180deg, rgba(20,24,28,0.7) 0%, rgba(20,24,28,0.95) 100% );
+}
+
+.hero-content {
+    max-width: 900px;
+    padding: 2rem;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 900;
+    background: linear-gradient(135deg, #fff 0%, #9ab 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 1.5rem auto;
+    color: var(--text-secondary);
+}
+
+/* PAGE CONTAINER */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.page-container {
+    margin-top: 100px;
+}
+
+/* CARDS */
+.card,
+.service-card,
+.trainer-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: var(--transition-smooth);
+}
+
+    .card:hover,
+    .service-card:hover,
+    .trainer-card:hover {
+        transform: translateY(-6px);
+        border-color: var(--accent-green);
+        box-shadow: var(--shadow-lg);
+    }
+
+/* GRIDS */
+.services-grid,
+.trainers-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.trainers-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--bg-secondary);
+    padding: 4rem 2rem;
+    margin-top: 6rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 3rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--text-muted);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+}

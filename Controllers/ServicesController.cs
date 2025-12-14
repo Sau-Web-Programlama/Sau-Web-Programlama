@@ -1,7 +1,7 @@
 ﻿// Controllers/ServicesController.cs
 using Microsoft.AspNetCore.Mvc;
 
-namespace SporSalonu2.Controllers
+namespace FitnessCenter.Controllers
 {
     public class ServicesController : Controller
     {

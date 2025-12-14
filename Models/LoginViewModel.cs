@@ -1,11 +1,7 @@
 ﻿// Models/LoginViewModel.cs
 using System.ComponentModel.DataAnnotations;
 
-<<<<<<< Updated upstream
 namespace FitnessCenter.Models
-=======
-namespace SporSalonu2.Models
->>>>>>> Stashed changes
 {
     public class LoginViewModel
     {

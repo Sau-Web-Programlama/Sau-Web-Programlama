@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace SporSalonu2.Controllers
+namespace FitnessCenter.Controllers
 {
     public class HomeController : Controller
     {

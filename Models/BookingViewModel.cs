@@ -1,24 +1,12 @@
 ﻿// Models/BookingViewModel.cs
 using System.ComponentModel.DataAnnotations;
-<<<<<<< Updated upstream
 
 namespace FitnessCenter.Models
-=======
-using System.Collections.Generic;
-
-namespace SporSalonu2.Models
->>>>>>> Stashed changes
 {
     public class BookingViewModel
     {
         [Required(ErrorMessage = "Hizmet tipi seçimi zorunludur.")]
-<<<<<<< Updated upstream
         public string ServiceType { get; set; }
-=======
-        // public string ServiceType { get; set; } // ÖNCEKİ HALİ
-        [Range(1, int.MaxValue, ErrorMessage = "Geçerli bir hizmet seçimi zorunludur.")]
-        public int ServiceType { get; set; }
->>>>>>> Stashed changes
 
         [Required(ErrorMessage = "Antrenör seçimi zorunludur.")]
         [Range(1, int.MaxValue, ErrorMessage = "Geçerli bir antrenör seçiniz.")]
@@ -32,11 +20,5 @@ namespace SporSalonu2.Models
         public string AppointmentTime { get; set; }
 
         public string Notes { get; set; }
-<<<<<<< Updated upstream
-=======
-
-        public List<SelectListItemDto> Trainers { get; set; }
-        public List<SelectListItemDto> Services { get; set; }
->>>>>>> Stashed changes
     }
 }
