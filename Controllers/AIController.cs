@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 ﻿using FitnessCenter.Models;
+=======
+﻿using SporSalonu2.Models;
+>>>>>>> Stashed changes
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using OpenAI;
