@@ -6,12 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - FitZone</title>
 
-    <!-- CSS DOSYASI - ÇOK ÖNEMLİ! -->
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="/css/site.css" />
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
         <div class="container">
             <a asp-controller="Home" asp-action="Index" class="logo">
@@ -39,14 +37,29 @@
             <div class="nav-actions">
                 @if (User.Identity.IsAuthenticated)
                 {
+                    // KULLANICI GİRİŞ YAPMIŞSA
+
+                    // Randevularım Linki (Admin veya Üye iseniz)
+                    <a asp-controller="Booking" asp-action="MyBookings" class="btn btn-outline" style="margin-right: 0.5rem;">
+                        Randevularım
+                    </a>
+
+                    // Admin Paneli Linki (Sadece Admin iseniz)
                     @if (User.IsInRole("Admin"))
                     {
-                        <a asp-controller="Admin" asp-action="Index" class="btn btn-outline">Admin Panel</a>
+                        <a asp-controller="Admin" asp-action="Index" class="btn btn-outline" style="margin-right: 0.5rem;">
+                            Admin Panel
+                        </a>
                     }
-                    <a asp-controller="Account" asp-action="Logout" class="btn btn-primary">Çıkış Yap</a>
+
+                    // Çıkış Yap Butonu
+                    <form asp-controller="Account" asp-action="Logout" method="post" style="display: inline;">
+                        <button type="submit" class="btn btn-primary">Çıkış Yap</button>
+                    </form>
                 }
                 else
                 {
+                    // KULLANICI GİRİŞ YAPMAMIŞSA
                     <a asp-controller="Account" asp-action="Login" class="btn btn-outline">Giriş Yap</a>
                     <a asp-controller="Account" asp-action="Register" class="btn btn-primary">Üye Ol</a>
                 }
@@ -54,12 +67,10 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
     <main>
         @RenderBody()
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">

@@ -1,0 +1,92 @@
+﻿@* Views/Booking/MyBookings.cshtml *@
+@using SporSalonu2.Models
+@model List<Booking>
+@{
+    ViewData["Title"] = "Randevularım";
+}
+
+<div class="container page-container">
+    <h2 class="section-title">📆 Randevularım</h2>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">@TempData["Success"]</div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">@TempData["Error"]</div>
+    }
+
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>Hizmet</th>
+                <th>Antrenör</th>
+                <th>Tarih</th>
+                <th>Saat</th>
+                <th>Durum</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Any())
+            {
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Service.Name</td>
+                        <td>@item.Trainer.FirstName @item.Trainer.LastName</td>
+                        <td>@item.AppointmentDate.ToShortDateString()</td>
+                        <td>@item.AppointmentTime</td>
+
+                        @{
+                            string statusClass = "";
+                            string statusText = "";
+
+                            switch (item.Status)
+                            {
+                                case BookingStatus.Approved:
+                                    statusClass = "color: var(--accent-green);";
+                                    statusText = "Onaylandı";
+                                    break;
+                                case BookingStatus.Pending:
+                                    statusClass = "color: var(--accent-orange);";
+                                    statusText = "Beklemede";
+                                    break;
+                                case BookingStatus.Rejected:
+                                    statusClass = "color: darkred;";
+                                    statusText = "Reddedildi";
+                                    break;
+                                case BookingStatus.Cancelled:
+                                    statusClass = "color: gray;";
+                                    statusText = "İptal Edildi";
+                                    break;
+                            }
+                        }
+
+                        <td style="@statusClass">@statusText</td>
+
+                        <td>
+                            @if (item.Status == BookingStatus.Pending || item.Status == BookingStatus.Approved)
+                            {
+                                <form method="post" asp-controller="Booking" asp-action="Cancel" asp-route-id="@item.Id" onsubmit="return confirm('Bu randevuyu iptal etmek istediğinizden emin misiniz?');">
+                                    <button type="submit" class="btn btn-outline" style="padding: 0.3rem 0.6rem; color: darkred; border-color: darkred;">İptal Et</button>
+                                </form>
+                            }
+                            else
+                            {
+                                <span class="secondary-text">---</span>
+                            }
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="6" style="text-align: center;">Henüz kayıtlı randevunuz bulunmamaktadır.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
