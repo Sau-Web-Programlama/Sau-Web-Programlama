@@ -1,21 +1,14 @@
-<<<<<<< Updated upstream
-﻿@{
-    ViewData["Title"] = "Antrenör Yönetimi";
-=======
 ﻿@* Views/Admin/Trainers.cshtml *@
 @using SporSalonu2.Models
 @model List<Trainer>
 @{
     ViewData["Title"] = "Antrenör Yönetimi";
     Layout = "_AdminLayout"; // Admin layout'unuzun adını buraya girin
->>>>>>> Stashed changes
 }
 
 <div class="container page-container">
     <h2 class="section-title">🏋️ Antrenör Yönetimi</h2>
 
-<<<<<<< Updated upstream
-=======
     @if (TempData["Success"] != null)
     {
         <div class="alert alert-success">
@@ -23,7 +16,6 @@
         </div>
     }
 
->>>>>>> Stashed changes
     <div style="text-align: right; margin-bottom: 1.5rem;">
         <a asp-controller="Admin" asp-action="CreateTrainer" class="btn btn-primary">➕ Yeni Antrenör Ekle</a>
     </div>
@@ -34,32 +26,11 @@
                 <th>Ad Soyad</th>
                 <th>Uzmanlık</th>
                 <th>E-posta</th>
-<<<<<<< Updated upstream
-=======
                 <th>Telefon</th>
->>>>>>> Stashed changes
                 <th>İşlemler</th>
             </tr>
         </thead>
         <tbody>
-<<<<<<< Updated upstream
-            <tr>
-                <td>Ahmet Yılmaz</td>
-                <td>Fitness & Kilo Verme</td>
-                <td>ahmet@fitzone.com</td>
-                <td>
-                    <a href="#" class="btn btn-outline" style="padding: 0.3rem 0.8rem;">Düzenle</a>
-                </td>
-            </tr>
-            <tr>
-                <td>Zeynep Kara</td>
-                <td>Yoga & Meditasyon</td>
-                <td>zeynep@fitzone.com</td>
-                <td>
-                    <a href="#" class="btn btn-outline" style="padding: 0.3rem 0.8rem;">Düzenle</a>
-                </td>
-            </tr>
-=======
             @if (Model != null && Model.Any())
             {
                 @foreach (var trainer in Model)
@@ -82,7 +53,6 @@
                     <td colspan="5" style="text-align: center;">Henüz kayıtlı antrenör bulunmamaktadır.</td>
                 </tr>
             }
->>>>>>> Stashed changes
         </tbody>
     </table>
 </div>

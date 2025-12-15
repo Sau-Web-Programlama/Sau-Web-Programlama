@@ -1,15 +1,3 @@
-<<<<<<< Updated upstream
-C:\Users\tunah\source\repos\SporSalonu2\obj\Debug\net8.0\SporSalonu2.csproj.AssemblyReference.cache
-C:\Users\tunah\source\repos\SporSalonu2\obj\Debug\net8.0\rpswa.dswa.cache.json
-C:\Users\tunah\source\repos\SporSalonu2\obj\Debug\net8.0\SporSalonu2.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\tunah\source\repos\SporSalonu2\obj\Debug\net8.0\SporSalonu2.AssemblyInfoInputs.cache
-C:\Users\tunah\source\repos\SporSalonu2\obj\Debug\net8.0\SporSalonu2.AssemblyInfo.cs
-C:\Users\tunah\source\repos\SporSalonu2\obj\Debug\net8.0\SporSalonu2.csproj.CoreCompileInputs.cache
-C:\Users\tunah\source\repos\SporSalonu2\obj\Debug\net8.0\SporSalonu2.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\tunah\source\repos\SporSalonu2\obj\Debug\net8.0\SporSalonu2.RazorAssemblyInfo.cache
-C:\Users\tunah\source\repos\SporSalonu2\obj\Debug\net8.0\SporSalonu2.RazorAssemblyInfo.cs
-=======
->>>>>>> Stashed changes
 C:\Users\tunah\source\repos\SporSalonu2\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\tunah\source\repos\SporSalonu2\bin\Debug\net8.0\appsettings.json
 C:\Users\tunah\source\repos\SporSalonu2\bin\Debug\net8.0\SporSalonu2.staticwebassets.runtime.json
@@ -19,14 +7,6 @@ C:\Users\tunah\source\repos\SporSalonu2\bin\Debug\net8.0\SporSalonu2.deps.json
 C:\Users\tunah\source\repos\SporSalonu2\bin\Debug\net8.0\SporSalonu2.runtimeconfig.json
 C:\Users\tunah\source\repos\SporSalonu2\bin\Debug\net8.0\SporSalonu2.dll
 C:\Users\tunah\source\repos\SporSalonu2\bin\Debug\net8.0\SporSalonu2.pdb
-<<<<<<< Updated upstream
-C:\Users\tunah\source\repos\SporSalonu2\bin\Debug\net8.0\OpenAI.dll
-C:\Users\tunah\source\repos\SporSalonu2\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\tunah\source\repos\SporSalonu2\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\tunah\source\repos\SporSalonu2\bin\Debug\net8.0\System.ClientModel.dll
-C:\Users\tunah\source\repos\SporSalonu2\bin\Debug\net8.0\System.Memory.Data.dll
-C:\Users\tunah\source\repos\SporSalonu2\bin\Debug\net8.0\System.Net.ServerSentEvents.dll
-=======
 C:\Users\tunah\source\repos\SporSalonu2\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\tunah\source\repos\SporSalonu2\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\tunah\source\repos\SporSalonu2\bin\Debug\net8.0\OpenAI.dll
@@ -145,7 +125,6 @@ C:\Users\tunah\source\repos\SporSalonu2\obj\Debug\net8.0\SporSalonu2.csproj.Core
 C:\Users\tunah\source\repos\SporSalonu2\obj\Debug\net8.0\SporSalonu2.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\tunah\source\repos\SporSalonu2\obj\Debug\net8.0\SporSalonu2.RazorAssemblyInfo.cache
 C:\Users\tunah\source\repos\SporSalonu2\obj\Debug\net8.0\SporSalonu2.RazorAssemblyInfo.cs
->>>>>>> Stashed changes
 C:\Users\tunah\source\repos\SporSalonu2\obj\Debug\net8.0\rjimswa.dswa.cache.json
 C:\Users\tunah\source\repos\SporSalonu2\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 C:\Users\tunah\source\repos\SporSalonu2\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json

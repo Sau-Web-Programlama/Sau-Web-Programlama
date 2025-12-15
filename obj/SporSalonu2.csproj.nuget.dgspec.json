@@ -54,11 +54,6 @@
               "target": "Package",
               "version": "[8.7.2, )"
             },
-<<<<<<< Updated upstream
-            "OpenAI": {
-              "target": "Package",
-              "version": "[2.7.0, )"
-=======
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -76,7 +71,6 @@
             "OpenAI": {
               "target": "Package",
               "version": "[2.8.0, )"
->>>>>>> Stashed changes
             }
           },
           "imports": [

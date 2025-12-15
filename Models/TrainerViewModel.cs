@@ -1,22 +1,3 @@
-<<<<<<< Updated upstream
-﻿// Models/TrainerViewModel.cs
-using System.ComponentModel.DataAnnotations;
-
-namespace FitnessCenter.Models
-{
-    public class TrainerViewModel
-    {
-        [Required]
-        public string FirstName { get; set; }
-        [Required]
-        public string LastName { get; set; }
-        [EmailAddress]
-        public string Email { get; set; }
-        [Phone]
-        public string Phone { get; set; }
-        [Required]
-        public string Specialty { get; set; }
-=======
 ﻿using System.ComponentModel.DataAnnotations;
 
 namespace SporSalonu2.Models
@@ -44,7 +25,6 @@ namespace SporSalonu2.Models
         public string Phone { get; set; }
 
         [Display(Name = "Biyografi/Tanıtım")]
->>>>>>> Stashed changes
         public string Bio { get; set; }
     }
 }

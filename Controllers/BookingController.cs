@@ -1,8 +1,3 @@
-<<<<<<< Updated upstream
-﻿// Controllers/BookingController.cs
-using Microsoft.AspNetCore.Mvc;
-using FitnessCenter.Models; // Models klasörünü kullanmak için
-=======
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SporSalonu2.Data;
@@ -11,35 +6,23 @@ using System.Security.Claims; // ClaimTypes için gerekli
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization; // [Authorize] için gerekli
 using System.Linq; // LINQ metotları için gerekli
->>>>>>> Stashed changes
 
 namespace SporSalonu2.Controllers
 {
     public class BookingController : Controller
     {
-<<<<<<< Updated upstream
-        // Randevu alma sayfası
-        public IActionResult Index()
-=======
         private readonly ApplicationDbContext _context;
 
         public BookingController(ApplicationDbContext context)
->>>>>>> Stashed changes
         {
             _context = context;
         }
 
-<<<<<<< Updated upstream
-        // Randevu oluşturma
-        [HttpPost]
-        public IActionResult Create(BookingViewModel model)
-=======
         // ------------------------------------
         // RANDEVU ALMA FORMU (GET)
         // ------------------------------------
         // Bu metot, formu doldurmak için gerekli olan Antrenör ve Hizmet listelerini hazırlar.
         public async Task<IActionResult> Index()
->>>>>>> Stashed changes
         {
             var viewModel = new BookingViewModel
             {
@@ -75,12 +58,6 @@ namespace SporSalonu2.Controllers
 
             if (ModelState.IsValid)
             {
-<<<<<<< Updated upstream
-                // Veritabanına kaydetme simülasyonu...
-
-                TempData["Success"] = "Randevunuz başarıyla oluşturuldu! Onay için e-posta gönderilecektir.";
-                return RedirectToAction("Index", "Home");
-=======
                 // Oturum açmış üyenin ID'sini (e-posta) alırız.
                 var memberId = User.FindFirstValue(ClaimTypes.Email);
 
@@ -107,19 +84,12 @@ namespace SporSalonu2.Controllers
 
                 TempData["Success"] = "Randevunuz başarıyla oluşturuldu! Onay için admin onayı bekleniyor.";
                 return RedirectToAction("MyBookings");
->>>>>>> Stashed changes
             }
 
             // Doğrulama başarısız olursa, formu hatalarla birlikte tekrar göster
             return View("Index", model);
         }
 
-<<<<<<< Updated upstream
-        // Randevularım sayfası (üye paneli)
-        public IActionResult MyBookings()
-        {
-            return View();
-=======
         // ------------------------------------
         // ÜYE RANDEVULARIM (READ)
         // ------------------------------------
@@ -137,7 +107,6 @@ namespace SporSalonu2.Controllers
                                    .ToListAsync();
 
             return View(myBookings);
->>>>>>> Stashed changes
         }
 
         // ------------------------------------
@@ -148,9 +117,6 @@ namespace SporSalonu2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Cancel(int id)
         {
-<<<<<<< Updated upstream
-            TempData["Success"] = "Randevunuz başarıyla iptal edildi.";
-=======
             var booking = await _context.Bookings.FindAsync(id);
             var memberId = User.FindFirstValue(ClaimTypes.Email);
 
@@ -166,7 +132,6 @@ namespace SporSalonu2.Controllers
             await _context.SaveChangesAsync();
 
             TempData["Success"] = $"Randevunuz (#{id}) başarıyla iptal edildi.";
->>>>>>> Stashed changes
             return RedirectToAction("MyBookings");
         }
     }

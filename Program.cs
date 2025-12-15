@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication.Cookies;
-<<<<<<< Updated upstream
-=======
 using Microsoft.EntityFrameworkCore;
 using SporSalonu2.Data; // DbContext için eklendi
->>>>>>> Stashed changes
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,14 +8,11 @@ var builder = WebApplication.CreateBuilder(args);
 // MVC
 builder.Services.AddControllersWithViews();
 
-<<<<<<< Updated upstream
-=======
 // >>> 📌 Yeni Eklenen Kısım: EF CORE ve SQL Server Konfigürasyonu <<<
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 // >>> ----------------------------------------------------------- <<<
 
->>>>>>> Stashed changes
 // Authentication
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>

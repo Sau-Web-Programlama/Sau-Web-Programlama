@@ -13,10 +13,7 @@
     ],
     "configProperties": {
       "System.GC.Server": true,
-<<<<<<< Updated upstream
-=======
       "System.Reflection.NullabilityInfoContext.IsSupported": true,
->>>>>>> Stashed changes
       "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": false
     }
   }

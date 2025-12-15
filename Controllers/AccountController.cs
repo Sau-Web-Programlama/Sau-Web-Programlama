@@ -1,12 +1,7 @@
-<<<<<<< Updated upstream
-﻿// Controllers/AccountController.cs
-using FitnessCenter.Models; // Models klasörünü kullanmak için
-=======
 ﻿namespace SporSalonu2.Controllers 
 {
 
 using SporSalonu2.Models; 
->>>>>>> Stashed changes
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
@@ -112,9 +107,6 @@ namespace FitnessCenter.Controllers
             return RedirectToAction("Index", "Home");
         }
     }
-<<<<<<< Updated upstream
-=======
 }
 
->>>>>>> Stashed changes
 }

@@ -1,21 +1,13 @@
-<<<<<<< Updated upstream
-﻿@{
-=======
 ﻿@* Views/Admin/Services.cshtml *@
 @using SporSalonu2.Models
 @model List<Service>
 @{
->>>>>>> Stashed changes
     ViewData["Title"] = "Hizmet Yönetimi";
 }
 
 <div class="container page-container">
     <h2 class="section-title">💪 Hizmet Yönetimi</h2>
 
-<<<<<<< Updated upstream
-    <div style="text-align: right; margin-bottom: 1.5rem;">
-        <a href="#" class="btn btn-primary">➕ Yeni Hizmet Ekle</a>
-=======
     @if (TempData["Success"] != null)
     {
         <div class="alert alert-success">@TempData["Success"]</div>
@@ -23,7 +15,6 @@
 
     <div style="text-align: right; margin-bottom: 1.5rem;">
         <a asp-controller="Admin" asp-action="CreateService" class="btn btn-primary">➕ Yeni Hizmet Ekle</a>
->>>>>>> Stashed changes
     </div>
 
     <table class="admin-table">
@@ -31,34 +22,12 @@
             <tr>
                 <th>Hizmet Adı</th>
                 <th>Süre (dk)</th>
-<<<<<<< Updated upstream
-                <th>Fiyat (TL/ay)</th>
-=======
                 <th>Fiyat (TL)</th>
                 <th>Açıklama</th>
->>>>>>> Stashed changes
                 <th>İşlemler</th>
             </tr>
         </thead>
         <tbody>
-<<<<<<< Updated upstream
-            <tr>
-                <td>Fitness</td>
-                <td>60</td>
-                <td>350</td>
-                <td>
-                    <a href="#" class="btn btn-outline" style="padding: 0.3rem 0.8rem;">Düzenle</a>
-                </td>
-            </tr>
-            <tr>
-                <td>Yoga</td>
-                <td>45</td>
-                <td>400</td>
-                <td>
-                    <a href="#" class="btn btn-outline" style="padding: 0.3rem 0.8rem;">Düzenle</a>
-                </td>
-            </tr>
-=======
             @if (Model != null && Model.Any())
             {
                 @foreach (var service in Model)
@@ -81,7 +50,6 @@
                     <td colspan="5" style="text-align: center;">Kayıtlı hizmet bulunmamaktadır.</td>
                 </tr>
             }
->>>>>>> Stashed changes
         </tbody>
     </table>
 </div>

@@ -1,9 +1,3 @@
-<<<<<<< Updated upstream
-﻿// Controllers/AdminController.cs
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using FitnessCenter.Models;
-=======
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SporSalonu2.Models;
@@ -11,20 +5,9 @@ using SporSalonu2.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using System.Linq;
->>>>>>> Stashed changes
 
 namespace SporSalonu2.Controllers
 {
-<<<<<<< Updated upstream
-    [Authorize(Roles = "Admin")]
-    public class AdminController : Controller
-    {
-        public IActionResult Index() { return View(); }
-        public IActionResult Trainers() { return View(); }
-
-        [HttpGet]
-        public IActionResult CreateTrainer() { return View(); }
-=======
     // Yalnızca "Admin" rolüne sahip kullanıcılar bu controller'daki sayfalara erişebilir.
     [Authorize(Roles = "Admin")]
     public class AdminController : Controller
@@ -56,7 +39,6 @@ namespace SporSalonu2.Controllers
         // Yeni Antrenör Ekleme Formunu Gösterme (GET - CREATE)
         [HttpGet]
         public IActionResult CreateTrainer() { return View(new TrainerViewModel()); }
->>>>>>> Stashed changes
 
         // Yeni Antrenör Ekleme İşlemi (POST - CREATE)
         [HttpPost]
@@ -65,9 +47,6 @@ namespace SporSalonu2.Controllers
         {
             if (ModelState.IsValid)
             {
-<<<<<<< Updated upstream
-                TempData["Success"] = "Antrenör başarıyla eklendi!";
-=======
                 var trainer = new Trainer
                 {
                     FirstName = model.FirstName,
@@ -81,19 +60,11 @@ namespace SporSalonu2.Controllers
                 _context.Trainers.Add(trainer);
                 await _context.SaveChangesAsync();
                 TempData["Success"] = $"{trainer.FirstName} {trainer.LastName} başarıyla eklendi!";
->>>>>>> Stashed changes
                 return RedirectToAction("Trainers");
             }
             return View(model);
         }
 
-<<<<<<< Updated upstream
-        public IActionResult Services() { return View(); }
-        public IActionResult Bookings() { return View(); }
-        public IActionResult Members() { return View(); }
-        public IActionResult Reports() { return View(); }
-
-=======
         // Antrenör Düzenleme Formunu Gösterme (GET - UPDATE)
         [HttpGet]
         public async Task<IActionResult> EditTrainer(int id)
@@ -118,17 +89,10 @@ namespace SporSalonu2.Controllers
         }
 
         // Antrenör Düzenleme İşlemi (POST - UPDATE)
->>>>>>> Stashed changes
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditTrainer(int id, TrainerViewModel model)
         {
-<<<<<<< Updated upstream
-            TempData["Success"] = "Randevu onaylandı!";
-            return RedirectToAction("Bookings");
-        }
-
-=======
             if (ModelState.IsValid)
             {
                 var trainer = await _context.Trainers.FindAsync(id);
@@ -298,16 +262,10 @@ namespace SporSalonu2.Controllers
         }
 
         // Randevu Reddetme (UPDATE)
->>>>>>> Stashed changes
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> RejectBooking(int id)
         {
-<<<<<<< Updated upstream
-            TempData["Success"] = "Randevu reddedildi!";
-            return RedirectToAction("Bookings");
-        }
-=======
             var booking = await _context.Bookings.FindAsync(id);
             if (booking != null)
             {
@@ -323,6 +281,5 @@ namespace SporSalonu2.Controllers
         // ------------------------------------
         public IActionResult Members() { return View(); }
         public IActionResult Reports() { return View(); }
->>>>>>> Stashed changes
     }
 }
