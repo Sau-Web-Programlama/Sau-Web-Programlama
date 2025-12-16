@@ -5,10 +5,11 @@ using SporSalonu2.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using System.Linq;
+using System.Collections.Generic;
+using System;
 
 namespace SporSalonu2.Controllers
 {
-    // Yalnızca "Admin" rolüne sahip kullanıcılar bu controller'daki sayfalara erişebilir.
     [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
@@ -19,39 +20,51 @@ namespace SporSalonu2.Controllers
             _context = context;
         }
 
-        // ------------------------------------
-        // ANA SAYFA VE İSTATİSTİKLER (Index)
-        // ------------------------------------
         public IActionResult Index() { return View(); }
 
-
-        // ------------------------------------
-        // ANTRENÖR YÖNETİMİ (CRUD - TAM)
-        // ------------------------------------
-
-        // Antrenörleri listeleme (READ)
         public async Task<IActionResult> Trainers()
         {
             var trainers = await _context.Trainers.ToListAsync();
             return View(trainers);
         }
 
-        // Yeni Antrenör Ekleme Formunu Gösterme (GET - CREATE)
         [HttpGet]
-        public IActionResult CreateTrainer() { return View(new TrainerViewModel()); }
+        public async Task<IActionResult> CreateTrainer()
+        {
+            var model = new TrainerViewModel();
+            model.AvailableServices = await _context.Services
+                .Select(s => new SelectListItemDto
+                {
+                    Id = s.Id,
+                    Name = s.Name
+                }).ToListAsync();
 
-        // Yeni Antrenör Ekleme İşlemi (POST - CREATE)
+            return View(model);
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateTrainer(TrainerViewModel model)
         {
+            if (model.SelectedServiceIds == null || !model.SelectedServiceIds.Any())
+            {
+                ModelState.AddModelError("SelectedServiceIds", "En az bir uzmanlık alanı seçmelisiniz.");
+            }
+
             if (ModelState.IsValid)
             {
+                var selectedServiceNames = await _context.Services
+                    .Where(s => model.SelectedServiceIds.Contains(s.Id))
+                    .Select(s => s.Name)
+                    .ToListAsync();
+
+                string specialtyString = string.Join(", ", selectedServiceNames);
+
                 var trainer = new Trainer
                 {
                     FirstName = model.FirstName,
                     LastName = model.LastName,
-                    Specialty = model.Specialty,
+                    Specialty = specialtyString,
                     Email = model.Email,
                     Phone = model.Phone,
                     Bio = model.Bio
@@ -59,13 +72,17 @@ namespace SporSalonu2.Controllers
 
                 _context.Trainers.Add(trainer);
                 await _context.SaveChangesAsync();
+
                 TempData["Success"] = $"{trainer.FirstName} {trainer.LastName} başarıyla eklendi!";
                 return RedirectToAction("Trainers");
             }
+
+            model.AvailableServices = await _context.Services
+                .Select(s => new SelectListItemDto { Id = s.Id, Name = s.Name }).ToListAsync();
+
             return View(model);
         }
 
-        // Antrenör Düzenleme Formunu Gösterme (GET - UPDATE)
         [HttpGet]
         public async Task<IActionResult> EditTrainer(int id)
         {
@@ -75,80 +92,123 @@ namespace SporSalonu2.Controllers
                 TempData["Error"] = "Düzenlenecek antrenör bulunamadı.";
                 return RedirectToAction("Trainers");
             }
+
             var model = new TrainerViewModel
             {
+                Id = trainer.Id,
                 FirstName = trainer.FirstName,
                 LastName = trainer.LastName,
-                Specialty = trainer.Specialty,
                 Email = trainer.Email,
                 Phone = trainer.Phone,
                 Bio = trainer.Bio
             };
+
+            var allServices = await _context.Services.ToListAsync();
+
+            model.AvailableServices = allServices.Select(s => new SelectListItemDto
+            {
+                Id = s.Id,
+                Name = s.Name
+            }).ToList();
+
+            if (!string.IsNullOrEmpty(trainer.Specialty))
+            {
+                var currentSpecialties = trainer.Specialty.Split(',').Select(s => s.Trim()).ToList();
+                model.SelectedServiceIds = allServices
+                    .Where(s => currentSpecialties.Contains(s.Name))
+                    .Select(s => s.Id)
+                    .ToList();
+            }
+
             ViewBag.TrainerId = id;
             return View(model);
         }
 
-        // Antrenör Düzenleme İşlemi (POST - UPDATE)
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditTrainer(int id, TrainerViewModel model)
         {
+            if (model.SelectedServiceIds == null || !model.SelectedServiceIds.Any())
+            {
+                ModelState.AddModelError("SelectedServiceIds", "En az bir uzmanlık alanı seçmelisiniz.");
+            }
+
             if (ModelState.IsValid)
             {
                 var trainer = await _context.Trainers.FindAsync(id);
                 if (trainer == null) return NotFound();
 
+                var selectedServiceNames = await _context.Services
+                    .Where(s => model.SelectedServiceIds.Contains(s.Id))
+                    .Select(s => s.Name)
+                    .ToListAsync();
+
                 trainer.FirstName = model.FirstName;
                 trainer.LastName = model.LastName;
-                trainer.Specialty = model.Specialty;
+                trainer.Specialty = string.Join(", ", selectedServiceNames);
                 trainer.Email = model.Email;
                 trainer.Phone = model.Phone;
                 trainer.Bio = model.Bio;
 
                 _context.Trainers.Update(trainer);
                 await _context.SaveChangesAsync();
+
                 TempData["Success"] = $"{trainer.FirstName} {trainer.LastName} başarıyla güncellendi!";
                 return RedirectToAction("Trainers");
             }
+
+            model.AvailableServices = await _context.Services
+                .Select(s => new SelectListItemDto { Id = s.Id, Name = s.Name }).ToListAsync();
+
             ViewBag.TrainerId = id;
             return View(model);
         }
 
-        // Antrenör Silme İşlemi (POST - DELETE)
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteTrainer(int id)
         {
             var trainer = await _context.Trainers.FindAsync(id);
-            if (trainer != null)
+
+            if (trainer == null)
             {
+                TempData["Error"] = "Silinecek antrenör bulunamadı.";
+                return RedirectToAction("Trainers");
+            }
+
+            try
+            {
+                var availabilities = _context.Availabilities.Where(a => a.TrainerId == id);
+                _context.Availabilities.RemoveRange(availabilities);
+
+                var bookings = _context.Bookings.Where(b => b.TrainerId == id);
+                _context.Bookings.RemoveRange(bookings);
+
                 _context.Trainers.Remove(trainer);
                 await _context.SaveChangesAsync();
-                TempData["Success"] = "Antrenör başarıyla silindi.";
+
+                TempData["Success"] = "Antrenör ve ilişkili tüm verileri başarıyla silindi.";
             }
+            catch (Exception ex)
+            {
+                TempData["Error"] = "Hata oluştu: " + ex.Message;
+            }
+
             return RedirectToAction("Trainers");
         }
 
-
-        // ------------------------------------
-        // HİZMET YÖNETİMİ (CRUD - TAM)
-        // ------------------------------------
-
-        // Hizmetleri listeleme (READ)
         public async Task<IActionResult> Services()
         {
             var services = await _context.Services.ToListAsync();
             return View(services);
         }
 
-        // Yeni Hizmet Ekleme Formunu Gösterme (GET - CREATE)
         [HttpGet]
         public IActionResult CreateService()
         {
             return View(new ServiceViewModel());
         }
 
-        // Yeni Hizmet Ekleme İşlemi (POST - CREATE)
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateService(ServiceViewModel model)
@@ -170,14 +230,13 @@ namespace SporSalonu2.Controllers
             return View(model);
         }
 
-        // Hizmet Düzenleme Formunu Gösterme (GET - UPDATE)
         [HttpGet]
         public async Task<IActionResult> EditService(int id)
         {
             var service = await _context.Services.FindAsync(id);
             if (service == null)
             {
-                TempData["Error"] = "Düzenlenecek hizmet bulunamadı.";
+                TempData["Error"] = "Hizmet bulunamadı.";
                 return RedirectToAction("Services");
             }
             var model = new ServiceViewModel
@@ -191,7 +250,6 @@ namespace SporSalonu2.Controllers
             return View(model);
         }
 
-        // Hizmet Düzenleme İşlemi (POST - UPDATE)
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditService(int id, ServiceViewModel model)
@@ -201,19 +259,20 @@ namespace SporSalonu2.Controllers
                 var service = await _context.Services.FindAsync(id);
                 if (service == null) return NotFound();
 
-                service.Name = model.Name; service.Description = model.Description;
-                service.DurationMinutes = model.DurationMinutes; service.Price = model.Price;
+                service.Name = model.Name;
+                service.Description = model.Description;
+                service.DurationMinutes = model.DurationMinutes;
+                service.Price = model.Price;
 
                 _context.Services.Update(service);
                 await _context.SaveChangesAsync();
-                TempData["Success"] = $"'{service.Name}' hizmeti başarıyla güncellendi!";
+                TempData["Success"] = $"'{service.Name}' hizmeti güncellendi!";
                 return RedirectToAction("Services");
             }
             ViewBag.ServiceId = id;
             return View(model);
         }
 
-        // Hizmet Silme İşlemi (POST - DELETE)
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteService(int id)
@@ -223,30 +282,23 @@ namespace SporSalonu2.Controllers
             {
                 _context.Services.Remove(service);
                 await _context.SaveChangesAsync();
-                TempData["Success"] = "Hizmet başarıyla silindi.";
+                TempData["Success"] = "Hizmet silindi.";
             }
             return RedirectToAction("Services");
         }
 
-
-        // ------------------------------------
-        // RANDEVU YÖNETİMİ (READ / ONAY MEKANİZMASI)
-        // ------------------------------------
-
-        // Randevuları listeleme (READ)
         public async Task<IActionResult> Bookings()
         {
-            // İlişkili Trainer ve Service verilerini çekiyoruz
             var bookings = await _context.Bookings
-                                 .Include(b => b.Trainer)
-                                 .Include(b => b.Service)
-                                 .OrderByDescending(b => b.AppointmentDate)
-                                 .ToListAsync();
+                .Include(b => b.Trainer)
+                .Include(b => b.Service)
+                .OrderBy(b => b.Status != BookingStatus.Pending)
+                .ThenByDescending(b => b.AppointmentDate)
+                .ToListAsync();
 
             return View(bookings);
         }
 
-        // Randevu Onaylama (UPDATE)
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ApproveBooking(int id)
@@ -256,12 +308,15 @@ namespace SporSalonu2.Controllers
             {
                 booking.Status = BookingStatus.Approved;
                 await _context.SaveChangesAsync();
-                TempData["Success"] = $"Randevu #{id} onaylandı!";
+                TempData["Success"] = $"Randevu (#{id}) onaylandı.";
+            }
+            else
+            {
+                TempData["Error"] = "Randevu bulunamadı.";
             }
             return RedirectToAction("Bookings");
         }
 
-        // Randevu Reddetme (UPDATE)
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> RejectBooking(int id)
@@ -271,15 +326,19 @@ namespace SporSalonu2.Controllers
             {
                 booking.Status = BookingStatus.Rejected;
                 await _context.SaveChangesAsync();
-                TempData["Success"] = $"Randevu #{id} reddedildi!";
+                TempData["Success"] = $"Randevu (#{id}) reddedildi.";
             }
             return RedirectToAction("Bookings");
         }
 
-        // ------------------------------------
-        // DİĞER ADMIN SAYFALARI (İskeletler)
-        // ------------------------------------
-        public IActionResult Members() { return View(); }
+        public async Task<IActionResult> Members()
+        {
+            var members = await _context.Users
+                                    .Where(u => u.Role == "Member")
+                                    .ToListAsync();
+            return View(members);
+        }
+
         public IActionResult Reports() { return View(); }
     }
 }

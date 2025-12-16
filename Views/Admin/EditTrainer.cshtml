@@ -1,48 +1,80 @@
-﻿@* Views/Admin/EditTrainer.cshtml *@
-@model SporSalonu2.Models.TrainerViewModel
+﻿@model SporSalonu2.Models.TrainerViewModel
 @{
     ViewData["Title"] = "Antrenör Düzenle";
 }
 
 <div class="auth-container">
     <div class="auth-box" style="max-width: 600px;">
-        <h2>✏️ Antrenör Düzenle (#@ViewBag.TrainerId)</h2>
+        <h2>✏️ Antrenör Düzenle</h2>
+        <p class="text-muted">#@Model.Id numaralı kayıt düzenleniyor</p>
 
-        @* Form, veriyi POST olarak AdminController'daki EditTrainer Action'ına gönderir *@
-        <form method="post" asp-controller="Admin" asp-action="EditTrainer" asp-route-id="@ViewBag.TrainerId">
-
-            @* ID'yi taşımak için gizli alan (Controller action'ı id parametresini alıyor) *@
-            <input type="hidden" name="Id" value="@ViewBag.TrainerId" />
+        <form method="post" asp-controller="Admin" asp-action="EditTrainer" asp-route-id="@Model.Id">
+            <input type="hidden" asp-for="Id" />
 
             <div asp-validation-summary="ModelOnly" style="color: red; margin-bottom: 1rem;"></div>
 
             <div class="form-group">
                 <label asp-for="FirstName">Ad *</label>
                 <input asp-for="FirstName" required />
+                <span asp-validation-for="FirstName" style="color:red"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="LastName">Soyad *</label>
                 <input asp-for="LastName" required />
+                <span asp-validation-for="LastName" style="color:red"></span>
             </div>
 
-            <div class="form-group">
-                <label asp-for="Specialty">Uzmanlık Alanı *</label>
-                <input asp-for="Specialty" required />
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label style="font-weight: bold; margin-bottom: 0.8rem; display: block; color: #ecf0f1;">
+                    Uzmanlık Alanları <span style="color:#e74c3c">*</span>
+                </label>
+
+                <div class="specialty-wrapper">
+                    @for (int i = 0; i < Model.AvailableServices.Count; i++)
+                    {
+                        // Emoji belirleme mantığı
+                        string serviceName = Model.AvailableServices[i].Name;
+                        string emoji = "⭐";
+
+                        if (serviceName.Contains("Fitness")) emoji = "💪";
+                        else if (serviceName.Contains("Yoga")) emoji = "🧘";
+                        else if (serviceName.Contains("Pilates")) emoji = "🤸";
+                        else if (serviceName.Contains("Gym") || serviceName.Contains("Ağırlık")) emoji = "🏋️";
+                        else if (serviceName.Contains("Havuz") || serviceName.Contains("Yüzme")) emoji = "🏊";
+                        else if (serviceName.Contains("Boks")) emoji = "🥊";
+
+                        <input type="checkbox"
+                               class="btn-check"
+                               name="SelectedServiceIds"
+                               value="@Model.AvailableServices[i].Id"
+                               id="srv_edit_@Model.AvailableServices[i].Id"
+                               @(Model.SelectedServiceIds.Contains(Model.AvailableServices[i].Id) ? "checked" : "")
+                               autocomplete="off">
+
+                        <label class="specialty-tag" for="srv_edit_@Model.AvailableServices[i].Id">
+                            <span class="emoji-span">@emoji</span> @serviceName
+                        </label>
+                    }
+                </div>
+
+                <span asp-validation-for="SelectedServiceIds" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="Email">E-posta</label>
-                <input asp-for="Email" />
+                <input asp-for="Email" required />
+                <span asp-validation-for="Email" style="color:red"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="Phone">Telefon</label>
                 <input asp-for="Phone" />
+                <span asp-validation-for="Phone" style="color:red"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="Bio">Biyografi (Kısa Açıklama)</label>
+                <label asp-for="Bio">Biyografi</label>
                 <textarea asp-for="Bio" rows="4"></textarea>
             </div>
 
@@ -51,7 +83,7 @@
             </button>
 
             <div style="text-align: center; margin-top: 1rem;">
-                <a asp-controller="Admin" asp-action="Trainers" class="primary-text">Antrenör Listesine Geri Dön</a>
+                <a asp-controller="Admin" asp-action="Trainers" class="primary-text">Geri Dön</a>
             </div>
         </form>
     </div>
@@ -59,4 +91,56 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+
+    <style>
+        /* Kapsayıcı Alan */
+        .specialty-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 5px 0;
+        }
+
+        /* Checkbox Gizleme */
+        .btn-check {
+            position: absolute;
+            clip: rect(0,0,0,0);
+            pointer-events: none;
+        }
+
+        /* Etiket Tasarımı (Dark Mode) */
+        .specialty-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 18px;
+            background-color: #2c3e50;
+            border: 1px solid #4a5568;
+            border-radius: 8px;
+            color: #e2e8f0;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+
+            .specialty-tag:hover {
+                background-color: #34495e;
+                border-color: #718096;
+            }
+
+        /* SEÇİLDİĞİNDE */
+        .btn-check:checked + .specialty-tag {
+            background-color: #3498db;
+            border-color: #3498db;
+            color: white;
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.4);
+            font-weight: bold;
+            transform: translateY(-2px);
+        }
+
+        .emoji-span {
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+    </style>
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SporSalonu2.Data;
 
@@ -11,9 +12,11 @@ using SporSalonu2.Data;
 namespace SporSalonu2.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251215214030_AddUserTable")]
+    partial class AddUserTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -147,7 +150,7 @@ namespace SporSalonu2.Migrations
                         new
                         {
                             Id = 1,
-                            Description = "Kardiyo ve genel form.",
+                            Description = "Ağırlık ve kardiyo ekipmanları.",
                             DurationMinutes = 60,
                             Name = "Fitness",
                             Price = 350m
@@ -155,7 +158,7 @@ namespace SporSalonu2.Migrations
                         new
                         {
                             Id = 2,
-                            Description = "Esneklik ve denge.",
+                            Description = "Esneklik ve zihin dengesi.",
                             DurationMinutes = 45,
                             Name = "Yoga",
                             Price = 400m
@@ -163,34 +166,10 @@ namespace SporSalonu2.Migrations
                         new
                         {
                             Id = 3,
-                            Description = "Core güçlendirme.",
+                            Description = "Core güçlendirme ve duruş düzeltme.",
                             DurationMinutes = 50,
                             Name = "Pilates",
                             Price = 450m
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Description = "Serbest ağırlık ve vücut geliştirme.",
-                            DurationMinutes = 90,
-                            Name = "Gym & Ağırlık",
-                            Price = 500m
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Description = "Yüzme antrenmanları.",
-                            DurationMinutes = 60,
-                            Name = "Havuz",
-                            Price = 600m
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Description = "Boks ve kickboks dersleri.",
-                            DurationMinutes = 60,
-                            Name = "Boks",
-                            Price = 550m
                         });
                 });
 

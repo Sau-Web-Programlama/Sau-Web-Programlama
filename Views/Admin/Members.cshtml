@@ -1,4 +1,6 @@
-﻿@{
+﻿@using SporSalonu2.Models
+@model List<User>
+@{
     ViewData["Title"] = "Üye Yönetimi";
 }
 
@@ -10,30 +12,33 @@
             <tr>
                 <th>Ad Soyad</th>
                 <th>E-posta</th>
-                <th>Telefon</th>
-                <th>Kayıt Tarihi</th>
+                <th>Rol</th>
                 <th>İşlemler</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Ayşe Demir</td>
-                <td>ayse@ornek.com</td>
-                <td>0500 123 45 67</td>
-                <td>01.09.2024</td>
-                <td>
-                    <a href="#" class="btn btn-outline" style="padding: 0.3rem 0.8rem;">Detay</a>
-                </td>
-            </tr>
-            <tr>
-                <td>Caner Öztürk</td>
-                <td>caner@ornek.com</td>
-                <td>0500 987 65 43</td>
-                <td>15.10.2024</td>
-                <td>
-                    <a href="#" class="btn btn-outline" style="padding: 0.3rem 0.8rem;">Detay</a>
-                </td>
-            </tr>
+            @if (Model != null && Model.Any())
+            {
+                @foreach (var member in Model)
+                {
+                    <tr>
+                        <td>@member.FirstName @member.LastName</td>
+                        <td>@member.Email</td>
+                        <td>
+                            <span class="badge bg-info text-dark">@member.Role</span>
+                        </td>
+                        <td>
+                            <a href="#" class="btn btn-outline" style="padding: 0.3rem 0.8rem;">Detay</a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="4" style="text-align: center;">Henüz kayıtlı üye bulunmamaktadır.</td>
+                </tr>
+            }
         </tbody>
     </table>
 </div>

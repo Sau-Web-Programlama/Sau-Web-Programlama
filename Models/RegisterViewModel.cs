@@ -29,7 +29,7 @@ namespace SporSalonu2.Models
         [Display(Name = "Şifre Tekrar")]
         public string ConfirmPassword { get; set; }
 
-        [Range(typeof(bool), "true", "true", ErrorMessage = "Kullanım şartlarını kabul etmelisiniz.")]
+        //[Range(typeof(bool), "true", "true", ErrorMessage = "Kullanım şartlarını kabul etmelisiniz.")]  "KULLANIM KOŞULLARI TİKLENMİŞ OLMASINA RAĞMEN KABUL EDİLMEMİŞ GÖZÜKÜYOR"
         public bool AcceptTerms { get; set; }
     }
 }

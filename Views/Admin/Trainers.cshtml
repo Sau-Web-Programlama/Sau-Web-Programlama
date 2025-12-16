@@ -1,14 +1,13 @@
-﻿@* Views/Admin/Trainers.cshtml *@
-@using SporSalonu2.Models
+﻿@using SporSalonu2.Models
 @model List<Trainer>
 @{
     ViewData["Title"] = "Antrenör Yönetimi";
-    Layout = "_AdminLayout"; // Admin layout'unuzun adını buraya girin
 }
 
 <div class="container page-container">
     <h2 class="section-title">🏋️ Antrenör Yönetimi</h2>
 
+    @* Başarı Mesajı Gösterimi *@
     @if (TempData["Success"] != null)
     {
         <div class="alert alert-success">
@@ -42,7 +41,10 @@
                         <td>@trainer.Phone</td>
                         <td>
                             <a asp-controller="Admin" asp-action="EditTrainer" asp-route-id="@trainer.Id" class="btn btn-outline" style="padding: 0.3rem 0.8rem;">Düzenle</a>
-                            <a asp-controller="Admin" asp-action="DeleteTrainer" asp-route-id="@trainer.Id" class="btn btn-danger" style="padding: 0.3rem 0.8rem; background-color: darkred; color: white;">Sil</a>
+
+                            <form method="post" asp-controller="Admin" asp-action="DeleteTrainer" asp-route-id="@trainer.Id" style="display:inline;" onsubmit="return confirm('Bu antrenörü silmek istediğinize emin misiniz?');">
+                                <button type="submit" class="btn btn-danger" style="padding: 0.3rem 0.8rem; background-color: darkred; color: white; border: none;">Sil</button>
+                            </form>
                         </td>
                     </tr>
                 }

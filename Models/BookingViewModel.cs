@@ -1,13 +1,13 @@
-﻿// Models/BookingViewModel.cs
-using System.ComponentModel.DataAnnotations;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation; // Bu kütüphaneyi ekledik
 
 namespace SporSalonu2.Models
 {
     public class BookingViewModel
     {
         [Required(ErrorMessage = "Hizmet tipi seçimi zorunludur.")]
-        // public string ServiceType { get; set; } // ÖNCEKİ HALİ
         [Range(1, int.MaxValue, ErrorMessage = "Geçerli bir hizmet seçimi zorunludur.")]
         public int ServiceType { get; set; }
 
@@ -24,7 +24,14 @@ namespace SporSalonu2.Models
 
         public string Notes { get; set; }
 
-        public List<SelectListItemDto> Trainers { get; set; }
-        public List<SelectListItemDto> Services { get; set; }
+        // --- DEĞİŞİKLİK BURADA ---
+        // [ValidateNever] ekledik: "Form gönderilirken bu listelerin dolu olup olmadığını kontrol etme" demek.
+        // Ayrıca tiplerin yanına '?' koyarak boş olabileceklerini belirttik.
+
+        [ValidateNever]
+        public List<SelectListItemDto>? Trainers { get; set; }
+
+        [ValidateNever]
+        public List<SelectListItemDto>? Services { get; set; }
     }
 }

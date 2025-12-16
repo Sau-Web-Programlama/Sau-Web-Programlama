@@ -1,77 +1,158 @@
-﻿@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+﻿@model SporSalonu2.Models.BookingViewModel
+@{
+    ViewData["Title"] = "Randevu Al";
+}
 
+<div class="auth-container">
+    <div class="auth-box" style="max-width: 600px;">
+        <h2>📅 Yeni Randevu Oluştur</h2>
+
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["Success"]
+            </div>
+        }
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["Error"]
+            </div>
+        }
+        <form method="post" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <div class="form-group">
+                <label>Hizmet / Branş Seçin *</label>
+                <select asp-for="ServiceType" class="form-control" id="ddlService">
+                    <option value="">-- Branş Seçiniz --</option>
+                    @foreach (var item in Model.Services)
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                </select>
+                <span asp-validation-for="ServiceType" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Antrenör Seçin *</label>
+                <select asp-for="TrainerId" class="form-control" id="ddlTrainer" disabled>
+                    <option value="">-- Önce Branş Seçiniz --</option>
+                </select>
+                <span asp-validation-for="TrainerId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Tarih Seçin *</label>
+                <input asp-for="AppointmentDate" type="date" class="form-control" id="txtDate" disabled />
+                <span asp-validation-for="AppointmentDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Müsait Saatler *</label>
+                <select asp-for="AppointmentTime" class="form-control" id="ddlTime" disabled>
+                    <option value="">-- Önce Tarih Seçiniz --</option>
+                </select>
+                <span asp-validation-for="AppointmentTime" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Notlarınız (Opsiyonel)</label>
+                <textarea asp-for="Notes" class="form-control" rows="3" placeholder="Özel bir isteğiniz var mı?"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 py-3 mt-3">Randevuyu Onayla</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
     <script>
         $(document).ready(function () {
-            // Değişkenleri tanımlıyoruz
-            const trainerSelect = $('#TrainerId');
-            const dateInput = $('#AppointmentDate');
-            const timeSelect = $('#AppointmentTime');
 
-            // -------------------------------------------------------------
-            // TARİH KONTROLÜ (Hata veren kısım buraya taşındı ve düzeltildi)
-            // -------------------------------------------------------------
+            // 1. Hizmet Değiştiğinde
+            $('#ddlService').change(function () {
+                var serviceId = $(this).val();
+                var trainerSelect = $('#ddlTrainer');
 
-            // Bugünün tarihinden önceki tarihleri seçememe
-            const today = new Date().toISOString().split('T')[0];
+                trainerSelect.empty().append('<option value="">Yükleniyor...</option>').prop('disabled', true);
+                $('#txtDate').val('').prop('disabled', true);
+                $('#ddlTime').empty().append('<option value="">-- Önce Tarih Seçiniz --</option>').prop('disabled', true);
 
-            // jQuery kullanarak min attribute'ünü ayarla
-            if (dateInput.length) {
-                dateInput.attr('min', today);
-            }
-
-
-            // -------------------------------------------------------------
-            // AJAX ile MÜSAİT SAATLERİ DOLDURMA
-            // -------------------------------------------------------------
-
-            // Fonksiyon: Müsait saatleri API'den çeker ve doldurur
-            function updateAvailableSlots() {
-                const trainerId = trainerSelect.val();
-                const selectedDate = dateInput.val();
-
-                timeSelect.empty();
-                timeSelect.append($('<option>', { value: '', text: 'Önce antrenör ve tarih seçiniz...' }));
-
-                // Eğer antrenör seçili değilse veya tarih seçili değilse işlemi durdur
-                if (!trainerId || !selectedDate) {
-                    return;
-                }
-
-                timeSelect.append($('<option>', { value: '', text: 'Müsaitlik aranıyor...' }));
-
-                $.ajax({
-                    url: '@Url.Action("GetAvailableSlots", "Trainers")',
-                    type: 'GET',
-                    data: { trainerId: trainerId, date: selectedDate },
-                    success: function (slots) {
-                        timeSelect.empty();
-                        if (slots.length > 0) {
-                            timeSelect.append($('<option>', { value: '', text: 'Saat seçiniz...' }));
-                            slots.forEach(function (slot) {
-                                timeSelect.append($('<option>', {
-                                    value: slot,
-                                    text: slot
-                                }));
+                if (serviceId) {
+                    $.getJSON('/Booking/GetTrainersByService?serviceId=' + serviceId, function (data) {
+                        trainerSelect.empty();
+                        if (data.length > 0) {
+                            trainerSelect.append('<option value="">-- Antrenör Seçiniz --</option>');
+                            $.each(data, function (i, item) {
+                                trainerSelect.append($('<option>').val(item.id).text(item.name));
                             });
+                            trainerSelect.prop('disabled', false);
                         } else {
-                            timeSelect.append($('<option>', { value: '', text: 'Bu gün için müsaitlik yok.' }));
+                            trainerSelect.append('<option value="">Bu branşta uygun antrenör yok</option>');
                         }
-                    },
-                    error: function () {
+                    });
+                } else {
+                    trainerSelect.append('<option value="">-- Önce Branş Seçiniz --</option>');
+                }
+            });
+
+            // 2. Antrenör Değiştiğinde
+            $('#ddlTrainer').change(function () {
+                if ($(this).val()) {
+                    $('#txtDate').prop('disabled', false);
+                    var today = new Date().toISOString().split('T')[0];
+                    $('#txtDate').attr('min', today);
+                } else {
+                    $('#txtDate').prop('disabled', true);
+                }
+            });
+
+            // 3. Tarih Değiştiğinde
+            $('#txtDate').change(function () {
+                var date = $(this).val();
+                var trainerId = $('#ddlTrainer').val();
+                var timeSelect = $('#ddlTime');
+
+                timeSelect.empty().append('<option value="">Kontrol ediliyor...</option>').prop('disabled', true);
+
+                if (date && trainerId) {
+                    $.getJSON('/Booking/GetAvailableSlots?trainerId=' + trainerId + '&dateStr=' + date, function (data) {
                         timeSelect.empty();
-                        timeSelect.append($('<option>', { value: '', text: 'Hata oluştu!' }));
-                    }
-                });
-            }
+                        if (data.length > 0) {
+                            timeSelect.append('<option value="">-- Saat Seçiniz --</option>');
+                            $.each(data, function (i, item) {
+                                timeSelect.append($('<option>').val(item).text(item));
+                            });
+                            timeSelect.prop('disabled', false);
+                        } else {
+                            timeSelect.append('<option value="">Bugün için boş saat yok</option>');
+                        }
+                    });
+                }
+            });
 
-            // Antrenör veya Tarih değiştiğinde fonksiyonu çalıştır
-            trainerSelect.on('change', updateAvailableSlots);
-            dateInput.on('change', updateAvailableSlots);
-
-            // Sayfa yüklendiğinde bir kez çalıştır (varsa varsayılan değerler için)
-            updateAvailableSlots();
         });
     </script>
+
+    <style>
+        .form-control, .form-select {
+            background-color: #2c3e50;
+            border: 1px solid #4a5568;
+            color: #ecf0f1;
+        }
+
+            .form-control:focus {
+                background-color: #34495e;
+                color: #fff;
+                border-color: #3498db;
+                box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+            }
+
+        option {
+            background-color: #2c3e50;
+            color: white;
+        }
+    </style>
 }
