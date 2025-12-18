@@ -1,0 +1,202 @@
+﻿@model SporSalonu2.Models.MemberEditViewModel
+
+@{
+    ViewData["Title"] = "Üye Düzenle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    /* Kartın kendisi */
+    .modern-card {
+        background: linear-gradient(145deg, #1e272e, #2f3640);
+        border-radius: 20px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        overflow: hidden;
+        max-width: 800px; /* Kartın aşırı genişlemesini engeller */
+        margin: 0 auto; /* Sayfada ortalar */
+    }
+
+    /* Kart Başlığı */
+    .card-header-modern {
+        background: rgba(0, 0, 0, 0.2);
+        padding: 25px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        text-align: center;
+    }
+
+    .header-title {
+        color: #f1c40f; /* Altın sarısı */
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin: 0;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+    }
+
+    /* Form Alanları */
+    .form-group-modern {
+        margin-bottom: 25px;
+    }
+
+    .form-label {
+        color: #dcdde1;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        display: block;
+        padding-left: 5px;
+    }
+
+    /* İkonlu Input Grubu Tasarımı */
+    .input-group-text {
+        background-color: #353b48;
+        border: 1px solid #404b5a;
+        border-right: none;
+        color: #00d2d3; /* Turkuaz ikon rengi */
+        border-radius: 10px 0 0 10px;
+        width: 50px; /* İkon alanı genişliği sabit */
+        justify-content: center;
+    }
+
+    .form-control-modern {
+        background-color: #353b48;
+        border: 1px solid #404b5a;
+        border-left: none;
+        color: white;
+        padding: 12px 15px;
+        border-radius: 0 10px 10px 0;
+        transition: all 0.3s ease;
+    }
+
+        .form-control-modern:focus {
+            background-color: #2f3640;
+            border-color: #00d2d3; /* Odaklanınca turkuaz kenarlık */
+            box-shadow: none;
+            color: white;
+        }
+
+        .form-control-modern::placeholder {
+            color: #718093;
+        }
+
+    /* Butonlar */
+    .btn-container {
+        display: flex;
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .btn-action-save {
+        flex: 2; /* Kaydet butonu daha geniş */
+        background: linear-gradient(90deg, #00b894, #00cec9);
+        border: none;
+        padding: 14px;
+        border-radius: 12px;
+        color: white;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        transition: transform 0.2s;
+    }
+
+    .btn-action-cancel {
+        flex: 1;
+        background: transparent;
+        border: 2px solid #e74c3c;
+        color: #e74c3c;
+        padding: 14px;
+        border-radius: 12px;
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
+        transition: all 0.2s;
+    }
+
+    .btn-action-save:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 184, 148, 0.4);
+        color: white;
+    }
+
+    .btn-action-cancel:hover {
+        background-color: #e74c3c;
+        color: white;
+    }
+</style>
+
+<div class="container" style="margin-top: 100px; margin-bottom: 80px;">
+
+    <div class="modern-card">
+
+        <div class="card-header-modern">
+            <h3 class="header-title">
+                <i class="fas fa-user-cog me-2"></i> Üye Bilgilerini Düzenle
+            </h3>
+        </div>
+
+        <div class="card-body p-4 p-md-5">
+            <form asp-action="EditMember" method="post">
+
+                <input type="hidden" asp-for="Id" />
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-4"></div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group-modern">
+                            <label asp-for="FirstName" class="form-label">Ad</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input asp-for="FirstName" class="form-control form-control-modern" placeholder="Ad giriniz" />
+                            </div>
+                            <span asp-validation-for="FirstName" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group-modern">
+                            <label asp-for="LastName" class="form-label">Soyad</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-signature"></i></span>
+                                <input asp-for="LastName" class="form-control form-control-modern" placeholder="Soyad giriniz" />
+                            </div>
+                            <span asp-validation-for="LastName" class="text-danger small"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group-modern">
+                    <label asp-for="Email" class="form-label">E-posta Adresi</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                        <input asp-for="Email" type="email" class="form-control form-control-modern" placeholder="ornek@mail.com" />
+                    </div>
+                    <span asp-validation-for="Email" class="text-danger small"></span>
+                </div>
+
+                <div class="form-group-modern">
+                    <label asp-for="Phone" class="form-label">Telefon Numarası</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                        <input asp-for="Phone" class="form-control form-control-modern" placeholder="05XX XXX XX XX" />
+                    </div>
+                    <span asp-validation-for="Phone" class="text-danger small"></span>
+                </div>
+
+                <div class="btn-container">
+                    <a asp-action="Members" class="btn-action-cancel">
+                        <i class="fas fa-times me-2"></i> İPTAL
+                    </a>
+                    <button type="submit" class="btn-action-save">
+                        <i class="fas fa-check me-2"></i> DEĞİŞİKLİKLERİ KAYDET
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
