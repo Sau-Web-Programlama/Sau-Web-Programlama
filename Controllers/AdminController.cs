@@ -22,23 +22,17 @@ namespace SporSalonu2.Controllers
 
         public IActionResult Index() { return View(); }
 
+        // --- ANTRENÖR YÖNETİMİ ---
         public async Task<IActionResult> Trainers()
         {
-            var trainers = await _context.Trainers.ToListAsync();
-            return View(trainers);
+            return View(await _context.Trainers.ToListAsync());
         }
 
         [HttpGet]
         public async Task<IActionResult> CreateTrainer()
         {
             var model = new TrainerViewModel();
-            model.AvailableServices = await _context.Services
-                .Select(s => new SelectListItemDto
-                {
-                    Id = s.Id,
-                    Name = s.Name
-                }).ToListAsync();
-
+            model.AvailableServices = await _context.Services.Select(s => new SelectListItemDto { Id = s.Id, Name = s.Name }).ToListAsync();
             return View(model);
         }
 
@@ -46,40 +40,16 @@ namespace SporSalonu2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateTrainer(TrainerViewModel model)
         {
-            if (model.SelectedServiceIds == null || !model.SelectedServiceIds.Any())
-            {
-                ModelState.AddModelError("SelectedServiceIds", "En az bir uzmanlık alanı seçmelisiniz.");
-            }
-
+            if (model.SelectedServiceIds == null || !model.SelectedServiceIds.Any()) ModelState.AddModelError("SelectedServiceIds", "Seçim yapmalısınız.");
             if (ModelState.IsValid)
             {
-                var selectedServiceNames = await _context.Services
-                    .Where(s => model.SelectedServiceIds.Contains(s.Id))
-                    .Select(s => s.Name)
-                    .ToListAsync();
-
-                string specialtyString = string.Join(", ", selectedServiceNames);
-
-                var trainer = new Trainer
-                {
-                    FirstName = model.FirstName,
-                    LastName = model.LastName,
-                    Specialty = specialtyString,
-                    Email = model.Email,
-                    Phone = model.Phone,
-                    Bio = model.Bio
-                };
-
+                var services = await _context.Services.Where(s => model.SelectedServiceIds.Contains(s.Id)).Select(s => s.Name).ToListAsync();
+                var trainer = new Trainer { FirstName = model.FirstName, LastName = model.LastName, Specialty = string.Join(", ", services), Email = model.Email, Phone = model.Phone, Bio = model.Bio };
                 _context.Trainers.Add(trainer);
                 await _context.SaveChangesAsync();
-
-                TempData["Success"] = $"{trainer.FirstName} {trainer.LastName} başarıyla eklendi!";
                 return RedirectToAction("Trainers");
             }
-
-            model.AvailableServices = await _context.Services
-                .Select(s => new SelectListItemDto { Id = s.Id, Name = s.Name }).ToListAsync();
-
+            model.AvailableServices = await _context.Services.Select(s => new SelectListItemDto { Id = s.Id, Name = s.Name }).ToListAsync();
             return View(model);
         }
 
@@ -87,39 +57,15 @@ namespace SporSalonu2.Controllers
         public async Task<IActionResult> EditTrainer(int id)
         {
             var trainer = await _context.Trainers.FindAsync(id);
-            if (trainer == null)
-            {
-                TempData["Error"] = "Düzenlenecek antrenör bulunamadı.";
-                return RedirectToAction("Trainers");
-            }
-
-            var model = new TrainerViewModel
-            {
-                Id = trainer.Id,
-                FirstName = trainer.FirstName,
-                LastName = trainer.LastName,
-                Email = trainer.Email,
-                Phone = trainer.Phone,
-                Bio = trainer.Bio
-            };
-
+            if (trainer == null) return RedirectToAction("Trainers");
+            var model = new TrainerViewModel { Id = trainer.Id, FirstName = trainer.FirstName, LastName = trainer.LastName, Email = trainer.Email, Phone = trainer.Phone, Bio = trainer.Bio };
             var allServices = await _context.Services.ToListAsync();
-
-            model.AvailableServices = allServices.Select(s => new SelectListItemDto
-            {
-                Id = s.Id,
-                Name = s.Name
-            }).ToList();
-
+            model.AvailableServices = allServices.Select(s => new SelectListItemDto { Id = s.Id, Name = s.Name }).ToList();
             if (!string.IsNullOrEmpty(trainer.Specialty))
             {
-                var currentSpecialties = trainer.Specialty.Split(',').Select(s => s.Trim()).ToList();
-                model.SelectedServiceIds = allServices
-                    .Where(s => currentSpecialties.Contains(s.Name))
-                    .Select(s => s.Id)
-                    .ToList();
+                var current = trainer.Specialty.Split(',').Select(s => s.Trim()).ToList();
+                model.SelectedServiceIds = allServices.Where(s => current.Contains(s.Name)).Select(s => s.Id).ToList();
             }
-
             ViewBag.TrainerId = id;
             return View(model);
         }
@@ -128,215 +74,107 @@ namespace SporSalonu2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditTrainer(int id, TrainerViewModel model)
         {
-            if (model.SelectedServiceIds == null || !model.SelectedServiceIds.Any())
-            {
-                ModelState.AddModelError("SelectedServiceIds", "En az bir uzmanlık alanı seçmelisiniz.");
-            }
-
             if (ModelState.IsValid)
             {
                 var trainer = await _context.Trainers.FindAsync(id);
-                if (trainer == null) return NotFound();
-
-                var selectedServiceNames = await _context.Services
-                    .Where(s => model.SelectedServiceIds.Contains(s.Id))
-                    .Select(s => s.Name)
-                    .ToListAsync();
-
-                trainer.FirstName = model.FirstName;
-                trainer.LastName = model.LastName;
-                trainer.Specialty = string.Join(", ", selectedServiceNames);
-                trainer.Email = model.Email;
-                trainer.Phone = model.Phone;
-                trainer.Bio = model.Bio;
-
-                _context.Trainers.Update(trainer);
-                await _context.SaveChangesAsync();
-
-                TempData["Success"] = $"{trainer.FirstName} {trainer.LastName} başarıyla güncellendi!";
+                var services = await _context.Services.Where(s => model.SelectedServiceIds.Contains(s.Id)).Select(s => s.Name).ToListAsync();
+                trainer.FirstName = model.FirstName; trainer.LastName = model.LastName; trainer.Specialty = string.Join(", ", services); trainer.Email = model.Email; trainer.Phone = model.Phone; trainer.Bio = model.Bio;
+                _context.Trainers.Update(trainer); await _context.SaveChangesAsync();
                 return RedirectToAction("Trainers");
             }
-
-            model.AvailableServices = await _context.Services
-                .Select(s => new SelectListItemDto { Id = s.Id, Name = s.Name }).ToListAsync();
-
+            model.AvailableServices = await _context.Services.Select(s => new SelectListItemDto { Id = s.Id, Name = s.Name }).ToListAsync();
             ViewBag.TrainerId = id;
             return View(model);
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteTrainer(int id)
         {
             var trainer = await _context.Trainers.FindAsync(id);
-
-            if (trainer == null)
+            if (trainer != null)
             {
-                TempData["Error"] = "Silinecek antrenör bulunamadı.";
-                return RedirectToAction("Trainers");
+                _context.Bookings.RemoveRange(_context.Bookings.Where(b => b.TrainerId == id));
+                _context.Trainers.Remove(trainer); await _context.SaveChangesAsync();
             }
-
-            try
-            {
-                var availabilities = _context.Availabilities.Where(a => a.TrainerId == id);
-                _context.Availabilities.RemoveRange(availabilities);
-
-                var bookings = _context.Bookings.Where(b => b.TrainerId == id);
-                _context.Bookings.RemoveRange(bookings);
-
-                _context.Trainers.Remove(trainer);
-                await _context.SaveChangesAsync();
-
-                TempData["Success"] = "Antrenör ve ilişkili tüm verileri başarıyla silindi.";
-            }
-            catch (Exception ex)
-            {
-                TempData["Error"] = "Hata oluştu: " + ex.Message;
-            }
-
             return RedirectToAction("Trainers");
         }
 
-        public async Task<IActionResult> Services()
-        {
-            var services = await _context.Services.ToListAsync();
-            return View(services);
-        }
+        // --- HİZMETLER ---
+        public async Task<IActionResult> Services() => View(await _context.Services.ToListAsync());
 
-        [HttpGet]
-        public IActionResult CreateService()
-        {
-            return View(new ServiceViewModel());
-        }
+        [HttpGet] public IActionResult CreateService() => View(new ServiceViewModel());
+        [HttpPost] public async Task<IActionResult> CreateService(ServiceViewModel m) { if (ModelState.IsValid) { _context.Services.Add(new Service { Name = m.Name, Description = m.Description, DurationMinutes = m.DurationMinutes, Price = m.Price }); await _context.SaveChangesAsync(); return RedirectToAction("Services"); } return View(m); }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateService(ServiceViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                var service = new Service
-                {
-                    Name = model.Name,
-                    Description = model.Description,
-                    DurationMinutes = model.DurationMinutes,
-                    Price = model.Price
-                };
-                _context.Services.Add(service);
-                await _context.SaveChangesAsync();
-                TempData["Success"] = $"'{service.Name}' hizmeti başarıyla eklendi!";
-                return RedirectToAction("Services");
-            }
-            return View(model);
-        }
+        [HttpGet] public async Task<IActionResult> EditService(int id) { var s = await _context.Services.FindAsync(id); return View(new ServiceViewModel { Name = s.Name, Description = s.Description, DurationMinutes = s.DurationMinutes, Price = s.Price }); }
+        [HttpPost] public async Task<IActionResult> EditService(int id, ServiceViewModel m) { if (ModelState.IsValid) { var s = await _context.Services.FindAsync(id); s.Name = m.Name; s.Description = m.Description; s.DurationMinutes = m.DurationMinutes; s.Price = m.Price; await _context.SaveChangesAsync(); return RedirectToAction("Services"); } return View(m); }
+        [HttpPost] public async Task<IActionResult> DeleteService(int id) { var s = await _context.Services.FindAsync(id); if (s != null) { _context.Services.Remove(s); await _context.SaveChangesAsync(); } return RedirectToAction("Services"); }
 
-        [HttpGet]
-        public async Task<IActionResult> EditService(int id)
-        {
-            var service = await _context.Services.FindAsync(id);
-            if (service == null)
-            {
-                TempData["Error"] = "Hizmet bulunamadı.";
-                return RedirectToAction("Services");
-            }
-            var model = new ServiceViewModel
-            {
-                Name = service.Name,
-                Description = service.Description,
-                DurationMinutes = service.DurationMinutes,
-                Price = service.Price
-            };
-            ViewBag.ServiceId = id;
-            return View(model);
-        }
+        // --- RANDEVULAR ---
+        public async Task<IActionResult> Bookings() => View(await _context.Bookings.Include(b => b.Trainer).Include(b => b.Service).OrderByDescending(b => b.AppointmentDate).ToListAsync());
+        [HttpPost] public async Task<IActionResult> ApproveBooking(int id) { var b = await _context.Bookings.FindAsync(id); if (b != null) { b.Status = BookingStatus.Approved; await _context.SaveChangesAsync(); } return RedirectToAction("Bookings"); }
+        [HttpPost] public async Task<IActionResult> RejectBooking(int id) { var b = await _context.Bookings.FindAsync(id); if (b != null) { b.Status = BookingStatus.Rejected; await _context.SaveChangesAsync(); } return RedirectToAction("Bookings"); }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> EditService(int id, ServiceViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                var service = await _context.Services.FindAsync(id);
-                if (service == null) return NotFound();
-
-                service.Name = model.Name;
-                service.Description = model.Description;
-                service.DurationMinutes = model.DurationMinutes;
-                service.Price = model.Price;
-
-                _context.Services.Update(service);
-                await _context.SaveChangesAsync();
-                TempData["Success"] = $"'{service.Name}' hizmeti güncellendi!";
-                return RedirectToAction("Services");
-            }
-            ViewBag.ServiceId = id;
-            return View(model);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteService(int id)
-        {
-            var service = await _context.Services.FindAsync(id);
-            if (service != null)
-            {
-                _context.Services.Remove(service);
-                await _context.SaveChangesAsync();
-                TempData["Success"] = "Hizmet silindi.";
-            }
-            return RedirectToAction("Services");
-        }
-
-        public async Task<IActionResult> Bookings()
-        {
-            var bookings = await _context.Bookings
-                .Include(b => b.Trainer)
-                .Include(b => b.Service)
-                .OrderBy(b => b.Status != BookingStatus.Pending)
-                .ThenByDescending(b => b.AppointmentDate)
-                .ToListAsync();
-
-            return View(bookings);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ApproveBooking(int id)
-        {
-            var booking = await _context.Bookings.FindAsync(id);
-            if (booking != null)
-            {
-                booking.Status = BookingStatus.Approved;
-                await _context.SaveChangesAsync();
-                TempData["Success"] = $"Randevu (#{id}) onaylandı.";
-            }
-            else
-            {
-                TempData["Error"] = "Randevu bulunamadı.";
-            }
-            return RedirectToAction("Bookings");
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> RejectBooking(int id)
-        {
-            var booking = await _context.Bookings.FindAsync(id);
-            if (booking != null)
-            {
-                booking.Status = BookingStatus.Rejected;
-                await _context.SaveChangesAsync();
-                TempData["Success"] = $"Randevu (#{id}) reddedildi.";
-            }
-            return RedirectToAction("Bookings");
-        }
-
+        // --- ÜYE YÖNETİMİ (DÜZELTİLDİ) ---
         public async Task<IActionResult> Members()
         {
-            var members = await _context.Users
-                                    .Where(u => u.Role == "Member")
-                                    .ToListAsync();
+            var members = await _context.Users.Where(u => u.Role == "Member").ToListAsync();
             return View(members);
+        }
+
+        [HttpGet]
+        // DÜZELTME: Parametre string değil int yapıldı
+        public async Task<IActionResult> EditMember(int id)
+        {
+            if (id <= 0) return NotFound();
+            var user = await _context.Users.FindAsync(id);
+            if (user == null) return NotFound();
+
+            var model = new MemberEditViewModel
+            {
+                Id = user.Id,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
+                Phone = user.Phone // User.cs'ye Phone eklediğimiz için artık çalışır
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditMember(MemberEditViewModel model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            var user = await _context.Users.FindAsync(model.Id);
+            if (user == null) return RedirectToAction("Members");
+
+            user.FirstName = model.FirstName;
+            user.LastName = model.LastName;
+            user.Email = model.Email;
+            user.Phone = model.Phone;
+
+            _context.Users.Update(user);
+            await _context.SaveChangesAsync();
+            TempData["Success"] = "Üye güncellendi.";
+            return RedirectToAction("Members");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        // DÜZELTME: Parametre string değil int yapıldı
+        public async Task<IActionResult> DeleteMember(int id)
+        {
+            var user = await _context.Users.FindAsync(id);
+            if (user == null) return RedirectToAction("Members");
+
+            var bookings = _context.Bookings.Where(b => b.MemberId == user.Email);
+            _context.Bookings.RemoveRange(bookings);
+
+            _context.Users.Remove(user);
+            await _context.SaveChangesAsync();
+            TempData["Success"] = "Üye silindi.";
+            return RedirectToAction("Members");
         }
 
         public IActionResult Reports() { return View(); }

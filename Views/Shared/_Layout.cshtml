@@ -1,4 +1,7 @@
-﻿@* Views/Shared/_Layout.cshtml *@
+﻿@using Microsoft.AspNetCore.Http
+@using SporSalonu2.Data
+@inject ApplicationDbContext _context
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -8,6 +11,8 @@
 
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="/css/site.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
 <body>
     <nav>
@@ -17,34 +22,48 @@
             </a>
 
             <ul class="nav-links">
-                <li>
-                    <a asp-controller="Home" asp-action="Index">Ana Sayfa</a>
-                </li>
-                <li>
-                    <a asp-controller="Services" asp-action="Index">Hizmetler</a>
-                </li>
-                <li>
-                    <a asp-controller="Trainers" asp-action="Index">Antrenörler</a>
-                </li>
-                <li>
-                    <a asp-controller="Booking" asp-action="Index">Randevu Al</a>
-                </li>
-                <li>
-                    <a asp-controller="AI" asp-action="DietAssistant">YZ Diyet Asistanı</a>
-                </li>
+                <li><a asp-controller="Home" asp-action="Index">Ana Sayfa</a></li>
+                <li><a asp-controller="Services" asp-action="Index">Hizmetler</a></li>
+                <li><a asp-controller="Trainers" asp-action="Index">Antrenörler</a></li>
+                <li><a asp-controller="Booking" asp-action="Index">Randevu Al</a></li>
+                <li><a asp-controller="AI" asp-action="DietAssistant">YZ Diyet Asistanı</a></li>
             </ul>
 
-            <div class="nav-actions">
+            <div class="nav-actions" style="display: flex; align-items: center;">
                 @if (User.Identity.IsAuthenticated)
                 {
-                    // KULLANICI GİRİŞ YAPMIŞSA
+                    // --- İSİM ÇEKME İŞLEMİ (C# KODU) ---
+                    string displayName = User.Identity.Name; // Varsayılan olarak emaili al
 
-                    // Randevularım Linki (Admin veya Üye iseniz)
+                    try
+                    {
+                        // Veritabanından bu emaile sahip kullanıcıyı bul
+                        var currentUser = _context.Users.FirstOrDefault(u => u.Email == User.Identity.Name);
+                        if (currentUser != null)
+                        {
+                            // Eğer kullanıcı bulunduysa ismini ve soyismini birleştir
+                            displayName = $"{currentUser.FirstName} {currentUser.LastName}";
+                        }
+                    }
+                    catch
+                    {
+                        // Bir hata olursa (tablo bulunamazsa vs.) email göstermeye devam et
+                    }
+                    // ------------------------------------
+
+                    // --- İSİM GÖSTERME ALANI ---
+                    <div style="color: white; margin-right: 15px; font-weight: 500; font-size: 0.9rem; display:flex; align-items:center;">
+                        <i class="fas fa-user-circle" style="color: var(--accent-orange); margin-right: 8px; font-size: 1.2rem;"></i>
+                        <span style="max-width: 150px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                            @displayName
+                        </span>
+                    </div>
+                    // ---------------------------
+
                     <a asp-controller="Booking" asp-action="MyBookings" class="btn btn-outline" style="margin-right: 0.5rem;">
                         Randevularım
                     </a>
 
-                    // Admin Paneli Linki (Sadece Admin iseniz)
                     @if (User.IsInRole("Admin"))
                     {
                         <a asp-controller="Admin" asp-action="Index" class="btn btn-outline" style="margin-right: 0.5rem;">
@@ -52,14 +71,12 @@
                         </a>
                     }
 
-                    // Çıkış Yap Butonu
                     <form asp-controller="Account" asp-action="Logout" method="post" style="display: inline;">
                         <button type="submit" class="btn btn-primary">Çıkış Yap</button>
                     </form>
                 }
                 else
                 {
-                    // KULLANICI GİRİŞ YAPMAMIŞSA
                     <a asp-controller="Account" asp-action="Login" class="btn btn-outline">Giriş Yap</a>
                     <a asp-controller="Account" asp-action="Register" class="btn btn-primary">Üye Ol</a>
                 }
