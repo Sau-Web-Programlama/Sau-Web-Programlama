@@ -22,56 +22,6 @@ namespace SporSalonu2.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("SporSalonu2.Models.Availability", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("DayOfWeek")
-                        .HasColumnType("int");
-
-                    b.Property<TimeSpan>("EndTime")
-                        .HasColumnType("time");
-
-                    b.Property<bool>("IsBookable")
-                        .HasColumnType("bit");
-
-                    b.Property<TimeSpan>("StartTime")
-                        .HasColumnType("time");
-
-                    b.Property<int>("TrainerId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TrainerId");
-
-                    b.ToTable("Availabilities");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            DayOfWeek = 0,
-                            EndTime = new TimeSpan(0, 12, 0, 0, 0),
-                            IsBookable = true,
-                            StartTime = new TimeSpan(0, 9, 0, 0, 0),
-                            TrainerId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            DayOfWeek = 1,
-                            EndTime = new TimeSpan(0, 17, 0, 0, 0),
-                            IsBookable = true,
-                            StartTime = new TimeSpan(0, 14, 0, 0, 0),
-                            TrainerId = 1
-                        });
-                });
-
             modelBuilder.Entity("SporSalonu2.Models.Booking", b =>
                 {
                     b.Property<int>("Id")
@@ -142,56 +92,6 @@ namespace SporSalonu2.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Services");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "Kardiyo ve genel form.",
-                            DurationMinutes = 60,
-                            Name = "Fitness",
-                            Price = 350m
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "Esneklik ve denge.",
-                            DurationMinutes = 45,
-                            Name = "Yoga",
-                            Price = 400m
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "Core güçlendirme.",
-                            DurationMinutes = 50,
-                            Name = "Pilates",
-                            Price = 450m
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Description = "Serbest ağırlık ve vücut geliştirme.",
-                            DurationMinutes = 90,
-                            Name = "Gym & Ağırlık",
-                            Price = 500m
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Description = "Yüzme antrenmanları.",
-                            DurationMinutes = 60,
-                            Name = "Havuz",
-                            Price = 600m
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Description = "Boks ve kickboks dersleri.",
-                            DurationMinutes = 60,
-                            Name = "Boks",
-                            Price = 550m
-                        });
                 });
 
             modelBuilder.Entity("SporSalonu2.Models.Trainer", b =>
@@ -229,44 +129,16 @@ namespace SporSalonu2.Migrations
 
                     b.Property<string>("Specialty")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("WorkingDays")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Trainers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Bio = "Kişisel antrenör ve beslenme danışmanı.",
-                            Email = "ahmet@fitzone.com",
-                            FirstName = "Ahmet",
-                            LastName = "Yılmaz",
-                            Phone = "5551112233",
-                            Specialty = "Fitness & Kilo Verme"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Bio = "Uzman yoga eğitmeni.",
-                            Email = "zeynep@fitzone.com",
-                            FirstName = "Zeynep",
-                            LastName = "Kara",
-                            Phone = "5554445566",
-                            Specialty = "Yoga & Meditasyon"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Bio = "Reformer ve mat pilates uzmanı.",
-                            Email = "mehmet@fitzone.com",
-                            FirstName = "Mehmet",
-                            LastName = "Demir",
-                            Phone = "5557778899",
-                            Specialty = "Pilates & Rehabilitasyon"
-                        });
                 });
 
             modelBuilder.Entity("SporSalonu2.Models.User", b =>
@@ -285,6 +157,9 @@ namespace SporSalonu2.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<double?>("Height")
+                        .HasColumnType("float");
+
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -301,20 +176,12 @@ namespace SporSalonu2.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<double?>("Weight")
+                        .HasColumnType("float");
+
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("SporSalonu2.Models.Availability", b =>
-                {
-                    b.HasOne("SporSalonu2.Models.Trainer", "Trainer")
-                        .WithMany("Availabilities")
-                        .HasForeignKey("TrainerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Trainer");
                 });
 
             modelBuilder.Entity("SporSalonu2.Models.Booking", b =>
@@ -334,11 +201,6 @@ namespace SporSalonu2.Migrations
                     b.Navigation("Service");
 
                     b.Navigation("Trainer");
-                });
-
-            modelBuilder.Entity("SporSalonu2.Models.Trainer", b =>
-                {
-                    b.Navigation("Availabilities");
                 });
 #pragma warning restore 612, 618
         }

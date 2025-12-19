@@ -20,7 +20,12 @@
     /* Text Colors */
     --text-primary: #ffffff;
     --text-secondary: #9ab;
-    --text-muted: #678;
+
+    /*--text-muted: #678;*/
+
+
+
+
     /* Borders & Shadows */
     --border-color: #456;
     --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);

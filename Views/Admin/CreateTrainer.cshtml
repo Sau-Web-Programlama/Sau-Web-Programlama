@@ -30,9 +30,8 @@
                 <div class="specialty-wrapper">
                     @for (int i = 0; i < Model.AvailableServices.Count; i++)
                     {
-                        // Hizmet ismine göre Emoji belirleme mantığı
                         string serviceName = Model.AvailableServices[i].Name;
-                        string emoji = "⭐"; // Varsayılan
+                        string emoji = "⭐";
 
                         if (serviceName.Contains("Fitness")) emoji = "💪";
                         else if (serviceName.Contains("Yoga")) emoji = "🧘";
@@ -53,11 +52,43 @@
                         </label>
                     }
                 </div>
-
                 <small class="text-muted" style="display:block; margin-top:8px; color: #bdc3c7 !important;">
                     Birden fazla seçim yapabilirsiniz.
                 </small>
                 <span asp-validation-for="SelectedServiceIds" class="text-danger"></span>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label style="font-weight: bold; margin-bottom: 0.8rem; display: block; color: #ecf0f1;">
+                    Çalışma Günleri <span style="color:#e74c3c">*</span>
+                </label>
+
+                <div class="specialty-wrapper">
+                    <input type="checkbox" class="btn-check" name="selectedDays" value="Monday" id="day_Mon" autocomplete="off">
+                    <label class="specialty-tag" for="day_Mon">📅 Pazartesi</label>
+
+                    <input type="checkbox" class="btn-check" name="selectedDays" value="Tuesday" id="day_Tue" autocomplete="off">
+                    <label class="specialty-tag" for="day_Tue">📅 Salı</label>
+
+                    <input type="checkbox" class="btn-check" name="selectedDays" value="Wednesday" id="day_Wed" autocomplete="off">
+                    <label class="specialty-tag" for="day_Wed">📅 Çarşamba</label>
+
+                    <input type="checkbox" class="btn-check" name="selectedDays" value="Thursday" id="day_Thu" autocomplete="off">
+                    <label class="specialty-tag" for="day_Thu">📅 Perşembe</label>
+
+                    <input type="checkbox" class="btn-check" name="selectedDays" value="Friday" id="day_Fri" autocomplete="off">
+                    <label class="specialty-tag" for="day_Fri">📅 Cuma</label>
+
+                    <input type="checkbox" class="btn-check" name="selectedDays" value="Saturday" id="day_Sat" autocomplete="off">
+                    <label class="specialty-tag" for="day_Sat">📅 Cumartesi</label>
+
+                    <input type="checkbox" class="btn-check" name="selectedDays" value="Sunday" id="day_Sun" autocomplete="off">
+                    <label class="specialty-tag" for="day_Sun">📅 Pazar</label>
+                </div>
+
+                <small class="text-muted" style="display:block; margin-top:8px; color: #bdc3c7 !important;">
+                    Antrenörün çalışacağı günleri seçiniz.
+                </small>
             </div>
 
             <div class="form-group">
@@ -86,9 +117,7 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
-
     <style>
-        /* Kapsayıcı Alan: Diğer inputlar gibi görünecek */
         .specialty-wrapper {
             display: flex;
             flex-wrap: wrap;
@@ -96,45 +125,40 @@
             padding: 5px 0;
         }
 
-        /* Orijinal Checkbox'ı Gizle */
         .btn-check {
             position: absolute;
             clip: rect(0,0,0,0);
             pointer-events: none;
         }
 
-        /* Görünür Etiket Tasarımı (Dark Mode Uyumlu) */
         .specialty-tag {
             display: inline-flex;
             align-items: center;
             padding: 10px 18px;
-            background-color: #2c3e50; /* Inputların arka plan rengine yakın koyu ton */
-            border: 1px solid #4a5568; /* Hafif gri çerçeve */
-            border-radius: 8px; /* Hafif yuvarlatılmış köşeler */
-            color: #e2e8f0; /* Açık renk yazı */
+            background-color: #2c3e50;
+            border: 1px solid #4a5568;
+            border-radius: 8px;
+            color: #e2e8f0;
             font-size: 0.95rem;
             cursor: pointer;
             transition: all 0.2s ease;
             user-select: none;
         }
 
-            /* Üzerine gelince */
             .specialty-tag:hover {
                 background-color: #34495e;
                 border-color: #718096;
             }
 
-        /* SEÇİLDİĞİNDE (Tıklandığında) */
         .btn-check:checked + .specialty-tag {
-            background-color: #3498db; /* Mavi vurgu rengi */
+            background-color: #3498db;
             border-color: #3498db;
             color: white;
-            box-shadow: 0 0 10px rgba(52, 152, 219, 0.4); /* Hafif parlama efekti */
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.4);
             font-weight: bold;
-            transform: translateY(-2px); /* Hafif yukarı kalkma efekti */
+            transform: translateY(-2px);
         }
 
-        /* Emojiler için boşluk */
         .emoji-span {
             margin-right: 8px;
             font-size: 1.1rem;

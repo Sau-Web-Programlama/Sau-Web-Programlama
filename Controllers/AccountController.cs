@@ -1,35 +1,31 @@
 ﻿using SporSalonu2.Models;
-using SporSalonu2.Data; // DbContext için gerekli
+using SporSalonu2.Data;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization; // [Authorize] için gerekli
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore; // Async veritabanı işlemleri için gerekli
 using System.Security.Claims;
-using System.Linq; // LINQ sorguları için gerekli
+using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
-namespace FitnessCenter.Controllers
+namespace SporSalonu2.Controllers
 {
     public class AccountController : Controller
     {
-        // ---------------------------------------------------------
-        // 1. EKSİK OLAN KISIM: Veritabanı Bağlantısı (Dependency Injection)
-        // ---------------------------------------------------------
         private readonly ApplicationDbContext _context;
 
         public AccountController(ApplicationDbContext context)
         {
             _context = context;
         }
-        // ---------------------------------------------------------
 
-        // Giriş sayfası
         public IActionResult Login()
         {
             return View();
         }
 
-        // Giriş işlemi
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
@@ -38,7 +34,6 @@ namespace FitnessCenter.Controllers
                 ClaimsIdentity claimsIdentity = null;
                 bool isAuthenticated = false;
 
-                // A) ÖDEV GEREĞİ: Sabit Admin Kontrolü
                 if (model.Email == "ogrencinumarasi@sakarya.edu.tr" && model.Password == "sau")
                 {
                     var claims = new List<Claim>
@@ -50,26 +45,23 @@ namespace FitnessCenter.Controllers
                     claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                     isAuthenticated = true;
                 }
-                // B) ÜYE KONTROLÜ: Veritabanından kontrol et
                 else
                 {
-                    // Veritabanında bu email ve şifreye sahip kullanıcı var mı?
-                    var user = _context.Users.FirstOrDefault(u => u.Email == model.Email && u.Password == model.Password);
+                    var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == model.Email && u.Password == model.Password);
 
                     if (user != null)
                     {
                         var claims = new List<Claim>
                         {
-                            new Claim(ClaimTypes.Name, user.Email), // E-posta veya Ad Soyad
+                            new Claim(ClaimTypes.Name, user.Email),
                             new Claim(ClaimTypes.Email, user.Email),
-                            new Claim(ClaimTypes.Role, user.Role) // Genelde "Member"
+                            new Claim(ClaimTypes.Role, user.Role)
                         };
                         claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                         isAuthenticated = true;
                     }
                 }
 
-                // C) GİRİŞ BAŞARILIYSA COOKIE OLUŞTUR
                 if (isAuthenticated && claimsIdentity != null)
                 {
                     var authProperties = new AuthenticationProperties
@@ -82,7 +74,6 @@ namespace FitnessCenter.Controllers
                         new ClaimsPrincipal(claimsIdentity),
                         authProperties);
 
-                    // Rolüne göre yönlendirme yap
                     if (claimsIdentity.Claims.Any(c => c.Type == ClaimTypes.Role && c.Value == "Admin"))
                     {
                         return RedirectToAction("Index", "Admin");
@@ -101,61 +92,116 @@ namespace FitnessCenter.Controllers
             return View(model);
         }
 
-        // Kayıt sayfası
         public IActionResult Register()
         {
             return View();
         }
 
-        // Kayıt işlemi (GERÇEK VERİTABANI KAYDI)
         [HttpPost]
-        public IActionResult Register(RegisterViewModel model)
+        public async Task<IActionResult> Register(RegisterViewModel model)
         {
-            // 1. ADIM: Checkbox kontrolünü MANUEL yapıyoruz.
-            // [Range] attribute'ü sildiğimiz için, burada false ise hata fırlatıyoruz.
             if (model.AcceptTerms == false)
             {
                 ModelState.AddModelError("AcceptTerms", "Kullanım şartlarını kabul etmelisiniz.");
             }
 
-            // 2. ADIM: Diğer tüm kurallar (Boş alan, şifre uyumu vb.) uygun mu?
             if (ModelState.IsValid)
             {
-                // 3. ADIM: Bu e-posta adresi daha önce kullanılmış mı?
-                if (_context.Users.Any(u => u.Email == model.Email))
+                if (await _context.Users.AnyAsync(u => u.Email == model.Email))
                 {
                     ModelState.AddModelError("", "Bu e-posta adresi zaten kayıtlı.");
                     return View(model);
                 }
 
-                // 4. ADIM: ViewModel'deki verileri gerçek User nesnesine aktar
                 var newUser = new User
                 {
                     FirstName = model.FirstName,
                     LastName = model.LastName,
                     Email = model.Email,
-                    Password = model.Password, // Ödev olduğu için şifrelemeden (hashlemeden) kaydediyoruz
-                    Role = "Member" // Varsayılan olarak "Üye" rolü veriyoruz
-
-                    // DİKKAT: Eğer User.cs modelinde 'Phone' alanı tanımlı değilse aşağıdaki satırı silmelisin.
-                    // Ama RegisterViewModel'de Phone olduğu için User tablosuna da eklemiş olmalısın.
-                    // Phone = model.Phone 
+                    Password = model.Password,
+                    Role = "Member",
+                    Phone = model.Phone 
                 };
 
-                // 5. ADIM: Veritabanına kaydet
                 _context.Users.Add(newUser);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
 
-                // 6. ADIM: Başarılı mesajı ver ve Giriş sayfasına yönlendir
                 TempData["Success"] = "Kayıt başarılı! Lütfen giriş yapınız.";
                 return RedirectToAction("Login");
             }
 
-            // Hata varsa formu verilerle birlikte tekrar göster
             return View(model);
         }
 
-        // Çıkış işlemi
+        [Authorize]
+        public async Task<IActionResult> Profile()
+        {
+            var userEmail = User.Identity.Name;
+
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
+            if (user == null) return NotFound();
+
+            var model = new UserProfileViewModel
+            {
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
+                Phone = user.Phone,
+                Height = user.Height,
+                Weight = user.Weight
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Profile(UserProfileViewModel model)
+        {
+            var userEmail = User.Identity.Name;
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
+
+            if (user != null)
+            {
+                user.Phone = model.Phone;
+                user.Height = model.Height;
+                user.Weight = model.Weight;
+
+                _context.Users.Update(user);
+                await _context.SaveChangesAsync();
+
+                TempData["Success"] = "Profil bilgileriniz başarıyla güncellendi.";
+            }
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteAccount()
+        {
+            var userEmail = User.Identity.Name;
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
+
+            if (user != null)
+            {
+                // Kullanıcıya ait randevuları sil (Veritabanı bütünlüğü için)
+                var bookings = _context.Bookings.Where(b => b.MemberId == user.Email);
+                _context.Bookings.RemoveRange(bookings);
+
+                // Kullanıcıyı sil
+                _context.Users.Remove(user);
+                await _context.SaveChangesAsync();
+
+                // Oturumu kapat
+                await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
+
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);

@@ -1,107 +1,208 @@
-﻿<div class="container page-container">
-    <h2 class="section-title">Tüm Hizmetlerimiz</h2>
+﻿@model IEnumerable<SporSalonu2.Models.Service>
 
-    <div class="services-grid">
-        <div class="service-card">
-            <div class="service-image" style="background: linear-gradient(135deg, var(--primary) 0%, #00c853 100%)">💪</div>
-            <div class="service-content">
-                <h3>Fitness</h3>
-                <p>Modern kardio ve ağırlık ekipmanlarıyla donatılmış geniş fitness alanımızda hedeflerinize ulaşın. Koşu bantları, eliptik bisikletler, rowing makineleri ve daha fazlası.</p>
-                <div class="service-meta">
-                    <span>⏱️ 60 dakika</span>
-                    <span>💰 350 TL/ay</span>
-                </div>
-                <div style="margin-top: 1rem;">
-                    <a asp-controller="Booking" asp-action="Index" class="btn btn-primary" style="width: 100%;">Randevu Al</a>
-                </div>
-            </div>
-        </div>
+@{
+    ViewData["Title"] = "Hizmetlerimiz";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-        <div class="service-card">
-            <div class="service-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)">🧘</div>
-            <div class="service-content">
-                <h3>Yoga</h3>
-                <p>Huzurlu ortamda, uzman eğitmenler eşliğinde zihin ve beden dengenizi sağlayın. Hatha, Vinyasa ve Ashtanga yoga çeşitleri mevcut.</p>
-                <div class="service-meta">
-                    <span>⏱️ 45 dakika</span>
-                    <span>💰 400 TL/ay</span>
-                </div>
-                <div style="margin-top: 1rem;">
-                    <a asp-controller="Booking" asp-action="Index" class="btn btn-primary" style="width: 100%;">Randevu Al</a>
-                </div>
-            </div>
-        </div>
+<style>
+    /* Ana Konteyner */
+    .services-header {
+        text-align: center;
+        margin-bottom: 60px;
+        position: relative;
+    }
 
-        <div class="service-card">
-            <div class="service-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%)">🤸</div>
-            <div class="service-content">
-                <h3>Pilates</h3>
-                <p>Core güçlendirme, esneklik ve duruş düzeltme odaklı pilates programları. Mat ve reformer pilates seçenekleri ile kişiselleştirilmiş antrenmanlar.</p>
-                <div class="service-meta">
-                    <span>⏱️ 50 dakika</span>
-                    <span>💰 450 TL/ay</span>
-                </div>
-                <div style="margin-top: 1rem;">
-                    <a asp-controller="Booking" asp-action="Index" class="btn btn-primary" style="width: 100%;">Randevu Al</a>
-                </div>
-            </div>
-        </div>
+    .services-title {
+        font-size: 3rem;
+        font-weight: 800;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+    }
 
-        <div class="service-card">
-            <div class="service-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%)">🏋️</div>
-            <div class="service-content">
-                <h3>Gym / Ağırlık</h3>
-                <p>Profesyonel powerlifting ekipmanları ve serbest ağırlık alanı. Squat rack, bench press, deadlift platformları ve tam set dumbbell seti.</p>
-                <div class="service-meta">
-                    <span>⏱️ 90 dakika</span>
-                    <span>💰 500 TL/ay</span>
-                </div>
-                <div style="margin-top: 1rem;">
-                    <a asp-controller="Booking" asp-action="Index" class="btn btn-primary" style="width: 100%;">Randevu Al</a>
-                </div>
-            </div>
-        </div>
+    .services-subtitle {
+        color: #b2bec3;
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
 
-        <div class="service-card">
-            <div class="service-image" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%)">🏊</div>
-            <div class="service-content">
-                <h3>Havuz</h3>
-                <p>Olimpik standartlarda 25 metre kapalı yüzme havuzu. Yüzme dersleri, su aerobiği ve serbest yüzme saatleri mevcuttur.</p>
-                <div class="service-meta">
-                    <span>⏱️ 60 dakika</span>
-                    <span>💰 600 TL/ay</span>
-                </div>
-                <div style="margin-top: 1rem;">
-                    <a asp-controller="Booking" asp-action="Index" class="btn btn-primary" style="width: 100%;">Randevu Al</a>
-                </div>
-            </div>
-        </div>
+    /* GRID YAPISI */
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 30px;
+        padding-bottom: 50px;
+    }
 
-        <div class="service-card">
-            <div class="service-image" style="background: linear-gradient(135deg, #ff6a00 0%, #ee0979 100%)">🥊</div>
-            <div class="service-content">
-                <h3>Boks</h3>
-                <p>Profesyonel boks antrenmanları, kickboxing ve muay thai seansları. Teknik geliştirme ve kondisyon artırıcı programlar.</p>
-                <div class="service-meta">
-                    <span>⏱️ 60 dakika</span>
-                    <span>💰 550 TL/ay</span>
-                </div>
-                <div style="margin-top: 1rem;">
-                    <a asp-controller="Booking" asp-action="Index" class="btn btn-primary" style="width: 100%;">Randevu Al</a>
-                </div>
-            </div>
-        </div>
+    /* KART TASARIMI */
+    .service-card {
+        background-color: #1e272e;
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #2f3640;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            border-color: #00d2d3;
+        }
+
+    /* Kart Üstü (Görsel Alanı - İkonlu) */
+    .card-img-top {
+        height: 140px;
+        background: linear-gradient(135deg, #00b894, #0984e3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .service-icon {
+        font-size: 3.5rem;
+        color: rgba(255, 255, 255, 0.9);
+        z-index: 2;
+    }
+
+    /* Kart İçeriği */
+    .card-body {
+        padding: 25px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .service-name {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 15px;
+    }
+
+    .service-desc {
+        color: #b2bec3;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        flex-grow: 1; /* Açıklama alanı boşluğu doldursun */
+    }
+
+    /* Detaylar (Süre ve Fiyat) */
+    .service-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #2f3640;
+        padding-top: 20px;
+        margin-top: auto;
+    }
+
+    .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #dcdde1;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+
+    .price-tag {
+        color: #f1c40f; /* Sarı Fiyat */
+        font-size: 1.2rem;
+        font-weight: 800;
+    }
+
+    /* Buton */
+    .btn-book-service {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background-color: #2f3640;
+        color: #fff;
+        padding: 12px;
+        margin-top: 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.2s;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+        .btn-book-service:hover {
+            background-color: #00d2d3;
+            color: #1e272e;
+        }
+</style>
+
+<div class="container" style="margin-top: 100px;">
+
+    <div class="services-header">
+        <h1 class="services-title">Hizmetlerimiz</h1>
+        <p class="services-subtitle">
+            Hedeflerinize ulaşmanız için özel olarak tasarlanmış, profesyonel antrenman programları ve wellness seçenekleri.
+        </p>
     </div>
 
-    <div style="background-color: var(--bg-card); padding: 2rem; border-radius: 12px; margin-top: 3rem; border: 1px solid var(--border);">
-        <h3 style="color: var(--primary); margin-bottom: 1rem;">💡 Üyelik Avantajları</h3>
-        <ul style="color: var(--text-secondary); list-style-position: inside;">
-            <li>Tüm hizmetlere sınırsız erişim</li>
-            <li>Kişisel antrenör desteği</li>
-            <li>Beslenme danışmanlığı</li>
-            <li>Ücretsiz soyunma dolabı</li>
-            <li>Ücretsiz havlu hizmeti</li>
-            <li>Sauna ve buhar odası kullanımı</li>
-        </ul>
-    </div>
+    @if (!Model.Any())
+    {
+        <div class="text-center py-5">
+            <div style="font-size: 4rem; color: #2f3640;">📭</div>
+            <h3 class="text-muted mt-3">Henüz listelenecek bir hizmet bulunmuyor.</h3>
+            <p class="text-secondary">Admin panelinden yeni hizmetler ekleyebilirsiniz.</p>
+        </div>
+    }
+    else
+    {
+        <div class="services-grid">
+            @foreach (var item in Model)
+            {
+                <div class="service-card">
+
+                    <div class="card-img-top">
+                        <i class="fas fa-dumbbell service-icon"></i>
+                        <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png'); opacity: 0.2;"></div>
+                    </div>
+
+                    <div class="card-body">
+                        <h3 class="service-name">@item.Name</h3>
+
+                        <p class="service-desc">
+                            @if (!string.IsNullOrEmpty(item.Description))
+                            {
+                                @item.Description
+                            }
+                            else
+                            {
+                                <span>Bu hizmet için henüz detaylı açıklama girilmemiş. Salonumuzda bilgi alabilirsiniz.</span>
+                            }
+                        </p>
+
+                        <div class="service-meta">
+                            <div class="meta-item">
+                                <i class="far fa-clock text-info"></i>
+                                <span>@item.DurationMinutes dk</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="price-tag">@item.Price ₺</span>
+                            </div>
+                        </div>
+
+                        <a asp-controller="Booking" asp-action="Index" class="btn-book-service">
+                            Randevu Al
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+
 </div>

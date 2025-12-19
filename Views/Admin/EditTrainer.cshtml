@@ -1,16 +1,16 @@
 ﻿@model SporSalonu2.Models.TrainerViewModel
 @{
-    ViewData["Title"] = "Antrenör Düzenle";
+    ViewData["Title"] = "Antrenörü Düzenle";
+    // Controller'dan gelen seçili günleri alıyoruz
+    var selectedDays = ViewBag.SelectedDays as List<string> ?? new List<string>();
 }
 
 <div class="auth-container">
     <div class="auth-box" style="max-width: 600px;">
-        <h2>✏️ Antrenör Düzenle</h2>
-        <p class="text-muted">#@Model.Id numaralı kayıt düzenleniyor</p>
+        <h2>✏️ Antrenörü Düzenle</h2>
 
-        <form method="post" asp-controller="Admin" asp-action="EditTrainer" asp-route-id="@Model.Id">
+        <form method="post" asp-controller="Admin" asp-action="EditTrainer">
             <input type="hidden" asp-for="Id" />
-
             <div asp-validation-summary="ModelOnly" style="color: red; margin-bottom: 1rem;"></div>
 
             <div class="form-group">
@@ -33,44 +33,74 @@
                 <div class="specialty-wrapper">
                     @for (int i = 0; i < Model.AvailableServices.Count; i++)
                     {
-                        // Emoji belirleme mantığı
-                        string serviceName = Model.AvailableServices[i].Name;
+                        var item = Model.AvailableServices[i];
                         string emoji = "⭐";
+                        if (item.Name.Contains("Fitness")) emoji = "💪";
+                        else if (item.Name.Contains("Yoga")) emoji = "🧘";
+                        else if (item.Name.Contains("Pilates")) emoji = "🤸";
+                        else if (item.Name.Contains("Gym")) emoji = "🏋️";
 
-                        if (serviceName.Contains("Fitness")) emoji = "💪";
-                        else if (serviceName.Contains("Yoga")) emoji = "🧘";
-                        else if (serviceName.Contains("Pilates")) emoji = "🤸";
-                        else if (serviceName.Contains("Gym") || serviceName.Contains("Ağırlık")) emoji = "🏋️";
-                        else if (serviceName.Contains("Havuz") || serviceName.Contains("Yüzme")) emoji = "🏊";
-                        else if (serviceName.Contains("Boks")) emoji = "🥊";
+                        bool isChecked = Model.SelectedServiceIds.Contains(item.Id);
 
                         <input type="checkbox"
                                class="btn-check"
                                name="SelectedServiceIds"
-                               value="@Model.AvailableServices[i].Id"
-                               id="srv_edit_@Model.AvailableServices[i].Id"
-                               @(Model.SelectedServiceIds.Contains(Model.AvailableServices[i].Id) ? "checked" : "")
+                               value="@item.Id"
+                               id="srv_@item.Id"
+                               @(isChecked ? "checked" : "")
                                autocomplete="off">
 
-                        <label class="specialty-tag" for="srv_edit_@Model.AvailableServices[i].Id">
-                            <span class="emoji-span">@emoji</span> @serviceName
+                        <label class="specialty-tag" for="srv_@item.Id">
+                            <span class="emoji-span">@emoji</span> @item.Name
                         </label>
                     }
                 </div>
+            </div>
 
-                <span asp-validation-for="SelectedServiceIds" class="text-danger"></span>
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label style="font-weight: bold; margin-bottom: 0.8rem; display: block; color: #ecf0f1;">
+                    Çalışma Günleri
+                </label>
+
+                <div class="specialty-wrapper">
+                    @{
+                        // Günlerin listesi ve Türkçe karşılıkları
+                        var days = new Dictionary<string, string>
+                                        {
+                                        {"Monday", "Pazartesi"}, {"Tuesday", "Salı"}, {"Wednesday", "Çarşamba"},
+                                        {"Thursday", "Perşembe"}, {"Friday", "Cuma"}, {"Saturday", "Cumartesi"}, {"Sunday", "Pazar"}
+                                        };
+                    }
+
+                    @foreach (var day in days)
+                    {
+                        // Eğer bu gün veritabanındaki listede varsa kutucuğu işaretle (checked)
+                        bool isDaySelected = selectedDays.Contains(day.Key);
+
+                        <input type="checkbox"
+                               class="btn-check"
+                               name="selectedDays"
+                               value="@day.Key"
+                               id="day_@day.Key"
+                               @(isDaySelected ? "checked" : "")
+                               autocomplete="off">
+
+                        <label class="specialty-tag" for="day_@day.Key">📅 @day.Value</label>
+                    }
+                </div>
+                <small class="text-muted" style="display:block; margin-top:8px; color: #bdc3c7 !important;">
+                    Mevcut çalışma günlerini değiştirebilirsiniz.
+                </small>
             </div>
 
             <div class="form-group">
                 <label asp-for="Email">E-posta</label>
                 <input asp-for="Email" required />
-                <span asp-validation-for="Email" style="color:red"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="Phone">Telefon</label>
                 <input asp-for="Phone" />
-                <span asp-validation-for="Phone" style="color:red"></span>
             </div>
 
             <div class="form-group">
@@ -78,22 +108,19 @@
                 <textarea asp-for="Bio" rows="4"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem;">
-                Değişiklikleri Kaydet
+            <button type="submit" class="btn btn-warning" style="width: 100%; padding: 1rem; font-weight:bold;">
+                💾 Değişiklikleri Kaydet
             </button>
 
-            <div style="text-align: center; margin-top: 1rem;">
-                <a asp-controller="Admin" asp-action="Trainers" class="primary-text">Geri Dön</a>
-            </div>
+            <a asp-action="Trainers" class="btn btn-outline-light mt-3" style="width: 100%;">İptal</a>
         </form>
     </div>
 </div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
-
     <style>
-        /* Kapsayıcı Alan */
+        /* Create sayfasındaki stilin aynısı */
         .specialty-wrapper {
             display: flex;
             flex-wrap: wrap;
@@ -101,14 +128,12 @@
             padding: 5px 0;
         }
 
-        /* Checkbox Gizleme */
         .btn-check {
             position: absolute;
             clip: rect(0,0,0,0);
             pointer-events: none;
         }
 
-        /* Etiket Tasarımı (Dark Mode) */
         .specialty-tag {
             display: inline-flex;
             align-items: center;
@@ -128,14 +153,13 @@
                 border-color: #718096;
             }
 
-        /* SEÇİLDİĞİNDE */
         .btn-check:checked + .specialty-tag {
-            background-color: #3498db;
-            border-color: #3498db;
-            color: white;
-            box-shadow: 0 0 10px rgba(52, 152, 219, 0.4);
+            background-color: #f39c12; /* Düzenleme olduğu için turuncu/sarı ton */
+            border-color: #f39c12;
+            color: #2c3e50;
             font-weight: bold;
             transform: translateY(-2px);
+            box-shadow: 0 0 10px rgba(243, 156, 18, 0.4);
         }
 
         .emoji-span {

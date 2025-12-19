@@ -15,17 +15,11 @@ namespace SporSalonu2.Models
         [Display(Name = "Soyad")]
         public string LastName { get; set; }
 
-        // --- DEĞİŞİKLİK BURADA ---
-        // Eskiden burada [Required] vardı, onu SİLDİK.
-        // Çünkü bu alan artık formdan gelmiyor, Controller'da biz oluşturuyoruz.
         public string? Specialty { get; set; }
-        // -------------------------
 
-        // Formdan gelen asıl veri bu:
         [Display(Name = "Uzmanlık Alanları")]
         public List<int> SelectedServiceIds { get; set; } = new List<int>();
 
-        // Checkbox listesini doldurmak için kullanılan liste:
         public List<SelectListItemDto> AvailableServices { get; set; } = new List<SelectListItemDto>();
 
         [EmailAddress]

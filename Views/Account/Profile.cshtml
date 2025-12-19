@@ -1,0 +1,162 @@
+﻿@model SporSalonu2.Models.UserProfileViewModel
+
+@{
+    ViewData["Title"] = "Profilim";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .profile-card {
+        background: linear-gradient(145deg, #1e272e, #2f3640);
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+        color: #fff;
+        overflow: hidden;
+        border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .profile-header {
+        background: rgba(0,0,0,0.2);
+        padding: 30px;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .avatar-large {
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(135deg, #0984e3, #00cec9);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: white;
+        margin: 0 auto 15px;
+        box-shadow: 0 5px 15px rgba(9, 132, 227, 0.4);
+    }
+
+    .form-control-dark {
+        background-color: #353b48;
+        border: 1px solid #4b6584;
+        color: #fff;
+        border-radius: 10px;
+        padding: 12px;
+    }
+
+        .form-control-dark:focus {
+            background-color: #2f3640;
+            border-color: #00d2d3;
+            color: #fff;
+            box-shadow: none;
+        }
+
+        .form-control-dark::placeholder {
+            color: #7f8fa6;
+        }
+
+        .form-control-dark:disabled {
+            background-color: #2d3436;
+            color: #636e72;
+            border-color: transparent;
+        }
+
+    .btn-update {
+        background: #00d2d3;
+        color: #1e272e;
+        border: none;
+        padding: 12px;
+        border-radius: 10px;
+        font-weight: 800;
+        width: 100%;
+        transition: all 0.2s;
+    }
+
+        .btn-update:hover {
+            background: #55efc4;
+            transform: translateY(-2px);
+        }
+
+    .btn-delete-account {
+        background: transparent;
+        border: 1px solid #e74c3c;
+        color: #e74c3c;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        transition: all 0.2s;
+    }
+
+        .btn-delete-account:hover {
+            background: #e74c3c;
+            color: white;
+        }
+
+</style>
+
+<div class="container" style="margin-top: 120px; margin-bottom: 80px;">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success border-0 shadow-sm rounded-3 mb-4">
+                    <i class="fas fa-check-circle me-2"></i> @TempData["Success"]
+                </div>
+            }
+
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="avatar-large">
+                        @(Model.FirstName.Substring(0, 1).ToUpper())
+                    </div>
+                    <h3 class="fw-bold mb-1">@Model.FirstName @Model.LastName</h3>
+                    <p class="text-muted mb-0">@Model.Email</p>
+                </div>
+
+                <div class="p-4 p-md-5">
+                    <form asp-action="Profile" method="post">
+
+                        <input type="hidden" asp-for="FirstName" />
+                        <input type="hidden" asp-for="LastName" />
+                        <input type="hidden" asp-for="Email" />
+
+                        <div class="mb-4">
+                            <label class="form-label text-light small fw-bold">Telefon Numarası</label>
+                            <input asp-for="Phone" class="form-control form-control-dark" placeholder="05XX XXX XX XX" />
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-6">
+                                <label class="form-label text-light small fw-bold">Boy (cm)</label>
+                                <input asp-for="Height" type="number" step="0.01" class="form-control form-control-dark" placeholder="175" />
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label text-light small fw-bold">Kilo (kg)</label>
+                                <input asp-for="Weight" type="number" step="0.01" class="form-control form-control-dark" placeholder="70.5" />
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-update shadow">
+                            BİLGİLERİMİ GÜNCELLE
+                        </button>
+                    </form>
+
+                    <hr class="border-secondary my-4" />
+
+                    <div class="text-center">
+                        <p class="text-muted small mb-3">Hesabınızı silmek geri alınamaz bir işlemdir.</p>
+                        <form asp-action="DeleteAccount" method="post" onsubmit="return confirm('Hesabınızı kalıcı olarak silmek istediğinize emin misiniz? Bu işlem geri alınamaz!');">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn-delete-account">
+                                <i class="fas fa-trash-alt me-2"></i> Hesabımı Sil
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

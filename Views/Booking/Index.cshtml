@@ -24,7 +24,7 @@
 
             <div class="form-group">
                 <label>Hizmet / Branş Seçin *</label>
-                <select asp-for="ServiceType" class="form-control" id="ddlService">
+                <select asp-for="ServiceType" class="form-control form-select" id="ddlService">
                     <option value="">-- Branş Seçiniz --</option>
                     @foreach (var item in Model.Services)
                     {
@@ -36,7 +36,7 @@
 
             <div class="form-group">
                 <label>Antrenör Seçin *</label>
-                <select asp-for="TrainerId" class="form-control" id="ddlTrainer" disabled>
+                <select asp-for="TrainerId" class="form-control form-select" id="ddlTrainer" disabled>
                     <option value="">-- Önce Branş Seçiniz --</option>
                 </select>
                 <span asp-validation-for="TrainerId" class="text-danger"></span>
@@ -50,7 +50,7 @@
 
             <div class="form-group">
                 <label>Müsait Saatler *</label>
-                <select asp-for="AppointmentTime" class="form-control" id="ddlTime" disabled>
+                <select asp-for="AppointmentTime" class="form-control form-select" id="ddlTime" disabled>
                     <option value="">-- Önce Tarih Seçiniz --</option>
                 </select>
                 <span asp-validation-for="AppointmentTime" class="text-danger"></span>
@@ -137,19 +137,43 @@
     </script>
 
     <style>
+        /* 1. Tüm giriş kutularının (Dropdown ve Yazı alanları) genel tasarımı */
         .form-control, .form-select {
-            background-color: #2c3e50;
-            border: 1px solid #4a5568;
-            color: #ecf0f1;
+            background-color: #2c3e50 !important; /* Koyu arka plan */
+            color: #ecf0f1 !important; /* Beyaz yazı */
+            border: 1px solid #4a5568 !important;
         }
 
-            .form-control:focus {
-                background-color: #34495e;
-                color: #fff;
-                border-color: #3498db;
-                box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+            /* 2. Kutucuğa tıklayınca (Focus) rengi */
+            .form-control:focus, .form-select:focus {
+                background-color: #34495e !important;
+                color: #ffffff !important;
+                border-color: #00d2d3 !important; /* Turkuaz çerçeve */
+                box-shadow: none !important;
             }
 
+            /* 3. KRİTİK KISIM: Devre dışı (Disabled) olan kutucuklar */
+            /* Arka plan koyu kalacak ama yazı KIRMIZI olacak */
+            .form-control:disabled, .form-select:disabled {
+                background-color: #2f3640 !important;
+                color: #e74c3c !important; /* YAZI RENGİ KIRMIZI */
+                opacity: 1 !important;
+                cursor: not-allowed;
+                border-color: #4a5568 !important;
+            }
+
+        /* 4. Placeholder (Silik ipucu yazıları) rengi */
+        ::placeholder {
+            color: #95a5a6 !important;
+            opacity: 1;
+        }
+
+        /* Dropdown ok işaretinin rengini beyaz yap (Dark modda kaybolmaması için) */
+        .form-select {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+        }
+
+        /* Dropdown seçeneklerinin arka planı */
         option {
             background-color: #2c3e50;
             color: white;

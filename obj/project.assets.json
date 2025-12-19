@@ -4502,23 +4502,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Anıl\\.nuget\\packages\\": {},
+    "C:\\Users\\tunah\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Anıl\\Desktop\\SporSalonu2\\SporSalonu2.csproj",
+      "projectUniqueName": "C:\\Users\\tunah\\OneDrive\\Masaüstü\\SporSalonu3\\SporSalonu2\\SporSalonu2.csproj",
       "projectName": "SporSalonu2",
-      "projectPath": "C:\\Users\\Anıl\\Desktop\\SporSalonu2\\SporSalonu2.csproj",
-      "packagesPath": "C:\\Users\\Anıl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Anıl\\Desktop\\SporSalonu2\\obj\\",
+      "projectPath": "C:\\Users\\tunah\\OneDrive\\Masaüstü\\SporSalonu3\\SporSalonu2\\SporSalonu2.csproj",
+      "packagesPath": "C:\\Users\\tunah\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tunah\\OneDrive\\Masaüstü\\SporSalonu3\\SporSalonu2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Anıl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\tunah\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4593,7 +4593,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

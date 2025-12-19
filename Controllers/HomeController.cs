@@ -10,18 +10,6 @@ namespace SporSalonu2.Controllers
             return View();
         }
 
-        // Hakkýmýzda sayfasý (opsiyonel)
-        public IActionResult About()
-        {
-            return View();
-        }
-
-        // Ýletiþim sayfasý (opsiyonel)
-        public IActionResult Contact()
-        {
-            return View();
-        }
-
         // Hata sayfasý
         public IActionResult Error()
         {

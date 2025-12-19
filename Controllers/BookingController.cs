@@ -46,6 +46,7 @@ namespace SporSalonu2.Controllers
             return Json(trainers);
         }
 
+        // --- GÜNCELLENEN METOD BURASI ---
         [HttpGet]
         public async Task<IActionResult> GetAvailableSlots(int trainerId, string dateStr)
         {
@@ -54,9 +55,26 @@ namespace SporSalonu2.Controllers
             if (!DateTime.TryParse(dateStr, out DateTime selectedDate))
                 return Json(new List<string>());
 
+            // 1. ADIM: Antrenörü buluyoruz
+            var trainer = await _context.Trainers.FindAsync(trainerId);
+            if (trainer == null) return Json(new List<string>());
+
+            // 2. ADIM: Gün Kontrolü
+            // Seçilen tarihin İngilizce gün adını alıyoruz (Monday, Tuesday vb.)
+            string selectedDayName = selectedDate.DayOfWeek.ToString();
+
+            // Eğer antrenörün çalışma günleri bu günü içermiyorsa, boş liste dön (Randevu alınamaz)
+            // Not: Admin panelinde kaydederken virgülle ayırmıştık (Monday,Friday gibi)
+            if (string.IsNullOrEmpty(trainer.WorkingDays) || !trainer.WorkingDays.Contains(selectedDayName))
+            {
+                // Antrenör bugün çalışmıyor.
+                return Json(new List<string>());
+            }
+
+            // 3. ADIM: Eğer çalışıyorsa saatleri oluştur
             var allSlots = new List<string>();
-            TimeSpan start = new TimeSpan(9, 0, 0);
-            TimeSpan end = new TimeSpan(22, 0, 0);
+            TimeSpan start = new TimeSpan(9, 0, 0); // Sabah 09:00
+            TimeSpan end = new TimeSpan(22, 0, 0);  // Akşam 22:00
 
             while (start < end)
             {
@@ -64,6 +82,7 @@ namespace SporSalonu2.Controllers
                 start = start.Add(TimeSpan.FromHours(1));
             }
 
+            // Dolu randevuları çek
             var bookedSlots = await _context.Bookings
                 .Where(b => b.TrainerId == trainerId
                          && b.AppointmentDate.Date == selectedDate.Date
@@ -72,8 +91,10 @@ namespace SporSalonu2.Controllers
                 .Select(b => b.AppointmentTime)
                 .ToListAsync();
 
+            // Dolu saatleri listeden çıkar
             var availableSlots = allSlots.Except(bookedSlots).ToList();
 
+            // Eğer seçilen gün "Bugün" ise, geçmiş saatleri gösterme
             if (selectedDate.Date == DateTime.Today)
             {
                 var now = DateTime.Now.TimeOfDay;
@@ -97,8 +118,8 @@ namespace SporSalonu2.Controllers
             if (!ModelState.IsValid)
             {
                 var errors = ModelState.Values.SelectMany(v => v.Errors)
-                                              .Select(e => e.ErrorMessage)
-                                              .ToList();
+                                            .Select(e => e.ErrorMessage)
+                                            .ToList();
 
                 TempData["Error"] = "Form Hatası: " + string.Join(" | ", errors);
 

@@ -17,7 +17,7 @@ namespace SporSalonu2.Models
         public string LastName { get; set; }
 
         [Required]
-        [MaxLength(100)]
+        [MaxLength(300)]
         public string Specialty { get; set; }
 
         [EmailAddress]
@@ -31,6 +31,9 @@ namespace SporSalonu2.Models
         [MaxLength(1000)]
         public string Bio { get; set; }
 
-        public ICollection<Availability> Availabilities { get; set; }
+        
+        
+        public string WorkingDays { get; set; }
     }
+
 }

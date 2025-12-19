@@ -1,142 +1,98 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\",
+  "WorkspaceRootPath": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\views\\admin\\trainers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\admin\\trainers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Migrations\\20251219180603_AddWorkingDaysColumn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20251219180603_AddWorkingDaysColumn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\views\\admin\\members.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\admin\\members.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\views\\admin\\editmember.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\admin\\editmember.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Migrations\\20251217194146_AddPhoneColumn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20251217194146_AddPhoneColumn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\models\\membereditviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:models\\membereditviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\models\\bookingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:models\\bookingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\views\\trainers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\trainers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\controllers\\trainerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:controllers\\trainerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\views\\admin\\bookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\admin\\bookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\views\\booking\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\onedrive\\masa\u00FCst\u00FC\\sporsalonu3\\sporsalonu2\\views\\booking\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\booking\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\controllers\\apicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:controllers\\apicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\controllers\\aicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:controllers\\aicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\views\\booking\\mybookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\booking\\mybookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\views\\admin\\edittrainer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\onedrive\\masa\u00FCst\u00FC\\sporsalonu3\\sporsalonu2\\views\\admin\\edittrainer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\admin\\edittrainer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\models\\trainerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\onedrive\\masa\u00FCst\u00FC\\sporsalonu3\\sporsalonu2\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\onedrive\\masa\u00FCst\u00FC\\sporsalonu3\\sporsalonu2\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\onedrive\\masa\u00FCst\u00FC\\sporsalonu3\\sporsalonu2\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\onedrive\\masa\u00FCst\u00FC\\sporsalonu3\\sporsalonu2\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\onedrive\\masa\u00FCst\u00FC\\sporsalonu3\\sporsalonu2\\models\\trainerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:models\\trainerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\onedrive\\masa\u00FCst\u00FC\\sporsalonu3\\sporsalonu2\\models\\selectlistitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:models\\selectlistitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\models\\a\u0131dietviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:models\\a\u0131dietviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\onedrive\\masa\u00FCst\u00FC\\sporsalonu3\\sporsalonu2\\models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\migrations\\20251215214030_addusertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:migrations\\20251215214030_addusertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\onedrive\\masa\u00FCst\u00FC\\sporsalonu3\\sporsalonu2\\models\\membereditviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:models\\membereditviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\onedrive\\masa\u00FCst\u00FC\\sporsalonu3\\sporsalonu2\\models\\trainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:models\\trainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\migrations\\20251214193821_addphonetotrainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:migrations\\20251214193821_addphonetotrainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\onedrive\\masa\u00FCst\u00FC\\sporsalonu3\\sporsalonu2\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\migrations\\20251214153739_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:migrations\\20251214153739_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\onedrive\\masa\u00FCst\u00FC\\sporsalonu3\\sporsalonu2\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\onedrive\\masa\u00FCst\u00FC\\sporsalonu3\\sporsalonu2\\views\\admin\\createtrainer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\admin\\createtrainer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\onedrive\\masa\u00FCst\u00FC\\sporsalonu3\\sporsalonu2\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\onedrive\\masa\u00FCst\u00FC\\sporsalonu3\\sporsalonu2\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\onedrive\\masa\u00FCst\u00FC\\sporsalonu3\\sporsalonu2\\models\\bookingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:models\\bookingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\models\\bookingreportdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:models\\bookingreportdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\onedrive\\masa\u00FCst\u00FC\\sporsalonu3\\sporsalonu2\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\an\u0131l\\desktop\\sporsalonu2\\sporsalonu2.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:sporsalonu2.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\onedrive\\masa\u00FCst\u00FC\\sporsalonu3\\sporsalonu2\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\onedrive\\masa\u00FCst\u00FC\\sporsalonu3\\sporsalonu2\\controllers\\trainerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:controllers\\trainerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\onedrive\\masa\u00FCst\u00FC\\sporsalonu3\\sporsalonu2\\controllers\\servicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:controllers\\servicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|c:\\users\\tunah\\onedrive\\masa\u00FCst\u00FC\\sporsalonu3\\sporsalonu2\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24E7DA5B-19AC-4DE8-B42D-D2DDF43E9B1D}|SporSalonu2.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -146,7 +102,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -154,420 +110,281 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EditMember.cshtml",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Views\\Admin\\EditMember.cshtml",
-              "RelativeDocumentMoniker": "Views\\Admin\\EditMember.cshtml",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Views\\Admin\\EditMember.cshtml",
-              "RelativeToolTip": "Views\\Admin\\EditMember.cshtml",
-              "ViewState": "AgIAAKIAAAAAAAAAAAAQwKgAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-17T17:35:30.844Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MemberEditViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Models\\MemberEditViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\MemberEditViewModel.cs",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Models\\MemberEditViewModel.cs",
-              "RelativeToolTip": "Models\\MemberEditViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "20251219180603_AddWorkingDaysColumn.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Migrations\\20251219180603_AddWorkingDaysColumn.cs",
+              "RelativeDocumentMoniker": "Migrations\\20251219180603_AddWorkingDaysColumn.cs",
+              "ToolTip": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Migrations\\20251219180603_AddWorkingDaysColumn.cs",
+              "RelativeToolTip": "Migrations\\20251219180603_AddWorkingDaysColumn.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T17:32:43.814Z",
+              "WhenOpened": "2025-12-19T18:06:03.492Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Members.cshtml",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Views\\Admin\\Members.cshtml",
-              "RelativeDocumentMoniker": "Views\\Admin\\Members.cshtml",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Views\\Admin\\Members.cshtml",
-              "RelativeToolTip": "Views\\Admin\\Members.cshtml",
-              "ViewState": "AgIAAKMAAAAAAAAAAAAwwMUAAAAVAAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Views\\Booking\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Booking\\Index.cshtml",
+              "ToolTip": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Views\\Booking\\Index.cshtml",
+              "RelativeToolTip": "Views\\Booking\\Index.cshtml",
+              "ViewState": "AgIAAIUAAAAAAAAAAAAcwKEAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-15T22:00:25.389Z",
+              "WhenOpened": "2025-12-19T17:25:16.531Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Trainers.cshtml",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Views\\Admin\\Trainers.cshtml",
-              "RelativeDocumentMoniker": "Views\\Admin\\Trainers.cshtml",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Views\\Admin\\Trainers.cshtml",
-              "RelativeToolTip": "Views\\Admin\\Trainers.cshtml",
-              "ViewState": "AgIAAOEAAAAAAAAAAAAwwP4AAAAmAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "EditTrainer.cshtml",
+              "DocumentMoniker": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Views\\Admin\\EditTrainer.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\EditTrainer.cshtml",
+              "ToolTip": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Views\\Admin\\EditTrainer.cshtml",
+              "RelativeToolTip": "Views\\Admin\\EditTrainer.cshtml",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAIwIgAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-15T22:11:07.896Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-19T17:19:33.939Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "20251217194146_AddPhoneColumn.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Migrations\\20251217194146_AddPhoneColumn.cs",
-              "RelativeDocumentMoniker": "Migrations\\20251217194146_AddPhoneColumn.cs",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Migrations\\20251217194146_AddPhoneColumn.cs",
-              "RelativeToolTip": "Migrations\\20251217194146_AddPhoneColumn.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAgAAAAAAAAAA==",
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAcwFEAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T19:41:47.011Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-19T17:02:57.511Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-19T16:04:44.807Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "Controllers\\AdminController.cs",
-              "ViewState": "AgIAAHIAAAAAAAAAAAA5wI0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T21:57:40.08Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Bookings.cshtml",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Views\\Admin\\Bookings.cshtml",
-              "RelativeDocumentMoniker": "Views\\Admin\\Bookings.cshtml",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Views\\Admin\\Bookings.cshtml",
-              "RelativeToolTip": "Views\\Admin\\Bookings.cshtml",
-              "ViewState": "AgIAAJ4AAAAAAAAAAAAQwKkAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-15T20:52:54.541Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "Controllers\\AccountController.cs",
-              "ViewState": "AgIAAIQAAAAAAAAAAAAmwJsAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T20:46:08.477Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "BookingViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Models\\BookingViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\BookingViewModel.cs",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Models\\BookingViewModel.cs",
-              "RelativeToolTip": "Models\\BookingViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-16T11:22:27.431Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAYwGkAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-16T11:12:12.145Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "TrainersController.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Controllers\\TrainersController.cs",
-              "RelativeDocumentMoniker": "Controllers\\TrainersController.cs",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Controllers\\TrainersController.cs",
-              "RelativeToolTip": "Controllers\\TrainersController.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAkwEEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T20:47:56.332Z"
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-12-19T15:31:32.268Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Models\\User.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Models\\User.cs",
               "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T21:19:24.325Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-19T15:21:50.435Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "A\u0131DietViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Models\\A\u0131DietViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\A\u0131DietViewModel.cs",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Models\\A\u0131DietViewModel.cs",
-              "RelativeToolTip": "Models\\A\u0131DietViewModel.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAYwBEAAAAWAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "TrainerViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Models\\TrainerViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\TrainerViewModel.cs",
+              "ToolTip": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Models\\TrainerViewModel.cs",
+              "RelativeToolTip": "Models\\TrainerViewModel.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAUwBkAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T20:51:26.619Z"
+              "WhenOpened": "2025-12-19T15:21:35.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SelectListItemDto.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Models\\SelectListItemDto.cs",
+              "RelativeDocumentMoniker": "Models\\SelectListItemDto.cs",
+              "ToolTip": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Models\\SelectListItemDto.cs",
+              "RelativeToolTip": "Models\\SelectListItemDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T15:11:39.685Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Models\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\RegisterViewModel.cs",
+              "ToolTip": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Models\\RegisterViewModel.cs",
+              "RelativeToolTip": "Models\\RegisterViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T14:54:04.107Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Views\\Trainers\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Trainers\\Index.cshtml",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Views\\Trainers\\Index.cshtml",
-              "RelativeToolTip": "Views\\Trainers\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-16T20:23:21.309Z"
+              "Title": "MemberEditViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Models\\MemberEditViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\MemberEditViewModel.cs",
+              "ToolTip": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Models\\MemberEditViewModel.cs",
+              "RelativeToolTip": "Models\\MemberEditViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T14:52:39.866Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Trainer.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Models\\Trainer.cs",
+              "RelativeDocumentMoniker": "Models\\Trainer.cs",
+              "ToolTip": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Models\\Trainer.cs",
+              "RelativeToolTip": "Models\\Trainer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T14:47:02.291Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "BookingController.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Controllers\\BookingController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BookingController.cs",
+              "ToolTip": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Controllers\\BookingController.cs",
+              "RelativeToolTip": "Controllers\\BookingController.cs",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAcwLIAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T14:17:49.595Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Views\\Booking\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Booking\\Index.cshtml",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Views\\Booking\\Index.cshtml",
-              "RelativeToolTip": "Views\\Booking\\Index.cshtml",
-              "ViewState": "AgIAAHQAAAAAAAAAAAAQwIsAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-16T10:55:20.539Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "AIController.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Controllers\\AIController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AIController.cs",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Controllers\\AIController.cs",
-              "RelativeToolTip": "Controllers\\AIController.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAzwEgAAAAAAAAAAAAAAA==",
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AgIAAK8AAAAAAAAAAAAuwMYAAABeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T20:47:02.72Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ApiController.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Controllers\\ApiController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ApiController.cs",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Controllers\\ApiController.cs",
-              "RelativeToolTip": "Controllers\\ApiController.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAYwFIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T20:47:16.636Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "MyBookings.cshtml",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Views\\Booking\\MyBookings.cshtml",
-              "RelativeDocumentMoniker": "Views\\Booking\\MyBookings.cshtml",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Views\\Booking\\MyBookings.cshtml",
-              "RelativeToolTip": "Views\\Booking\\MyBookings.cshtml",
-              "ViewState": "AgIAAHkAAAAAAAAAAAAQwJQAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-16T10:58:55.016Z"
+              "WhenOpened": "2025-12-19T14:23:12.916Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "BookingController.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Controllers\\BookingController.cs",
-              "RelativeDocumentMoniker": "Controllers\\BookingController.cs",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Controllers\\BookingController.cs",
-              "RelativeToolTip": "Controllers\\BookingController.cs",
-              "ViewState": "AgIAAJAAAAAAAAAAAAAYwKkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-16T10:54:28.816Z"
+              "Title": "CreateTrainer.cshtml",
+              "DocumentMoniker": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Views\\Admin\\CreateTrainer.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\CreateTrainer.cshtml",
+              "ToolTip": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Views\\Admin\\CreateTrainer.cshtml",
+              "RelativeToolTip": "Views\\Admin\\CreateTrainer.cshtml",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAUwIIAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-19T17:02:32.012Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "TrainerViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Models\\TrainerViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\TrainerViewModel.cs",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Models\\TrainerViewModel.cs",
-              "RelativeToolTip": "Models\\TrainerViewModel.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAADwvxYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T22:18:05.03Z"
+              "DocumentIndex": 15,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAPkAAAAAAAAAAAAmwBMBAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-19T15:41:22.811Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAswCkAAAAyAAAAAAAAAA==",
+              "DocumentIndex": 16,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Models\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Models\\LoginViewModel.cs",
+              "RelativeToolTip": "Models\\LoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T20:48:08.183Z"
+              "WhenOpened": "2025-12-19T14:52:28.692Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "BookingViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Models\\BookingViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\BookingViewModel.cs",
+              "ToolTip": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Models\\BookingViewModel.cs",
+              "RelativeToolTip": "Models\\BookingViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T14:51:00.86Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 18,
-              "Title": "EditTrainer.cshtml",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Views\\Admin\\EditTrainer.cshtml",
-              "RelativeDocumentMoniker": "Views\\Admin\\EditTrainer.cshtml",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Views\\Admin\\EditTrainer.cshtml",
-              "RelativeToolTip": "Views\\Admin\\EditTrainer.cshtml",
-              "ViewState": "AgIAAGoAAAAAAAAAAAAwwIYAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-15T22:54:50.833Z"
+              "Title": "Booking.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Models\\Booking.cs",
+              "RelativeDocumentMoniker": "Models\\Booking.cs",
+              "ToolTip": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Models\\Booking.cs",
+              "RelativeToolTip": "Models\\Booking.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAowC0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T14:48:14.49Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAlwBcAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T14:38:32.797Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "TrainersController.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Controllers\\TrainersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TrainersController.cs",
+              "ToolTip": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Controllers\\TrainersController.cs",
+              "RelativeToolTip": "Controllers\\TrainersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvxYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T14:32:57.469Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ServicesController.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Controllers\\ServicesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ServicesController.cs",
+              "ToolTip": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Controllers\\ServicesController.cs",
+              "RelativeToolTip": "Controllers\\ServicesController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T14:31:22.557Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 22,
-              "Title": "RegisterViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Models\\RegisterViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\RegisterViewModel.cs",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Models\\RegisterViewModel.cs",
-              "RelativeToolTip": "Models\\RegisterViewModel.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAA5wB8AAACyAAAAAAAAAA==",
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\tunah\\OneDrive\\Masa\u00FCst\u00FC\\SporSalonu3\\SporSalonu2\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T21:49:16.47Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "20251215214030_AddUserTable.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Migrations\\20251215214030_AddUserTable.cs",
-              "RelativeDocumentMoniker": "Migrations\\20251215214030_AddUserTable.cs",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Migrations\\20251215214030_AddUserTable.cs",
-              "RelativeToolTip": "Migrations\\20251215214030_AddUserTable.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T21:40:31.227Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "20251214153739_InitialCreate.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Migrations\\20251214153739_InitialCreate.cs",
-              "RelativeDocumentMoniker": "Migrations\\20251214153739_InitialCreate.cs",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Migrations\\20251214153739_InitialCreate.cs",
-              "RelativeToolTip": "Migrations\\20251214153739_InitialCreate.cs",
-              "ViewState": "AgIAAH4AAAAAAAAAAAAswKQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T20:48:33.05Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "20251214193821_AddPhoneToTrainer.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Migrations\\20251214193821_AddPhoneToTrainer.cs",
-              "RelativeDocumentMoniker": "Migrations\\20251214193821_AddPhoneToTrainer.cs",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Migrations\\20251214193821_AddPhoneToTrainer.cs",
-              "RelativeToolTip": "Migrations\\20251214193821_AddPhoneToTrainer.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAswDMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T20:51:17.354Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "ApplicationDbContextModelSnapshot.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "RelativeDocumentMoniker": "Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "RelativeToolTip": "Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "ViewState": "AgIAAA8BAAAAAAAAAADwv1YBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T20:51:21.664Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAswCoAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T20:49:12.142Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "Privacy.cshtml",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Views\\Home\\Privacy.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Privacy.cshtml",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Views\\Home\\Privacy.cshtml",
-              "RelativeToolTip": "Views\\Home\\Privacy.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAgwAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-15T20:53:59.282Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Views\\Account\\Register.cshtml",
-              "RelativeDocumentMoniker": "Views\\Account\\Register.cshtml",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Views\\Account\\Register.cshtml",
-              "RelativeToolTip": "Views\\Account\\Register.cshtml",
-              "ViewState": "AgIAACUAAAAAAAAAAAAgwFEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-15T20:52:49.234Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Views\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Views\\Account\\Login.cshtml",
-              "RelativeToolTip": "Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAgwD4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-15T20:52:34.313Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "BookingReportDto.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Models\\BookingReportDto.cs",
-              "RelativeDocumentMoniker": "Models\\BookingReportDto.cs",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Models\\BookingReportDto.cs",
-              "RelativeToolTip": "Models\\BookingReportDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T20:51:48.976Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "Booking.cs",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Models\\Booking.cs",
-              "RelativeDocumentMoniker": "Models\\Booking.cs",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\Models\\Booking.cs",
-              "RelativeToolTip": "Models\\Booking.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAQwC0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T20:51:44.871Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "SporSalonu2",
-              "DocumentMoniker": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\SporSalonu2.csproj",
-              "RelativeDocumentMoniker": "SporSalonu2.csproj",
-              "ToolTip": "C:\\Users\\An\u0131l\\Desktop\\SporSalonu2\\SporSalonu2.csproj",
-              "RelativeToolTip": "SporSalonu2.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-15T20:45:57.199Z"
+              "WhenOpened": "2025-12-19T14:20:36.359Z"
             }
           ]
         }

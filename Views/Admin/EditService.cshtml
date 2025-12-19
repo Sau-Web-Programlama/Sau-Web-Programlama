@@ -1,45 +1,198 @@
-﻿@* Views/Admin/EditService.cshtml *@
-@model SporSalonu2.Models.ServiceViewModel
+﻿@model SporSalonu2.Models.ServiceViewModel
+
 @{
     ViewData["Title"] = "Hizmet Düzenle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="auth-container">
-    <div class="auth-box" style="max-width: 600px;">
-        <h2>✏️ Hizmet Düzenle (#@ViewBag.ServiceId)</h2>
+<style>
+    /* ANA KART */
+    .premium-card {
+        background-color: #1e272e;
+        border-radius: 20px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.5); /* Daha güçlü bir gölge */
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        max-width: 600px; /* Genişliği daralttık ki form dağılmasın, derli toplu dursun */
+        margin: 0 auto;
+        overflow: hidden;
+    }
 
-        <form method="post" asp-controller="Admin" asp-action="EditService" asp-route-id="@ViewBag.ServiceId">
-            <input type="hidden" name="Id" value="@ViewBag.ServiceId" />
-            <div asp-validation-summary="ModelOnly" style="color: red; margin-bottom: 1rem;"></div>
+    /* BAŞLIK ALANI */
+    .card-header-clean {
+        background: #2f3640;
+        padding: 30px;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
 
-            <div class="form-group">
-                <label asp-for="Name">Hizmet Adı *</label>
-                <input asp-for="Name" placeholder="Örn: Kişisel Antrenman" required />
-            </div>
+    .header-title {
+        color: #00d2d3;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-size: 1.4rem;
+        margin: 0;
+    }
 
-            <div class="form-group">
-                <label asp-for="DurationMinutes">Süre (Dakika) *</label>
-                <input asp-for="DurationMinutes" type="number" required />
-            </div>
+    /* FORM DÜZENİ */
+    .form-container {
+        padding: 40px;
+    }
 
-            <div class="form-group">
-                <label asp-for="Price">Fiyat (TL) *</label>
-                <input asp-for="Price" type="number" step="0.01" required />
-            </div>
+    .form-group-custom {
+        margin-bottom: 25px; /* Her eleman arası boşluk */
+    }
 
-            <div class="form-group">
-                <label asp-for="Description">Açıklama</label>
-                <textarea asp-for="Description" rows="4" placeholder="Hizmetin kısa açıklaması ve detayları..."></textarea>
-            </div>
+    .form-label-custom {
+        display: block;
+        color: #dfe6e9;
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+        padding-left: 5px; /* Etiketi hafif içeriden başlattık */
+    }
 
-            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem;">
-                Değişiklikleri Kaydet
-            </button>
+    /* İNPUT GRUBU (Bütünleşik Görünüm) */
+    .input-group-custom {
+        display: flex;
+        align-items: center;
+        background-color: #353b48; /* Input arka planı */
+        border: 2px solid transparent; /* Kenarlık varsayılan olarak yok */
+        border-radius: 12px;
+        transition: all 0.3s ease;
+    }
 
-            <div style="text-align: center; margin-top: 1rem;">
-                <a asp-controller="Admin" asp-action="Services" class="primary-text">Hizmet Listesine Geri Dön</a>
-            </div>
-        </form>
+        /* Inputa tıklayınca tüm kutu parlasın */
+        .input-group-custom:focus-within {
+            border-color: #00d2d3;
+            box-shadow: 0 0 15px rgba(0, 210, 211, 0.2);
+            background-color: #2f3640;
+        }
+
+    .input-icon {
+        padding: 0 15px;
+        color: #7f8fa6;
+        font-size: 1.1rem;
+    }
+
+    /* Kutunun kendisi */
+    .form-control-custom {
+        flex-grow: 1;
+        background: transparent;
+        border: none;
+        color: white;
+        padding: 15px 15px 15px 0; /* Soldan boşluk yok, ikonla birleşsin */
+        font-size: 1rem;
+        outline: none; /* Mavi çerçeveyi kapat */
+    }
+
+        .form-control-custom::placeholder {
+            color: #636e72;
+        }
+
+    /* TextArea için özel ayar */
+    textarea.form-control-custom {
+        padding-left: 15px; /* İkon olmadığı için soldan boşluk verelim */
+        resize: none;
+    }
+
+    /* BUTONLAR */
+    .btn-save-clean {
+        background: #00d2d3;
+        color: #1e272e;
+        width: 100%;
+        padding: 15px;
+        border-radius: 12px;
+        border: none;
+        font-weight: 800;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        margin-top: 10px;
+        transition: transform 0.2s, background 0.2s;
+    }
+
+        .btn-save-clean:hover {
+            background: #55efc4;
+            transform: translateY(-2px);
+        }
+
+    .btn-cancel-clean {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        color: #ff7675;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: color 0.2s;
+    }
+
+        .btn-cancel-clean:hover {
+            color: #fab1a0;
+        }
+
+</style>
+
+<div class="container" style="margin-top: 100px; margin-bottom: 80px;">
+
+    <div class="premium-card">
+
+        <div class="card-header-clean">
+            <h3 class="header-title">Hizmet Düzenle</h3>
+            <div class="text-muted small mt-2">#ID: @Model.Id</div>
+        </div>
+
+        <div class="form-container">
+            <form asp-action="EditService" method="post">
+
+                <input type="hidden" asp-for="Id" />
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-4 small text-center"></div>
+
+                <div class="form-group-custom">
+                    <label asp-for="Name" class="form-label-custom">Hizmetin Adı</label>
+                    <div class="input-group-custom">
+                        <div class="input-icon"><i class="fas fa-tag"></i></div>
+                        <input asp-for="Name" class="form-control-custom" placeholder="Örn: Zumba" />
+                    </div>
+                    <span asp-validation-for="Name" class="text-danger small mt-1 ps-2"></span>
+                </div>
+
+                <div class="form-group-custom">
+                    <label asp-for="Description" class="form-label-custom">Açıklama</label>
+                    <div class="input-group-custom" style="align-items: flex-start;">
+                        <textarea asp-for="Description" rows="4" class="form-control-custom" placeholder="Hizmet detaylarını giriniz..."></textarea>
+                    </div>
+                    <span asp-validation-for="Description" class="text-danger small mt-1 ps-2"></span>
+                </div>
+
+                <div class="form-group-custom">
+                    <label asp-for="DurationMinutes" class="form-label-custom">Süre (Dakika)</label>
+                    <div class="input-group-custom">
+                        <div class="input-icon"><i class="far fa-clock"></i></div>
+                        <input asp-for="DurationMinutes" type="number" class="form-control-custom" placeholder="60" />
+                    </div>
+                    <span asp-validation-for="DurationMinutes" class="text-danger small mt-1 ps-2"></span>
+                </div>
+
+                <div class="form-group-custom">
+                    <label asp-for="Price" class="form-label-custom">Ücret (TL)</label>
+                    <div class="input-group-custom">
+                        <div class="input-icon"><i class="fas fa-lira-sign"></i></div>
+                        <input asp-for="Price" type="number" step="0.01" class="form-control-custom" placeholder="0.00" />
+                    </div>
+                    <span asp-validation-for="Price" class="text-danger small mt-1 ps-2"></span>
+                </div>
+
+                <button type="submit" class="btn-save-clean">
+                    KAYDET VE GÜNCELLE
+                </button>
+
+                <a asp-action="Services" class="btn-cancel-clean">
+                    Vazgeç ve Geri Dön
+                </a>
+
+            </form>
+        </div>
     </div>
 </div>
 
